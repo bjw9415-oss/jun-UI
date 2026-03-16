@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ButtonPage from "./pages/ButtonPage";
+import IconButtonPage from "./pages/IconButtonPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
 
         {/* /buttons 주소일 때는 ButtonPage를 보여줌 */}
         <Route path="/buttons" element={<ButtonPage />} />
+        <Route path="/icon-buttons" element={<IconButtonPage />} />
       </Routes>
     </BrowserRouter>
   );

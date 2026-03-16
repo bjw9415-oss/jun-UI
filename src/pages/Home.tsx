@@ -19,6 +19,11 @@ export default function Home() {
             버튼 컴포넌트 보기
           </Button>
         </Link>
+        <Link to="/icon-buttons">
+          <Button variant="outline" size="lg">
+            아이콘 버튼 보기
+          </Button>
+        </Link>
         <Button
           variant="outline"
           size="lg"
