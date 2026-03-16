@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
-import { Mail, ArrowRight, Trash2, Send } from "lucide-react";
+import { Mail, ArrowRight, Trash2, Send, Image } from "lucide-react";
 
 export default function IconButtonPage() {
   return (
@@ -45,6 +45,13 @@ export default function IconButtonPage() {
           <Button variant="primary" size="icon" className="rounded-full">
             <Send className="w-5 h-5" />
           </Button>
+
+          {/* 이미지 아이콘 버튼 */}
+          <Button variant="primary" size="icon" className="rounded-full">
+            <Image className="w-6 h-6" />
+          </Button>
+
+          {/*  */}
         </div>
       </div>
     </div>

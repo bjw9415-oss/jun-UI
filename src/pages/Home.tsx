@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0d1117] flex flex-col items-center justify-center p-4">
       <div className="text-center mb-12">
-        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00a2ff] to-[#00ff88] mb-4">
+        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#00a2ff] to-[#00ff88] mb-4">
           Jun-UI
         </h1>
         <p className="text-xl text-gray-400">
