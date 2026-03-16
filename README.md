@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# 🎨 Jun-UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **나만의 다크 테마 React + TS 컴포넌트 디자인 시스템**
+> 외부 무거운 UI 라이브러리(MUI, Bootstrap 등)에 의존하지 않고, 처음부터 직접 설계하고 구축하는 커스텀 UI 컴포넌트 모음집입니다. (shadcn/ui 철학 지향)
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dark Theme First**: 세련된 다크 모드(`bg-[#0d1117]`)를 기본 배경으로 설계된 UI
+- **Tailwind CSS v4**: 최신 Tailwind 엔진을 활용한 직관적이고 빠른 스타일링
+- **Type-Safe**: TypeScript 기반의 엄격한 `interface` 설계로 완벽한 자동완성 지원
+- **Flexible & Scalable**: `clsx`와 `tailwind-merge`를 결합한 `cn` 유틸리티로 자유로운 클래스 병합 지원
+- **Modern Icons**: `lucide-react`를 활용한 깔끔하고 일관된 벡터 아이콘 적용
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Core**: React, TypeScript, Vite
+- **Styling**: Tailwind CSS v4
+- **Routing**: React Router DOM
+- **Icons**: Lucide React
+- **Utils**: clsx, tailwind-merge
 
-## Expanding the ESLint configuration
+## 📦 Components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+현재까지 구현된 컴포넌트 목록입니다.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [x] **Button**: 다양한 Variant(primary, outline, danger)와 Size를 지원하는 만능 버튼
+- [x] **Icon Button**: Lucide 아이콘과 완벽하게 조화되는 실무형 버튼
+- [ ] _Input (예정)_
+- [ ] _Modal (예정)_
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+로컬 환경에서 프로젝트를 실행하는 방법입니다.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+```bash
+# 1. 패키지 설치
+npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 2. 개발 서버 실행
+npm run dev
 ```
