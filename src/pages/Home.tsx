@@ -7,6 +7,7 @@ import {
   AlignLeft,
   ToggleLeft,
   ListFilter,
+  ToggleRight,
   type LucideIcon,
 } from "lucide-react";
 interface ComponentItem {
@@ -68,6 +69,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/select",
         icon: ListFilter,
         desc: "목록에서 하나의 값을 고르는 드롭다운",
+      },
+      {
+        name: "Toggle",
+        path: "/toggle",
+        icon: ToggleRight,
+        desc: "설정을 켜고 끄는 스위치",
       },
     ],
   },
