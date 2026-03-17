@@ -34,6 +34,11 @@ export default function Home() {
             입력창 (Input) 보기
           </Button>
         </Link>
+        <Link to="/textarea">
+          <Button variant="outline" size="lg">
+            텍스트 영역 (Textarea) 보기
+          </Button>
+        </Link>
         <Button
           variant="outline"
           size="lg"
