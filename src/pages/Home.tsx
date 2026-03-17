@@ -24,6 +24,11 @@ export default function Home() {
             아이콘 버튼 보기
           </Button>
         </Link>
+        <Link to="/image-button">
+          <Button variant="success" size="lg">
+            이미지 버튼 보기
+          </Button>
+        </Link>
         <Button
           variant="outline"
           size="lg"
