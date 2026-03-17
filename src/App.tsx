@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import ButtonPage from "./pages/ButtonPage";
 import IconButtonPage from "./pages/IconButtonPage";
 import CustomImageButtonPage from "./pages/CustomImageButtonPage";
+import InputPage from "./pages/InputPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/buttons" element={<ButtonPage />} />
         <Route path="/icon-buttons" element={<IconButtonPage />} />
         <Route path="/image-button" element={<CustomImageButtonPage />} />
+        <Route path="/inputs" element={<InputPage />} />
       </Routes>
     </BrowserRouter>
   );

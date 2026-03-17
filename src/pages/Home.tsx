@@ -29,6 +29,11 @@ export default function Home() {
             이미지 버튼 보기
           </Button>
         </Link>
+        <Link to="/inputs">
+          <Button variant="ghost" className="border border-gray-700">
+            입력창 (Input) 보기
+          </Button>
+        </Link>
         <Button
           variant="outline"
           size="lg"
