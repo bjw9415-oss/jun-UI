@@ -43,7 +43,7 @@ export default function ButtonPage() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview (미리보기)
           </div>
-          <div className="flex-1 flex items-center justify-center p-20 min-h-[300px] bg-[url('https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg')] bg-cover bg-center">
+          <div className="flex-1 flex items-center justify-center p-20 min-h-75 bg-[url('https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg')] bg-cover bg-center">
             <Button variant={variant} size={size} disabled={isDisabled}>
               {size === "icon" ? "😻" : buttonText}
             </Button>
