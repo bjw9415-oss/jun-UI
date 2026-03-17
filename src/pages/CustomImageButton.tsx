@@ -2,9 +2,9 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import { Upload, X, Image as ImageIcon } from "lucide-react";
+import CodeViewer from "../components/CodeViewer";
 
 export default function CustomImageButtonPage() {
-  // 🌟 핵심 1: 다 지웠을 때 '빈칸(문자열)'도 허용할 수 있게 <number | string>으로 타입 변경!
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [buttonWidth, setButtonWidth] = useState<number | string>(250);
   const [buttonHeight, setButtonHeight] = useState<number | string>(150);
@@ -248,14 +248,7 @@ export default function CustomImageButtonPage() {
             </div>
           </div>
 
-          <div className="bg-[#161b22] rounded-2xl border border-gray-800 overflow-hidden flex flex-col">
-            <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium flex justify-between items-center">
-              <span>Code</span>
-            </div>
-            <pre className="p-4 overflow-x-auto text-sm text-green-400 font-mono">
-              <code>{generatedCode}</code>
-            </pre>
-          </div>
+          <CodeViewer code={generatedCode} />
         </div>
       </div>
     </div>
