@@ -10,6 +10,7 @@ export default function CustomImageButtonPage() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [buttonWidth, setButtonWidth] = useState<number | string>(250);
   const [buttonHeight, setButtonHeight] = useState<number | string>(150);
+  const [borderRadius, setBorderRadius] = useState<number | string>(0);
   const [buttonText, setButtonText] = useState("Click Me!");
   const [overlayOpacity, setOverlayOpacity] = useState<number | string>(40);
 
@@ -33,11 +34,12 @@ export default function CustomImageButtonPage() {
   // 빈칸일 때(에러 방지)를 대비해 기본값 0을 살짝 챙겨줍니다.
   const safeWidth = buttonWidth || 0;
   const safeHeight = buttonHeight || 0;
+  const safeRadius = borderRadius || 0;
   const safeOpacity = overlayOpacity || 0;
 
   const generatedCode = `<Button 
   className="relative overflow-hidden p-0 group" 
-  style={{ width: '${safeWidth}px', height: '${safeHeight}px' }}
+  style={{ width: '${safeWidth}px', height: '${safeHeight}px', borderRadius: '${safeRadius}%' }}
 >
   {/* 이미지 영역 */}
   <img 
@@ -76,10 +78,15 @@ export default function CustomImageButtonPage() {
               {safeWidth} x {safeHeight}
             </span>
           </div>
-          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[url('https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg')] bg-cover bg-center overflow-auto">
+          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
+            {" "}
             <Button
               className="relative overflow-hidden p-0 group border-0 shadow-2xl"
-              style={{ width: `${safeWidth}px`, height: `${safeHeight}px` }}
+              style={{
+                width: `${safeWidth}px`,
+                height: `${safeHeight}px`,
+                borderRadius: `${safeRadius}%`,
+              }}
             >
               {imageUrl ? (
                 <img
@@ -163,38 +170,24 @@ export default function CustomImageButtonPage() {
                 value={buttonHeight}
                 onChange={setButtonHeight}
                 min={50}
-                max={400}
+                max={600}
                 unit="px"
               />
-            </div>
-            {/* 3. 오버레이(배경 어둡기) 컨트롤 */}
-            <div className="flex flex-col gap-2 mt-2">
-              <label className="text-sm text-gray-400 flex justify-between items-center">
-                <span>Overlay Opacity</span>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="number"
-                    min="0"
-                    max="100"
-                    value={overlayOpacity}
-                    onChange={(e) =>
-                      setOverlayOpacity(
-                        e.target.value === "" ? "" : Number(e.target.value),
-                      )
-                    }
-                    className="w-16 bg-[#0d1117] border border-gray-600 rounded-md text-center py-1 text-[#00a2ff] outline-none focus:border-[#00a2ff] transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  />
-                  <span className="text-gray-500 text-sm">%</span>
-                </div>
-              </label>
-              <input
-                type="range"
-                min="0"
-                max="90"
-                step="1"
-                value={Number(safeOpacity)}
-                onChange={(e) => setOverlayOpacity(Number(e.target.value))}
-                className="w-full accent-[#00a2ff]"
+              <NumberSliderControl
+                label="Border Radius (모서리 둥글기)"
+                value={borderRadius}
+                onChange={setBorderRadius}
+                min={0}
+                max={50}
+                unit="%"
+              />
+              <NumberSliderControl
+                label="Overlay Opacity (어둡기)"
+                value={overlayOpacity}
+                onChange={setOverlayOpacity}
+                min={0}
+                max={100}
+                unit="%"
               />
             </div>
 

@@ -69,21 +69,13 @@ export default function IconButtonPage() {
         title="Icon Button"
         description="Lucide 아이콘을 조합한 실무형 인터랙티브 컴포넌트입니다."
       />
-
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-white mb-2">Icon Button</h1>
-        <p className="text-gray-400">
-          Lucide 아이콘을 조합한 실무형 인터랙티브 컴포넌트입니다.
-        </p>
-      </div>
-
       <div className="w-full max-w-5xl flex flex-col lg:flex-row gap-8">
         {/* 왼쪽: Preview (미리보기) */}
         <div className="flex-1 bg-[#161b22] rounded-2xl border border-gray-800 flex flex-col overflow-hidden">
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview (미리보기)
           </div>
-          <div className="flex-1 flex items-center justify-center p-20 min-h-75 bg-[url('https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg')] bg-cover bg-center">
+          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
             {/* 실제 렌더링되는 버튼 */}
             <Button
               variant={variant}
