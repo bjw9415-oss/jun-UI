@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import { Upload, X, Image as ImageIcon } from "lucide-react";
 import CodeViewer from "../components/CodeViewer";
+import NumberSliderControl from "../components/NumberSliderControl";
 
 export default function CustomImageButtonPage() {
+  // [ 상태 관리 영역 (State & Refs)] ========================================
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [buttonWidth, setButtonWidth] = useState<number | string>(250);
   const [buttonHeight, setButtonHeight] = useState<number | string>(150);
@@ -13,6 +15,7 @@ export default function CustomImageButtonPage() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  //  [ 이벤트 핸들러 영역 (Event Handlers)] ==================================
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -26,7 +29,8 @@ export default function CustomImageButtonPage() {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
-  // 🌟 빈칸일 때(에러 방지)를 대비해 기본값 0을 살짝 챙겨줍니다.
+  // [ 코드 자동 생성 영역 (Code Generator)] =================================
+  // 빈칸일 때(에러 방지)를 대비해 기본값 0을 살짝 챙겨줍니다.
   const safeWidth = buttonWidth || 0;
   const safeHeight = buttonHeight || 0;
   const safeOpacity = overlayOpacity || 0;
@@ -51,8 +55,10 @@ export default function CustomImageButtonPage() {
   </span>
 </Button>`;
 
+  //  [ UI 렌더링 영역 ] ===============================================
   return (
     <div className="min-h-screen bg-[#0d1117] flex flex-col items-center py-20 px-4">
+      {/* --- [상단: 뒤로가기 및 제목] --- */}
       <div className="w-full max-w-5xl mb-8">
         <Link
           to="/"
@@ -72,7 +78,11 @@ export default function CustomImageButtonPage() {
         </p>
       </div>
 
+      {/* --- [메인 레이아웃: 좌측 미리보기 / 우측 조종판] --- */}
       <div className="w-full max-w-5xl flex flex-col lg:flex-row gap-8">
+        {/* =========================================================
+            왼쪽: 미리보기(Preview) 패널 
+            ========================================================= */}
         <div className="flex-1 bg-[#161b22] rounded-2xl border border-gray-800 flex flex-col overflow-hidden">
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium flex justify-between items-center">
             <span>Preview</span>
@@ -112,10 +122,14 @@ export default function CustomImageButtonPage() {
           </div>
         </div>
 
+        {/* =========================================================
+            오른쪽: 조종판(Controls) 및 코드 뷰어(Code Viewer) 패널
+            ========================================================= */}
         <div className="w-full lg:w-96 flex flex-col gap-6">
           <div className="bg-[#161b22] p-6 rounded-2xl border border-gray-800 flex flex-col gap-5">
             <h3 className="text-white font-semibold mb-2">Image Settings</h3>
 
+            {/* 1. 이미지 업로드 컨트롤 */}
             <div className="flex flex-col gap-2">
               <label className="text-sm text-gray-400">Upload Image</label>
               <div className="flex gap-2">
@@ -148,65 +162,26 @@ export default function CustomImageButtonPage() {
 
             <div className="border-t border-gray-800 my-1"></div>
 
+            {/* 2. 사이즈 조절 컨트롤 (Width / Height) */}
             <div className="flex flex-col gap-4">
-              {/* 🌟 핵심 2: 입력창에 테두리(border)와 배경색을 주고, 다 지웠을 때 빈칸('')이 되도록 수정! */}
-              <div className="flex flex-col gap-2">
-                <label className="text-sm text-gray-400 flex justify-between items-center">
-                  <span>Width (가로)</span>
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="number"
-                      value={buttonWidth}
-                      onChange={(e) =>
-                        setButtonWidth(
-                          e.target.value === "" ? "" : Number(e.target.value),
-                        )
-                      }
-                      className="w-20 bg-[#0d1117] border border-gray-600 rounded-md text-center py-1 text-[#00a2ff] outline-none focus:border-[#00a2ff] transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                    />
-                    <span className="text-gray-500 text-sm">px</span>
-                  </div>
-                </label>
-                <input
-                  type="range"
-                  min="100"
-                  max="600"
-                  step="1"
-                  value={Number(safeWidth)}
-                  onChange={(e) => setButtonWidth(Number(e.target.value))}
-                  className="w-full accent-[#00a2ff]"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="text-sm text-gray-400 flex justify-between items-center">
-                  <span>Height (세로)</span>
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="number"
-                      value={buttonHeight}
-                      onChange={(e) =>
-                        setButtonHeight(
-                          e.target.value === "" ? "" : Number(e.target.value),
-                        )
-                      }
-                      className="w-20 bg-[#0d1117] border border-gray-600 rounded-md text-center py-1 text-[#00a2ff] outline-none focus:border-[#00a2ff] transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                    />
-                    <span className="text-gray-500 text-sm">px</span>
-                  </div>
-                </label>
-                <input
-                  type="range"
-                  min="50"
-                  max="400"
-                  step="1"
-                  value={Number(safeHeight)}
-                  onChange={(e) => setButtonHeight(Number(e.target.value))}
-                  className="w-full accent-[#00a2ff]"
-                />
-              </div>
+              <NumberSliderControl
+                label="Width (가로)"
+                value={buttonWidth}
+                onChange={setButtonWidth}
+                min={100}
+                max={600}
+                unit="px"
+              />
+              <NumberSliderControl
+                label="Height (세로)"
+                value={buttonHeight}
+                onChange={setButtonHeight}
+                min={50}
+                max={400}
+                unit="px"
+              />
             </div>
-
+            {/* 3. 오버레이(배경 어둡기) 컨트롤 */}
             <div className="flex flex-col gap-2 mt-2">
               <label className="text-sm text-gray-400 flex justify-between items-center">
                 <span>Overlay Opacity</span>
@@ -237,6 +212,7 @@ export default function CustomImageButtonPage() {
               />
             </div>
 
+            {/* 4. 텍스트 내용 컨트롤 */}
             <div className="flex flex-col gap-2 mt-2">
               <label className="text-sm text-gray-400">Text Content</label>
               <input
@@ -248,6 +224,7 @@ export default function CustomImageButtonPage() {
             </div>
           </div>
 
+          {/* 5. 코드 뷰어 영역 (컴포넌트로 분리됨) */}
           <CodeViewer code={generatedCode} />
         </div>
       </div>
