@@ -6,6 +6,7 @@ import {
   Type,
   AlignLeft,
   ToggleLeft,
+  ListFilter,
   type LucideIcon,
 } from "lucide-react";
 interface ComponentItem {
@@ -61,6 +62,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/textarea",
         icon: AlignLeft,
         desc: "여러 줄의 긴 텍스트를 입력받는 영역",
+      },
+      {
+        name: "Select",
+        path: "/select",
+        icon: ListFilter,
+        desc: "목록에서 하나의 값을 고르는 드롭다운",
       },
     ],
   },
