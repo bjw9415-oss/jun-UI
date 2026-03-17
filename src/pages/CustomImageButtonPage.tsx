@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import { Upload, X, Image as ImageIcon } from "lucide-react";
 import CodeViewer from "../components/CodeViewer";
 import NumberSliderControl from "../components/NumberSliderControl";
+import PageHeader from "../components/PageHeader";
 
 export default function CustomImageButtonPage() {
   // [ 상태 관리 영역 (State & Refs)] ========================================
@@ -59,24 +59,10 @@ export default function CustomImageButtonPage() {
   return (
     <div className="min-h-screen bg-[#0d1117] flex flex-col items-center py-20 px-4">
       {/* --- [상단: 뒤로가기 및 제목] --- */}
-      <div className="w-full max-w-5xl mb-8">
-        <Link
-          to="/"
-          className="text-gray-400 hover:text-white transition-colors"
-        >
-          ← 메인으로 돌아가기
-        </Link>
-      </div>
-
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-white mb-2">
-          Custom Image Button
-        </h1>
-        <p className="text-gray-400">
-          이미지를 업로드하고 마음대로 크기를 조절해 보세요. 비율은 절대 깨지지
-          않습니다!
-        </p>
-      </div>
+      <PageHeader
+        title="Custom Image Button"
+        description="이미지를 업로드하고 마음대로 크기를 조절해 보세요. 비율은 절대 깨지지 않습니다!"
+      />
 
       {/* --- [메인 레이아웃: 좌측 미리보기 / 우측 조종판] --- */}
       <div className="w-full max-w-5xl flex flex-col lg:flex-row gap-8">

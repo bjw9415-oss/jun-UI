@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import {
   Mail,
@@ -9,6 +8,7 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import CodeViewer from "../components/CodeViewer";
+import PageHeader from "../components/PageHeader";
 
 type VariantType =
   | "primary"
@@ -65,14 +65,10 @@ export default function IconButtonPage() {
 
   return (
     <div className="min-h-screen bg-[#0d1117] flex flex-col items-center py-20 px-4">
-      <div className="w-full max-w-5xl mb-8">
-        <Link
-          to="/"
-          className="text-gray-400 hover:text-white transition-colors"
-        >
-          ← 메인으로 돌아가기
-        </Link>
-      </div>
+      <PageHeader
+        title="Icon Button"
+        description="Lucide 아이콘을 조합한 실무형 인터랙티브 컴포넌트입니다."
+      />
 
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-white mb-2">Icon Button</h1>
