@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ButtonPage from "./pages/ButtonPage";
 import IconButtonPage from "./pages/IconButtonPage";
-import CustomImageButtonPage from "./pages/CustomImageButton";
+import CustomImageButtonPage from "./pages/CustomImageButtonPage";
 
 function App() {
   return (
