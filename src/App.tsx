@@ -4,6 +4,7 @@ import ButtonPage from "./pages/ButtonPage";
 import IconButtonPage from "./pages/IconButtonPage";
 import CustomImageButtonPage from "./pages/CustomImageButtonPage";
 import InputPage from "./pages/InputPage";
+import TextareaPage from "./pages/TextareaPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/icon-buttons" element={<IconButtonPage />} />
         <Route path="/image-button" element={<CustomImageButtonPage />} />
         <Route path="/inputs" element={<InputPage />} />
+        <Route path="/textarea" element={<TextareaPage />} />
       </Routes>
     </BrowserRouter>
   );
