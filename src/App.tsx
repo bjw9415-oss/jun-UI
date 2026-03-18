@@ -10,27 +10,31 @@ import TogglePage from "./pages/TogglePage";
 import CheckboxPage from "./pages/CheckBoxPage";
 import RadioPage from "./pages/RadioPage";
 import ModalPage from "./pages/ModalPage";
-
+import ToastPage from "./pages/ToastPage";
+import { ToastProvider } from "./components/Toast";
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* 기본 주소(/)일 때는 Home 페이지를 보여줌 */}
-        <Route path="/" element={<Home />} />
+    <ToastProvider position="top-center">
+      <BrowserRouter>
+        <Routes>
+          {/* 기본 주소(/)일 때는 Home 페이지를 보여줌 */}
+          <Route path="/" element={<Home />} />
 
-        {/* /buttons 주소일 때는 ButtonPage를 보여줌 */}
-        <Route path="/buttons" element={<ButtonPage />} />
-        <Route path="/icon-buttons" element={<IconButtonPage />} />
-        <Route path="/image-button" element={<CustomImageButtonPage />} />
-        <Route path="/inputs" element={<InputPage />} />
-        <Route path="/textarea" element={<TextareaPage />} />
-        <Route path="/select" element={<SelectPage />} />
-        <Route path="/Toggle" element={<TogglePage />} />
-        <Route path="/checkbox" element={<CheckboxPage />} />
-        <Route path="/radio" element={<RadioPage />} />
-        <Route path="/modal" element={<ModalPage />} />
-      </Routes>
-    </BrowserRouter>
+          {/* /buttons 주소일 때는 ButtonPage를 보여줌 */}
+          <Route path="/buttons" element={<ButtonPage />} />
+          <Route path="/icon-buttons" element={<IconButtonPage />} />
+          <Route path="/image-button" element={<CustomImageButtonPage />} />
+          <Route path="/inputs" element={<InputPage />} />
+          <Route path="/textarea" element={<TextareaPage />} />
+          <Route path="/select" element={<SelectPage />} />
+          <Route path="/Toggle" element={<TogglePage />} />
+          <Route path="/checkbox" element={<CheckboxPage />} />
+          <Route path="/radio" element={<RadioPage />} />
+          <Route path="/modal" element={<ModalPage />} />
+          <Route path="/toast" element={<ToastPage />} />
+        </Routes>
+      </BrowserRouter>
+    </ToastProvider>
   );
 }
 
