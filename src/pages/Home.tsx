@@ -11,6 +11,7 @@ import {
   CheckSquare,
   CircleDot,
   Bell,
+  PanelRight,
   type LucideIcon,
 } from "lucide-react";
 
@@ -110,6 +111,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/toast",
         icon: Bell,
         desc: "화면 모서리에 나타났다 사라지는 알림 메세지",
+      },
+      {
+        name: "Drawer",
+        path: "/drawer",
+        icon: PanelRight,
+        desc: "화면 가장자리에서 부드럽게 밀려 들어오는 사이드 패널",
       },
     ],
   },

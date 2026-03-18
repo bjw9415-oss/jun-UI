@@ -12,6 +12,7 @@ import RadioPage from "./pages/RadioPage";
 import ModalPage from "./pages/ModalPage";
 import ToastPage from "./pages/ToastPage";
 import { ToastProvider } from "./components/Toast";
+import DrawerPage from "./pages/DrawerPage";
 function App() {
   return (
     <ToastProvider position="top-center">
@@ -32,6 +33,7 @@ function App() {
           <Route path="/radio" element={<RadioPage />} />
           <Route path="/modal" element={<ModalPage />} />
           <Route path="/toast" element={<ToastPage />} />
+          <Route path="/drawer" element={<DrawerPage />} />
         </Routes>
       </BrowserRouter>
     </ToastProvider>
