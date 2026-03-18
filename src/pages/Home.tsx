@@ -8,8 +8,10 @@ import {
   ToggleLeft,
   ListFilter,
   ToggleRight,
+  CheckSquare,
   type LucideIcon,
 } from "lucide-react";
+
 interface ComponentItem {
   name: string;
   path: string;
@@ -75,6 +77,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/toggle",
         icon: ToggleRight,
         desc: "설정을 켜고 끄는 스위치",
+      },
+      {
+        name: "Checkbox",
+        path: "/checkbox",
+        icon: CheckSquare,
+        desc: "다중 선택이나 약관 동의를 위한 체크박스",
       },
     ],
   },
