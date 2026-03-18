@@ -9,6 +9,7 @@ import {
   ListFilter,
   ToggleRight,
   CheckSquare,
+  CircleDot,
   type LucideIcon,
 } from "lucide-react";
 
@@ -83,6 +84,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/checkbox",
         icon: CheckSquare,
         desc: "다중 선택이나 약관 동의를 위한 체크박스",
+      },
+      {
+        name: "Radio",
+        path: "/radio",
+        icon: CircleDot,
+        desc: "여러 옵션 중 단 하나의 값만 선택해야 할 때 사용하는 컴포넌트",
       },
     ],
   },

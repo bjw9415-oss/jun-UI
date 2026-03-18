@@ -178,6 +178,7 @@ export default function IconButtonPage() {
                 <option value="danger">Danger</option>
                 <option value="secondary">Secondary</option>
                 <option value="ghost">Ghost</option>
+                <option value="success">Success</option>
               </select>
             </div>
 
