@@ -10,6 +10,7 @@ import {
   ToggleRight,
   CheckSquare,
   CircleDot,
+  Bell,
   type LucideIcon,
 } from "lucide-react";
 
@@ -103,6 +104,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/modal",
         icon: AppWindow,
         desc: "화면 중앙에 뜨는 팝업 창",
+      },
+      {
+        name: "Toast",
+        path: "/toast",
+        icon: Bell,
+        desc: "화면 모서리에 나타났다 사라지는 알림 메세지",
       },
     ],
   },
