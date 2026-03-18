@@ -14,7 +14,7 @@ import ToastPage from "./pages/ToastPage";
 import { ToastProvider } from "./components/Toast";
 function App() {
   return (
-    <ToastProvider>
+    <ToastProvider position="top-center">
       <BrowserRouter>
         <Routes>
           {/* 기본 주소(/)일 때는 Home 페이지를 보여줌 */}
