@@ -13,6 +13,7 @@ import ModalPage from "./pages/ModalPage";
 import ToastPage from "./pages/ToastPage";
 import { ToastProvider } from "./components/Toast";
 import DrawerPage from "./pages/DrawerPage";
+import TooltipPage from "./pages/TooltipPage";
 function App() {
   return (
     <ToastProvider position="top-center">
@@ -34,6 +35,7 @@ function App() {
           <Route path="/modal" element={<ModalPage />} />
           <Route path="/toast" element={<ToastPage />} />
           <Route path="/drawer" element={<DrawerPage />} />
+          <Route path="/tooltip" element={<TooltipPage />} />
         </Routes>
       </BrowserRouter>
     </ToastProvider>

@@ -12,6 +12,7 @@ import {
   CircleDot,
   Bell,
   PanelRight,
+  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 
@@ -117,6 +118,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/drawer",
         icon: PanelRight,
         desc: "화면 가장자리에서 부드럽게 밀려 들어오는 사이드 패널",
+      },
+      {
+        name: "Tooltip",
+        path: "/tooltip",
+        icon: MessageCircle,
+        desc: "버튼이나 아이콘 위에 마우스를 올리면 나타나는 작은 말풍선",
       },
     ],
   },
