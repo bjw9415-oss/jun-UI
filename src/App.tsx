@@ -8,6 +8,7 @@ import TextareaPage from "./pages/TextareaPage";
 import SelectPage from "./pages/SelectPage";
 import TogglePage from "./pages/TogglePage";
 import CheckboxPage from "./pages/CheckBoxPage";
+import RadioPage from "./pages/RadioPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/select" element={<SelectPage />} />
         <Route path="/Toggle" element={<TogglePage />} />
         <Route path="/checkbox" element={<CheckboxPage />} />
+        <Route path="/radio" element={<RadioPage />} />
       </Routes>
     </BrowserRouter>
   );
