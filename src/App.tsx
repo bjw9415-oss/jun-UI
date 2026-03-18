@@ -9,6 +9,7 @@ import SelectPage from "./pages/SelectPage";
 import TogglePage from "./pages/TogglePage";
 import CheckboxPage from "./pages/CheckBoxPage";
 import RadioPage from "./pages/RadioPage";
+import ModalPage from "./pages/ModalPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/Toggle" element={<TogglePage />} />
         <Route path="/checkbox" element={<CheckboxPage />} />
         <Route path="/radio" element={<RadioPage />} />
+        <Route path="/modal" element={<ModalPage />} />
       </Routes>
     </BrowserRouter>
   );

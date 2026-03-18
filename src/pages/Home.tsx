@@ -5,7 +5,7 @@ import {
   Image as ImageIcon,
   Type,
   AlignLeft,
-  ToggleLeft,
+  AppWindow,
   ListFilter,
   ToggleRight,
   CheckSquare,
@@ -94,16 +94,15 @@ const componentCategories: ComponentCategory[] = [
     ],
   },
   {
-    title: "💡 Feedback & Overlay (예정)",
+    title: " Feedback & Overlay",
     description:
       "사용자에게 상태를 알려주거나 화면 위에 띄우는 컴포넌트들입니다.",
     items: [
       {
-        name: "Modal (준비 중)",
-        path: "/",
-        icon: ToggleLeft,
+        name: "Modal",
+        path: "/modal",
+        icon: AppWindow,
         desc: "화면 중앙에 뜨는 팝업 창",
-        disabled: true,
       },
     ],
   },
