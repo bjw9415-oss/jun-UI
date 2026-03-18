@@ -6,6 +6,7 @@ import CustomImageButtonPage from "./pages/CustomImageButtonPage";
 import InputPage from "./pages/InputPage";
 import TextareaPage from "./pages/TextareaPage";
 import SelectPage from "./pages/SelectPage";
+import TogglePage from "./pages/TogglePage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/inputs" element={<InputPage />} />
         <Route path="/textarea" element={<TextareaPage />} />
         <Route path="/select" element={<SelectPage />} />
+        <Route path="/Toggle" element={<TogglePage />} />
       </Routes>
     </BrowserRouter>
   );
