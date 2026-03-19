@@ -16,6 +16,7 @@ import {
   type LucideIcon,
   LayoutTemplate,
   Loader,
+  AlertTriangle,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -138,6 +139,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/skeleton",
         icon: Loader,
         desc: "데이터를 불러오는 동안 보여주는 세련된 로딩 뼈대 UI",
+      },
+      {
+        name: "Alert & Badge",
+        path: "/alert-badge",
+        icon: AlertTriangle,
+        desc: "중요한 메시지를 띄우는 경고창과 작은 상태 표시 뱃지",
       },
     ],
   },
