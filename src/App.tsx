@@ -16,6 +16,7 @@ import DrawerPage from "./pages/DrawerPage";
 import TooltipPage from "./pages/TooltipPage";
 import PopoverPage from "./pages/PopoverPage";
 import SkeletonPage from "./pages/SkeletonPage";
+import AlertBadgePage from "./pages/AlertBadgePage";
 function App() {
   return (
     <ToastProvider position="top-center">
@@ -40,6 +41,7 @@ function App() {
           <Route path="/tooltip" element={<TooltipPage />} />
           <Route path="/popover" element={<PopoverPage />} />
           <Route path="/skeleton" element={<SkeletonPage />} />
+          <Route path="/alert-badge" element={<AlertBadgePage />} />
         </Routes>
       </HashRouter>
     </ToastProvider>
