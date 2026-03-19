@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ButtonPage from "./pages/ButtonPage";
 import IconButtonPage from "./pages/IconButtonPage";
@@ -17,7 +17,7 @@ import TooltipPage from "./pages/TooltipPage";
 function App() {
   return (
     <ToastProvider position="top-center">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           {/* 기본 주소(/)일 때는 Home 페이지를 보여줌 */}
           <Route path="/" element={<Home />} />
@@ -37,7 +37,7 @@ function App() {
           <Route path="/drawer" element={<DrawerPage />} />
           <Route path="/tooltip" element={<TooltipPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ToastProvider>
   );
 }
