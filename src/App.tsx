@@ -15,6 +15,7 @@ import { ToastProvider } from "./components/Toast";
 import DrawerPage from "./pages/DrawerPage";
 import TooltipPage from "./pages/TooltipPage";
 import PopoverPage from "./pages/PopoverPage";
+import SkeletonPage from "./pages/SkeletonPage";
 function App() {
   return (
     <ToastProvider position="top-center">
@@ -38,6 +39,7 @@ function App() {
           <Route path="/drawer" element={<DrawerPage />} />
           <Route path="/tooltip" element={<TooltipPage />} />
           <Route path="/popover" element={<PopoverPage />} />
+          <Route path="/skeleton" element={<SkeletonPage />} />
         </Routes>
       </HashRouter>
     </ToastProvider>

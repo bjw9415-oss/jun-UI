@@ -15,6 +15,7 @@ import {
   MessageCircle,
   type LucideIcon,
   LayoutTemplate,
+  Loader,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -131,6 +132,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/popover",
         icon: LayoutTemplate,
         desc: "클릭 시 폼이나 메뉴 등 복잡한 컨텐츠를 띄우는 오버레이 카드",
+      },
+      {
+        name: "Skeleton",
+        path: "/skeleton",
+        icon: Loader,
+        desc: "데이터를 불러오는 동안 보여주는 세련된 로딩 뼈대 UI",
       },
     ],
   },
