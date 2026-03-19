@@ -160,6 +160,12 @@ const componentCategories: ComponentCategory[] = [
         icon: UserCircle,
         desc: "사용자 프로필 이미지나 깨짐 방지(Fallback) 이니셜",
       },
+      {
+        name: "Card",
+        path: "/card",
+        icon: LayoutTemplate,
+        desc: "콘텐츠와 액션을 그룹화하는 유연한 합성 컴포넌트 컨테이너",
+      },
     ],
   },
 ];
