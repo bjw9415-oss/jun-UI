@@ -18,6 +18,7 @@ import {
   Loader,
   AlertTriangle,
   UserCircle,
+  FolderKanban,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -165,6 +166,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/card",
         icon: LayoutTemplate,
         desc: "콘텐츠와 액션을 그룹화하는 유연한 합성 컴포넌트 컨테이너",
+      },
+      {
+        name: "Tabs",
+        path: "/tabs",
+        icon: FolderKanban,
+        desc: "동일한 공간에서 여러 섹션의 콘텐츠를 전환하는 탭 메뉴",
       },
     ],
   },
