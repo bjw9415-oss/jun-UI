@@ -17,6 +17,7 @@ import {
   LayoutTemplate,
   Loader,
   AlertTriangle,
+  UserCircle,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -145,6 +146,19 @@ const componentCategories: ComponentCategory[] = [
         path: "/alert-badge",
         icon: AlertTriangle,
         desc: "중요한 메시지를 띄우는 경고창과 작은 상태 표시 뱃지",
+      },
+    ],
+  },
+  {
+    title: " Data Display (데이터 표시)",
+    description:
+      "데이터를 읽기 쉽고 직관적인 형태로 변환하여 보여주는 컴포넌트들입니다.",
+    items: [
+      {
+        name: "Avatar",
+        path: "/avatar",
+        icon: UserCircle,
+        desc: "사용자 프로필 이미지나 깨짐 방지(Fallback) 이니셜",
       },
     ],
   },
