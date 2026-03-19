@@ -34,6 +34,7 @@ interface ComponentCategory {
   description: string;
   items: ComponentItem[];
 }
+
 const componentCategories: ComponentCategory[] = [
   {
     title: " Buttons (버튼류)",
@@ -60,7 +61,7 @@ const componentCategories: ComponentCategory[] = [
     ],
   },
   {
-    title: " Data Entry (입력 폼)",
+    title: "Data Entry (입력 폼)",
     description: "사용자로부터 텍스트나 데이터를 입력받는 컴포넌트들입니다.",
     items: [
       {
@@ -150,6 +151,20 @@ const componentCategories: ComponentCategory[] = [
       },
     ],
   },
+  // 🌟 새롭게 독립한 Navigation 카테고리!
+  {
+    title: " Navigation (네비게이션)",
+    description:
+      "사용자가 애플리케이션 내의 다양한 페이지나 뷰 사이를 이동할 수 있도록 돕습니다.",
+    items: [
+      {
+        name: "Tabs",
+        path: "/tabs",
+        icon: FolderKanban,
+        desc: "동일한 공간에서 여러 섹션의 콘텐츠를 전환하는 탭 메뉴",
+      },
+    ],
+  },
   {
     title: " Data Display (데이터 표시)",
     description:
@@ -166,12 +181,6 @@ const componentCategories: ComponentCategory[] = [
         path: "/card",
         icon: LayoutTemplate,
         desc: "콘텐츠와 액션을 그룹화하는 유연한 합성 컴포넌트 컨테이너",
-      },
-      {
-        name: "Tabs",
-        path: "/tabs",
-        icon: FolderKanban,
-        desc: "동일한 공간에서 여러 섹션의 콘텐츠를 전환하는 탭 메뉴",
       },
     ],
   },
@@ -208,7 +217,7 @@ export default function Home() {
               <p className="text-sm text-gray-500">{category.description}</p>
             </div>
 
-            {/* 카드 그리드 (반응형: 모바일 1칸, 태블릿 2칸, PC 3칸) */}
+            {/* 카드 그리드 */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {category.items.map((item, itemIdx) => {
                 const Icon = item.icon;
