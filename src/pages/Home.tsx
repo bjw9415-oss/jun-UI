@@ -14,6 +14,7 @@ import {
   PanelRight,
   MessageCircle,
   type LucideIcon,
+  LayoutTemplate,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -124,6 +125,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/tooltip",
         icon: MessageCircle,
         desc: "버튼이나 아이콘 위에 마우스를 올리면 나타나는 작은 말풍선",
+      },
+      {
+        name: "Popover",
+        path: "/popover",
+        icon: LayoutTemplate,
+        desc: "클릭 시 폼이나 메뉴 등 복잡한 컨텐츠를 띄우는 오버레이 카드",
       },
     ],
   },
