@@ -19,6 +19,7 @@ import SkeletonPage from "./pages/SkeletonPage";
 import AlertBadgePage from "./pages/AlertBadgePage";
 import AvatarPage from "./pages/AvatarPage";
 import CardPage from "./pages/CardPage";
+import TabsPage from "./pages/TabsPage";
 function App() {
   return (
     <ToastProvider position="top-center">
@@ -46,6 +47,7 @@ function App() {
           <Route path="/alert-badge" element={<AlertBadgePage />} />
           <Route path="/avatar" element={<AvatarPage />} />
           <Route path="/card" element={<CardPage />} />
+          <Route path="/tabs" element={<TabsPage />} />
         </Routes>
       </HashRouter>
     </ToastProvider>
