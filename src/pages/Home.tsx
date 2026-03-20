@@ -21,6 +21,7 @@ import {
   FolderKanban,
   ListCollapse,
   Images,
+  FileDigit,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -153,7 +154,6 @@ const componentCategories: ComponentCategory[] = [
       },
     ],
   },
-  // 🌟 새롭게 독립한 Navigation 카테고리!
   {
     title: " Navigation (네비게이션)",
     description:
@@ -164,6 +164,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/tabs",
         icon: FolderKanban,
         desc: "동일한 공간에서 여러 섹션의 콘텐츠를 전환하는 탭 메뉴",
+      },
+      {
+        name: "Pagination",
+        path: "/pagination",
+        icon: FileDigit,
+        desc: "대량의 목록을 여러 페이지로 나누어 탐색할 수 있는 네비게이션",
       },
     ],
   },

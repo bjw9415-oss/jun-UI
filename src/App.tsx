@@ -22,6 +22,7 @@ import CardPage from "./pages/CardPage";
 import TabsPage from "./pages/TabsPage";
 import AccordionPage from "./pages/AccordionPage";
 import CarouselPage from "./pages/CarouselPage";
+import PaginationPage from "./pages/PaginationPage";
 function App() {
   return (
     <ToastProvider position="top-center">
@@ -52,6 +53,7 @@ function App() {
           <Route path="/tabs" element={<TabsPage />} />
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/carousel" element={<CarouselPage />} />
+          <Route path="/pagination" element={<PaginationPage />} />
         </Routes>
       </HashRouter>
     </ToastProvider>
