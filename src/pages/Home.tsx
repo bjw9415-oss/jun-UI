@@ -20,6 +20,7 @@ import {
   UserCircle,
   FolderKanban,
   ListCollapse,
+  Images,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -188,6 +189,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/accordion",
         icon: ListCollapse,
         desc: "클릭 시 숨겨진 세부 내용이 부드럽게 펼쳐지는 접이식 패널",
+      },
+      {
+        name: "Carousel",
+        path: "/carousel",
+        icon: Images,
+        desc: "여러 개의 이미지나 콘텐츠를 좌우로 슬라이드하며 넘겨볼 수 있는 동적 슬라이더",
       },
     ],
   },
