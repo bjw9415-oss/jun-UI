@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import Button from "../components/Button";
+import Button from "../components/buttons/Button";
 import { Upload, X, Image as ImageIcon } from "lucide-react";
 import CodeViewer from "../components/CodeViewer";
 import NumberSliderControl from "../components/NumberSliderControl";

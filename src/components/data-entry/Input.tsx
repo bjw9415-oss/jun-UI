@@ -1,5 +1,5 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
-import { cn } from "../shared/lib/utils";
+import { cn } from "../../shared/lib/utils";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean; // 에러 상태 (테두리 빨갛게!)

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Modal, { type ModalProps } from "../components/Modal";
+import Modal, { type ModalProps } from "../components/feedback/Modal";
 import PageHeader from "../components/PageHeader";
 import CodeViewer from "../components/CodeViewer";
 

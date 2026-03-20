@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Textarea from "../components/Textarea";
+import Textarea from "../components/data-entry/Textarea";
 import PageHeader from "../components/PageHeader";
 import CodeViewer from "../components/CodeViewer";
 import NumberSliderControl from "../components/NumberSliderControl";

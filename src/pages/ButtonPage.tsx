@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../components/Button";
+import Button from "../components/buttons/Button";
 import CodeViewer from "../components/CodeViewer";
 import PageHeader from "../components/PageHeader";
 

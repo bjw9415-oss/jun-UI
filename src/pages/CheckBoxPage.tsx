@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
-import Checkbox, { type CheckboxProps } from "../components/Checkbox";
+import Checkbox, {
+  type CheckboxProps,
+} from "../components/data-entry/Checkbox";
 import PageHeader from "../components/PageHeader";
 import CodeViewer from "../components/CodeViewer";
 

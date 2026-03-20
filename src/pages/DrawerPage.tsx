@@ -2,7 +2,7 @@ import { useState } from "react";
 import Drawer, {
   type DrawerDirection,
   type DrawerSize,
-} from "../components/Drawer";
+} from "../components/feedback/Drawer";
 import PageHeader from "../components/PageHeader";
 import CodeViewer from "../components/CodeViewer";
 
