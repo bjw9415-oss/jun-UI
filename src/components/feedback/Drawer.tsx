@@ -2,6 +2,7 @@ import { useEffect, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 export type DrawerDirection = "left" | "right" | "top" | "bottom";
 export type DrawerSize = "sm" | "md" | "lg" | "xl" | "full";
@@ -29,28 +30,24 @@ export default function Drawer({
   footer,
   className,
 }: DrawerProps) {
-  // 🌟 1. 스크롤 잠금 및 ESC 키 이벤트 (Modal과 완벽 동일!)
+  //  스크롤 잠금
+  useScrollLock(isOpen);
+  //ESC 키 이벤트
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
 
     if (isOpen) {
-      document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleEsc);
-    } else {
-      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = "unset";
       window.removeEventListener("keydown", handleEsc);
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
-
-  // 🌟 2. 방향에 따른 CSS 클래스 및 애니메이션 매핑
+  //  2. 방향에 따른 CSS 클래스 및 애니메이션 매핑
   const directionConfig = {
     left: "inset-y-0 left-0 border-r border-gray-800 animate-in slide-in-from-left duration-300",
     right:
@@ -60,7 +57,7 @@ export default function Drawer({
       "inset-x-0 bottom-0 border-t border-gray-800 animate-in slide-in-from-bottom duration-300",
   };
 
-  // 🌟 3. 사이즈 설정 (좌/우는 너비(width) 기준, 상/하는 높이(height) 기준)
+  //  3. 사이즈 설정 (좌/우는 너비(width) 기준, 상/하는 높이(height) 기준)
   const isHorizontal = direction === "left" || direction === "right";
   const sizeConfig = {
     sm: isHorizontal ? "w-64" : "h-64",
