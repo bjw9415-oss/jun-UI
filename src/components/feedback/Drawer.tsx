@@ -35,6 +35,7 @@ export default function Drawer({
   useScrollLock(isOpen);
   //ESC 키 이벤트
   useEscapeKey(onClose, isOpen);
+  if (!isOpen) return null;
 
   //  2. 방향에 따른 CSS 클래스 및 애니메이션 매핑
   const directionConfig = {

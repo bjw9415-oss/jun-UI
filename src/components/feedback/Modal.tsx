@@ -43,9 +43,6 @@ export default function Modal({
   // 열려있지 않으면 아무것도 렌더링하지 않음
   if (!isOpen) return null;
 
-  // 열려있지 않으면 아무것도 렌더링하지 않음
-  if (!isOpen) return null;
-
   // 사이즈별 최대 너비 설정
   const sizeConfig = {
     sm: "max-w-sm",
