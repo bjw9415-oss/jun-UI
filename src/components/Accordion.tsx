@@ -1,6 +1,8 @@
-import React from "react";
+import * as React from "react";
 import { cn } from "../shared/lib/utils";
+import { ChevronDown } from "lucide-react";
 
+// Context 설정: 현재 열려있는 아이템들을 추적
 type AccordionContextValue = {
   type: "single" | "multiple";
   value: string[];
@@ -11,30 +13,34 @@ const AccordionContext = React.createContext<AccordionContextValue | null>(
   null,
 );
 
+//  최상위 부모: 상태를 관리하고 하위로 뿌려줍니다.
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   type?: "single" | "multiple";
-  defaultValue?: string[];
+  defaultValue?: string | string[];
 }
 
 const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
   ({ type = "single", defaultValue, className, ...props }, ref) => {
+    // 초기값 배열화 방어 로직
     const initialValue = Array.isArray(defaultValue)
       ? defaultValue
       : defaultValue
         ? [defaultValue]
         : [];
 
-    const [value, setValue] = React.useState(initialValue);
+    const [value, setValue] = React.useState<string[]>(initialValue);
 
     const toggleValue = (itemValue: string) => {
       if (type === "single") {
+        // 단일 모드: 누른 게 이미 열려있으면 닫고(빈 배열), 아니면 그것만 엶
         setValue((prev) => (prev[0] === itemValue ? [] : [itemValue]));
       } else {
-        setValue((prev) => {
+        // 다중 모드: 이미 있으면 빼고, 없으면 배열에 추가
+        setValue((prev) =>
           prev.includes(itemValue)
-            ? prev.filter((val) => val !== itemValue)
-            : [...prev, itemValue];
-        });
+            ? prev.filter((v) => v !== itemValue)
+            : [...prev, itemValue],
+        );
       }
     };
 
@@ -47,7 +53,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
 );
 Accordion.displayName = "Accordion";
 
-// 🌟 3. 개별 아이템 영역 (각각의 패널 단위)
+//  개별 아이템 영역 (각각의 패널 단위)
 const AccordionItemContext = React.createContext<{
   value: string;
   isOpen: boolean;
@@ -78,7 +84,7 @@ const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>(
 );
 AccordionItem.displayName = "AccordionItem";
 
-// 🌟 4. 클릭하는 버튼 (헤더) 영역
+//  클릭하는 버튼 (헤더) 영역
 const AccordionTrigger = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement>
@@ -101,7 +107,7 @@ const AccordionTrigger = React.forwardRef<
         {...props}
       >
         {children}
-        {/* 🌟 열릴 때 아이콘이 180도 부드럽게 회전합니다 */}
+        {/* 열릴 때 아이콘이 180도 부드럽게 회전합니다 */}
         <ChevronDown
           className={cn(
             "h-4 w-4 shrink-0 text-gray-500 transition-transform duration-300 ease-in-out",
@@ -114,7 +120,7 @@ const AccordionTrigger = React.forwardRef<
 });
 AccordionTrigger.displayName = "AccordionTrigger";
 
-// 🌟 5. 숨겨진 내용이 펼쳐지는 영역 (애니메이션 핵심 포인트!)
+// 숨겨진 내용이 펼쳐지는 영역 (애니메이션 핵심 포인트!)
 const AccordionContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -126,6 +132,7 @@ const AccordionContent = React.forwardRef<
     <div
       className={cn(
         "grid transition-all duration-300 ease-in-out",
+        // CSS Grid 마법: 열리면 1fr(가변 높이 전체), 닫히면 0fr(높이 0)
         itemContext.isOpen
           ? "grid-rows-[1fr] opacity-100"
           : "grid-rows-[0fr] opacity-0",
