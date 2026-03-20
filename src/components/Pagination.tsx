@@ -74,7 +74,7 @@ const PaginationPrevious = ({
 );
 PaginationPrevious.displayName = "PaginationPrevious";
 
-// 🌟 6. 다음 버튼
+// 다음 버튼
 const PaginationNext = ({
   className,
   ...props
@@ -90,7 +90,7 @@ const PaginationNext = ({
 );
 PaginationNext.displayName = "PaginationNext";
 
-// 🌟 7. 말줄임표 (...)
+//말줄임표 (...)
 const PaginationEllipsis = ({
   className,
   ...props
