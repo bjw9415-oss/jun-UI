@@ -2,9 +2,9 @@ import { useState } from "react";
 import Drawer, {
   type DrawerDirection,
   type DrawerSize,
-} from "../components/Drawer";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
+} from "../components/feedback/Drawer";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 
 type CodeTabType = "component" | "usage";
 

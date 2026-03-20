@@ -1,5 +1,5 @@
 import { type HTMLAttributes, type ReactNode } from "react";
-import { cn } from "../shared/lib/utils";
+import { cn } from "../../shared/lib/utils";
 import { Info, AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
 
 export type AlertVariant =

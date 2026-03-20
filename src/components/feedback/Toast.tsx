@@ -13,7 +13,7 @@ import {
   Info,
   AlertTriangle,
 } from "lucide-react";
-import { cn } from "../shared/lib/utils";
+import { cn } from "../../shared/lib/utils";
 
 // 1. 위치(Position) 타입 추가(총 6방향 지원)
 export type ToastPosition =

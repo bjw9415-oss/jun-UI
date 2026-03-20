@@ -2,9 +2,9 @@ import { useState, useMemo, useRef, type ChangeEvent } from "react";
 import Avatar, {
   type AvatarSize,
   type AvatarShape,
-} from "../components/Avatar";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
+} from "../components/data-display/Avatar";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 import {
   UploadCloud,
   Image as ImageIcon,

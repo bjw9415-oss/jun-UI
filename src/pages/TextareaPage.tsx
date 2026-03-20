@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Textarea from "../components/Textarea";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
-import NumberSliderControl from "../components/NumberSliderControl";
+import Textarea from "../components/data-entry/Textarea";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
+import NumberSliderControl from "../components/layout/NumberSliderControl";
 
 type CodeTabType = "component" | "usage";
 

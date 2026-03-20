@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { Check, Minus } from "lucide-react";
-import { cn } from "../shared/lib/utils";
+import { cn } from "../../shared/lib/utils";
 
 export interface CheckboxProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -39,7 +39,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    // 🌟 2. 핵심 로직: 숨겨진 native input에 indeterminate 속성 동기화
+    //  2. 핵심 로직: 숨겨진 native input에 indeterminate 속성 동기화
     // (이 로직 덕분에 React Hook Form 등에서 완벽하게 상태를 추적할 수 있습니다)
     useEffect(() => {
       if (inputRef.current) {
@@ -58,7 +58,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       onCheckedChange?.(newValue);
     };
 
-    // 📏 사이즈별 설정 (박스 크기, 모서리 둥기, 아이콘 크기)
+    //  사이즈별 설정 (박스 크기, 모서리 둥기, 아이콘 크기)
     const sizeConfig = {
       sm: "h-4 w-4 rounded-sm [&_svg]:h-3 [&_svg]:w-3",
       md: "h-5 w-5 rounded [&_svg]:h-3.5 [&_svg]:w-3.5",

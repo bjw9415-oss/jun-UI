@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useToast, type ToastVariant } from "../components/Toast";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
+import { useToast, type ToastVariant } from "../components/feedback/Toast";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 
 export default function ToastPage() {
   //  토스트 훅 가져오기 (이것만 있으면 어디서든 토스트를 띄울 수 있습니다)

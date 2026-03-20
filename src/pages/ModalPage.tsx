@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Modal, { type ModalProps } from "../components/Modal";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
+import Modal, { type ModalProps } from "../components/feedback/Modal";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 
 type CodeTabType = "component" | "usage";
 

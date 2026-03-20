@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import Popover, { type PopoverPosition } from "../components/Popover";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
+import Popover, { type PopoverPosition } from "../components/feedback/Popover";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 
 export default function PopoverPage() {
   const [position, setPosition] = useState<PopoverPosition>("bottom");

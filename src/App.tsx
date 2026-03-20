@@ -11,7 +11,7 @@ import CheckboxPage from "./pages/CheckBoxPage";
 import RadioPage from "./pages/RadioPage";
 import ModalPage from "./pages/ModalPage";
 import ToastPage from "./pages/ToastPage";
-import { ToastProvider } from "./components/Toast";
+import { ToastProvider } from "./components/feedback/Toast";
 import DrawerPage from "./pages/DrawerPage";
 import TooltipPage from "./pages/TooltipPage";
 import PopoverPage from "./pages/PopoverPage";
