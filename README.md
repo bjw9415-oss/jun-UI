@@ -1,7 +1,11 @@
 # 🎨 Jun-UI
 
+![Refactoring](https://img.shields.io/badge/Status-Refactoring_in_progress-FF8C00?style=for-the-badge&logo=codeigniter&logoColor=white)
+
 > **나만의 다크 테마 React + TS 컴포넌트 디자인 시스템**
 > 외부 무거운 UI 라이브러리(MUI, Bootstrap 등)에 의존하지 않고, 처음부터 직접 설계하고 구축하는 커스텀 UI 컴포넌트 모음집입니다. (shadcn/ui 철학 지향)
+
+> 🚧 **Notice**: 현재 컴포넌트 개발(Phase 1)을 성공적으로 마치고, 코드의 재사용성을 높이고 아키텍처를 단단하게 다지는 **대대적인 리팩토링 및 최적화(Phase 2)** 작업을 진행 중입니다! 🛠️
 
 ## ✨ Features
 
@@ -47,20 +51,20 @@
 - [x] **Tooltip**: 절대 좌표 계산과 순수 CSS 화살표 트릭을 활용해 방향에 따라 동적으로 나타나는 말풍선 오버레이
 - [x] **Skeleton**: 데이터를 불러오는 동안 부드러운 깜빡임(Pulse) 애니메이션으로 대기 체감 시간을 줄여주는 로딩 뼈대 UI
 - [x] **Alert & Badge**: 시스템의 상태나 메시지를 6가지 테마와 커스텀 아이콘으로 직관적으로 전달하는 경고창과 뱃지
-- [ ] _Popover (예정)_: 툴팁과 유사하지만 폼이나 버튼 등 더 복잡한 상호작용을 포함할 수 있는 팝오버
+- [x] **Popover**: 툴팁과 유사하지만 폼이나 버튼 등 더 복잡한 상호작용을 포함할 수 있는 팝오버
 
 ### 🧭 Navigation (탐색 및 메뉴)
 
 - [x] **Tabs**: Context API를 활용해 상태를 공유하며, 동일한 공간에서 여러 섹션의 콘텐츠를 전환하는 합성 컴포넌트 탭 메뉴
-- [ ] _Pagination (예정)_: 대량의 목록을 여러 페이지로 나누어 탐색하는 페이지네이션
-- [ ] _Breadcrumb (예정)_: 현재 페이지의 계층적 위치를 보여주는 경로 탐색 UI
+- [x] **Pagination**: 동적 말줄임표(...) 알고리즘을 적용하여 대량의 데이터를 여러 페이지로 우아하게 나누어 탐색할 수 있는 네비게이션
+- [x] **Breadcrumb**: 합성 컴포넌트 패턴으로 계층적 위치를 직관적으로 보여주며, 다양한 구분자와 생략(Ellipsis) 기능을 지원하는 경로 탐색 UI
 
 ### 📊 Data Display (데이터 표시)
 
 - [x] **Avatar**: 사용자 프로필 이미지를 표시하며, 로드 실패 시 이니셜(Fallback)이나 기본 아이콘을 띄워주는 안정적인 UI
 - [x] **Card**: 합성 컴포넌트(Compound Components) 패턴을 활용하여 Header, Content, Footer 영역을 레고처럼 조립하는 범용 컨테이너
-- [ ] _Accordion (예정)_: 클릭하면 숨겨진 세부 내용이 부드럽게 펼쳐지는 접이식 패널
-- [ ] _Carousel (예정)_: 여러 개의 이미지나 콘텐츠를 좌우로 슬라이드하며 넘겨볼 수 있는 동적 슬라이더
+- [x] **Accordion**: 순수 CSS Grid(`grid-rows-[1fr]`)를 활용하여 JS 개입 없이 부드럽게 펼쳐지는 다중/단일 제어 접이식 패널
+- [x] **Carousel**: 외부 라이브러리 없이 Tailwind의 `transform`을 활용해 GPU 가속 기반의 부드러운 스와이프를 지원하는 고성능 커스텀 슬라이더
 
 ## 🚀 Getting Started
 
