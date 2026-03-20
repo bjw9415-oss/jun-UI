@@ -22,6 +22,7 @@ import {
   ListCollapse,
   Images,
   FileDigit,
+  Route,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -170,6 +171,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/pagination",
         icon: FileDigit,
         desc: "대량의 목록을 여러 페이지로 나누어 탐색할 수 있는 네비게이션",
+      },
+      {
+        name: "Breadcrumb",
+        path: "/breadcrumb",
+        icon: Route,
+        desc: "현재 페이지의 계층적 위치를 보여주는 경로 탐색 UI",
       },
     ],
   },

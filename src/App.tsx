@@ -23,6 +23,7 @@ import TabsPage from "./pages/TabsPage";
 import AccordionPage from "./pages/AccordionPage";
 import CarouselPage from "./pages/CarouselPage";
 import PaginationPage from "./pages/PaginationPage";
+import BreadcrumbDemo from "./pages/BreadcrumbPage";
 function App() {
   return (
     <ToastProvider position="top-center">
@@ -30,7 +31,6 @@ function App() {
         <Routes>
           {/* 기본 주소(/)일 때는 Home 페이지를 보여줌 */}
           <Route path="/" element={<Home />} />
-
           {/* /buttons 주소일 때는 ButtonPage를 보여줌 */}
           <Route path="/buttons" element={<ButtonPage />} />
           <Route path="/icon-buttons" element={<IconButtonPage />} />
@@ -54,6 +54,7 @@ function App() {
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/carousel" element={<CarouselPage />} />
           <Route path="/pagination" element={<PaginationPage />} />
+          <Route path="/breadcrumb" element={<BreadcrumbDemo />} />
         </Routes>
       </HashRouter>
     </ToastProvider>
