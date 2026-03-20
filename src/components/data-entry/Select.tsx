@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { ChevronDown, Check } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 export interface SelectOption {
   value: string;
@@ -33,20 +34,8 @@ export default function Select({
 
   // 현재 선택된 옵션의 라벨(글자)을 찾는다.
   const selectedOption = options.find((opt) => opt.value === value);
-
   // 외부 클릭 감지 로직: 드롭다운 밖을 클릭하면 메뉴가 닫히게 만든다.
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  useClickOutside(dropdownRef, () => setIsOpen(false));
 
   const handleSelect = (optionValue: string) => {
     if (onChange) onChange(optionValue);

@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { cn } from "../../shared/lib/utils";
+import { useClickOutside } from "../../hooks/useClickOutside";
+import { useEscapeKey } from "../../hooks/useEscapeKey";
 
 export type PopoverPosition = "top" | "bottom" | "left" | "right";
 
@@ -22,28 +24,8 @@ export default function Popover({
   const [isOpen, setIsOpen] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        popoverRef.current &&
-        !popoverRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsOpen(false);
-    };
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("keydown", handleEsc);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleEsc);
-    };
-  }, [isOpen]);
-
+  useClickOutside(popoverRef, () => setIsOpen(false));
+  useEscapeKey(() => setIsOpen(false), isOpen);
   const positionConfig = {
     top: "bottom-full left-1/2 -translate-x-1/2 mb-2.5",
     bottom: "top-full left-1/2 -translate-x-1/2 mt-2.5",
