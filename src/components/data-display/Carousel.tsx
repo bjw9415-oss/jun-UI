@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "../shared/lib/utils";
+import { cn } from "../../shared/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Context 설정: 현재 몇 번째 슬라이드인지, 총 몇 개인지를 공유

@@ -1,7 +1,7 @@
 import { useEffect, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
-import { cn } from "../shared/lib/utils";
+import { cn } from "../../shared/lib/utils";
 
 export interface ModalProps {
   /** 모달이 열려있는지 여부 */

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cn } from "../shared/lib/utils";
+import { cn } from "../../shared/lib/utils";
 import { User, UserCircle } from "lucide-react";
 
 export type AvatarSize = "sm" | "md" | "lg" | "xl" | "2xl";

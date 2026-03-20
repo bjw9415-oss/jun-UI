@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "../shared/lib/utils";
+import { cn } from "../../shared/lib/utils";
 
 //  1. Context 생성: "지금 어떤 탭이 선택되어 있니?"를 공유하는 공간
 const TabsContext = React.createContext<{

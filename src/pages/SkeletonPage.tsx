@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Skeleton from "../components/Skeleton";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
+import Skeleton from "../components/feedback/Skeleton";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 import { User } from "lucide-react";
 
 export default function SkeletonPage() {

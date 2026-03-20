@@ -3,8 +3,8 @@ import { Check } from "lucide-react";
 import Checkbox, {
   type CheckboxProps,
 } from "../components/data-entry/Checkbox";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 
 type CodeTabType = "component" | "usage";
 type CheckedState = boolean | "indeterminate";

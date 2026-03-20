@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../components/buttons/Button";
-import CodeViewer from "../components/CodeViewer";
-import PageHeader from "../components/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
+import PageHeader from "../components/layout/PageHeader";
 
 type VariantType = "primary" | "outline" | "danger";
 type SizeType = "sm" | "md" | "lg" | "icon";

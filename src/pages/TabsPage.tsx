@@ -1,5 +1,10 @@
 import { useState, useMemo } from "react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/navigation/Tabs";
 import {
   Card,
   CardHeader,
@@ -7,9 +12,9 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "../components/Card";
-import PageHeader from "../components/PageHeader";
-import CodeViewer from "../components/CodeViewer";
+} from "../components/data-display/Card";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 
 export default function TabsPage() {
   const [activeTab, setActiveTab] = useState("account");
