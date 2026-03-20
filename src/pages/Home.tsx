@@ -19,6 +19,7 @@ import {
   AlertTriangle,
   UserCircle,
   FolderKanban,
+  ListCollapse,
 } from "lucide-react";
 
 interface ComponentItem {
@@ -181,6 +182,12 @@ const componentCategories: ComponentCategory[] = [
         path: "/card",
         icon: LayoutTemplate,
         desc: "콘텐츠와 액션을 그룹화하는 유연한 합성 컴포넌트 컨테이너",
+      },
+      {
+        name: "Accordion",
+        path: "/accordion",
+        icon: ListCollapse,
+        desc: "클릭 시 숨겨진 세부 내용이 부드럽게 펼쳐지는 접이식 패널",
       },
     ],
   },
