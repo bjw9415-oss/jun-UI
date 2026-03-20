@@ -1,8 +1,9 @@
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
 import { useScrollLock } from "../../hooks/useScrollLock";
+import { useEscapeKey } from "../../hooks/useEscapeKey";
 
 export type DrawerDirection = "left" | "right" | "top" | "bottom";
 export type DrawerSize = "sm" | "md" | "lg" | "xl" | "full";
@@ -33,19 +34,7 @@ export default function Drawer({
   //  스크롤 잠금
   useScrollLock(isOpen);
   //ESC 키 이벤트
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-
-    if (isOpen) {
-      window.addEventListener("keydown", handleEsc);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleEsc);
-    };
-  }, [isOpen, onClose]);
+  useEscapeKey(onClose, isOpen);
 
   //  2. 방향에 따른 CSS 클래스 및 애니메이션 매핑
   const directionConfig = {

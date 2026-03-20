@@ -1,8 +1,9 @@
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
 import { useScrollLock } from "../../hooks/useScrollLock";
+import { useEscapeKey } from "../../hooks/useEscapeKey";
 
 export interface ModalProps {
   /** 모달이 열려있는지 여부 */
@@ -37,19 +38,7 @@ export default function Modal({
   useScrollLock(isOpen);
 
   //  ESC 키 처리 로직
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-
-    if (isOpen) {
-      window.addEventListener("keydown", handleEsc);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleEsc);
-    };
-  }, [isOpen, onClose]);
+  useEscapeKey(onClose, isOpen);
 
   // 열려있지 않으면 아무것도 렌더링하지 않음
   if (!isOpen) return null;
