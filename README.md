@@ -7,6 +7,18 @@
 
 > 🚧 **Notice**: 현재 컴포넌트 개발(Phase 1)을 성공적으로 마치고, 코드의 재사용성을 높이고 아키텍처를 단단하게 다지는 **대대적인 리팩토링 및 최적화(Phase 2)** 작업을 진행 중입니다! 🛠️
 
+## 🛠 Refactoring Progress (Phase 2)
+
+현재 진행 중인 리팩토링 및 최적화 작업 내역입니다.
+
+- [x] **도메인별 폴더 구조화**: 비대해진 `components` 폴더를 6개의 도메인(`buttons`, `data-entry`, `feedback`, `navigation`, `data-display`, `layout`)으로 분류하여 아키텍처 및 DX 개선
+- [x] **공통 로직 커스텀 훅 추출 (DRY 원칙)**:
+  - `useScrollLock`: Modal, Drawer 등 오버레이 컴포넌트 렌더링 시 배경 스크롤 방지 로직 통합
+  - `useEscapeKey`: a11y(웹 접근성)를 위한 ESC 키 닫기 이벤트 리스너 통합
+  - `useClickOutside`: Select, Popover 등의 외부 클릭 감지 로직 통합 (초기 렌더링 `null` 방어 및 모바일 터치 이벤트 대응)
+- [ ] **Barrel Export (인덱싱)**: `index.ts`를 활용한 Import 경로 최적화 (진행 예정)
+- [ ] **타입스크립트(TS) 타입 정교화**: 제네릭 및 유틸리티 타입을 활용한 타입 안정성 강화 (진행 예정)
+
 ## ✨ Features
 
 - **Dark Theme First**: 세련된 다크 모드(`bg-[#0d1117]`)를 기본 배경으로 설계된 UI
@@ -16,7 +28,7 @@
 - **Modern Icons**: `lucide-react`를 활용한 깔끔하고 일관된 벡터 아이콘 적용
 - **Interactive Playground (DX)**: 각 컴포넌트의 상태를 직접 조작하고, 설정값에 따라 실시간으로 진화하는 **실무 적용 예시 코드**를 제공하여 최고 수준의 개발자 경험(DX) 제공
 
-## 🛠 Tech Stack
+## 💻 Tech Stack
 
 - **Core**: React, TypeScript, Vite
 - **Styling**: Tailwind CSS v4
