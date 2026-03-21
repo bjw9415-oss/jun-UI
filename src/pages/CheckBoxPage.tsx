@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { Checkbox, type CheckboxProps } from "../components/data-entry";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { PageHeader, CodeViewer } from "../components/layout";
 
 type CodeTabType = "component" | "usage";
 type CheckedState = boolean | "indeterminate";

@@ -7,8 +7,7 @@ import {
   Send,
   Image as ImageIcon,
 } from "lucide-react";
-import CodeViewer from "../components/layout/CodeViewer";
-import PageHeader from "../components/layout/PageHeader";
+import { PageHeader, CodeViewer } from "../components/layout";
 
 type VariantType =
   | "primary"

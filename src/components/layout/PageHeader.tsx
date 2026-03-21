@@ -5,7 +5,7 @@ interface PageHeaderProps {
   description: string;
 }
 
-export default function PageHeader({ title, description }: PageHeaderProps) {
+export function PageHeader({ title, description }: PageHeaderProps) {
   return (
     <>
       {/*  공통 뒤로가기 버튼 */}

@@ -1,8 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Moon, Sun, Bell, Check, Palette } from "lucide-react";
 import { Toggle, type ToggleProps } from "../components/data-entry";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { PageHeader, CodeViewer } from "../components/layout";
 
 type CodeTabType = "component" | "usage";
 

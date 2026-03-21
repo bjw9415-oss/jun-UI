@@ -3,8 +3,8 @@ import Avatar, {
   type AvatarSize,
   type AvatarShape,
 } from "../components/data-display/Avatar";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { PageHeader, CodeViewer } from "../components/layout";
+
 import {
   UploadCloud,
   Image as ImageIcon,

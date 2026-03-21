@@ -5,8 +5,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "../components/data-display/Accordion";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { PageHeader, CodeViewer } from "../components/layout";
 
 export default function AccordionPage() {
   const [type, setType] = useState<"single" | "multiple">("single");

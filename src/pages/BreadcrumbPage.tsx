@@ -8,8 +8,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 } from "../components/navigation/Breadcrumb";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { PageHeader, CodeViewer } from "../components/layout";
 import { ChevronRight, Slash } from "lucide-react";
 
 export default function BreadcrumbDemo() {

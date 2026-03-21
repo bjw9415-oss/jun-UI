@@ -1,8 +1,8 @@
 import { useState, useMemo } from "react";
 import { Alert, type AlertVariant } from "../components/feedback";
 import { Badge, type BadgeVariant } from "../components/feedback";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { PageHeader, CodeViewer } from "../components/layout";
+
 import { Terminal } from "lucide-react";
 
 export default function AlertBadgePage() {

@@ -4,8 +4,7 @@ import {
   Radio,
   type RadioGroupProps,
 } from "../components/data-entry/Radio";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { PageHeader, CodeViewer } from "../components/layout";
 
 type CodeTabType = "component" | "usage";
 
