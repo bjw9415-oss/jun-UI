@@ -7,7 +7,7 @@ import {
   PaginationNext,
   PaginationPrevious,
   PaginationEllipsis,
-} from "../components/navigation/Pagination";
+} from "../components/navigation";
 import { PageHeader, CodeViewer } from "../components/layout";
 
 export default function PaginationPage() {

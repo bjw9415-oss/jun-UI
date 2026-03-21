@@ -4,7 +4,7 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
-} from "../components/navigation/Tabs";
+} from "../components/navigation";
 import {
   Card,
   CardHeader,

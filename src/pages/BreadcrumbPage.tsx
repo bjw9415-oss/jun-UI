@@ -7,7 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
-} from "../components/navigation/Breadcrumb";
+} from "../components/navigation";
 import { PageHeader, CodeViewer } from "../components/layout";
 import { ChevronRight, Slash } from "lucide-react";
 
