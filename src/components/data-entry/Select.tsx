@@ -19,7 +19,7 @@ export interface SelectProps {
   className?: string;
 }
 
-export default function Select({
+export function Select({
   options,
   value,
   onChange,

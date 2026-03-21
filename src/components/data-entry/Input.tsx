@@ -8,7 +8,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   rightIcon?: ReactNode; // 오른쪽에 들어갈 아이콘 (예: 눈알 모양, 지우기 X)
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, error, errorMessage, leftIcon, rightIcon, ...props }, ref) => {
     return (
       <div className="flex flex-col gap-1.5 w-full">
@@ -62,5 +62,3 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
 // 디버깅을 위해 이름표를 붙여줍니다.
 Input.displayName = "Input";
-
-export default Input;

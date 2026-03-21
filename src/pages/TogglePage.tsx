@@ -1,8 +1,8 @@
 import { useState, type ReactNode } from "react";
-import { Moon, Sun, Bell, Check, Palette } from "lucide-react"; // 아이콘 추가
-import Toggle, { type ToggleProps } from "../components/data-entry/Toggle"; // 경로 확인 필요
-import PageHeader from "../components/layout/PageHeader"; // 기존 컴포넌트
-import CodeViewer from "../components/layout/CodeViewer"; // 기존 컴포넌트
+import { Moon, Sun, Bell, Check, Palette } from "lucide-react";
+import { Toggle, type ToggleProps } from "../components/data-entry";
+import PageHeader from "../components/layout/PageHeader";
+import CodeViewer from "../components/layout/CodeViewer";
 
 type CodeTabType = "component" | "usage";
 

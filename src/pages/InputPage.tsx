@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "../components/data-entry/Input";
+import { Input } from "../components/data-entry";
 import PageHeader from "../components/layout/PageHeader";
 import CodeViewer from "../components/layout/CodeViewer";
 import { Search, Mail, Lock, Eye, EyeOff } from "lucide-react";

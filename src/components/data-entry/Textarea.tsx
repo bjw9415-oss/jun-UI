@@ -6,7 +6,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
   errorMessage?: string;
 }
 
-const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, error, errorMessage, rows, ...props }, ref) => {
     return (
       <div className="flex flex-col gap-1.5 w-full">
@@ -38,5 +38,3 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 );
 
 Textarea.displayName = "Textarea";
-
-export default Textarea;

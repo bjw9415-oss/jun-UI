@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Select from "../components/data-entry/Select";
+import { Select } from "../components/data-entry";
 import PageHeader from "../components/layout/PageHeader";
 import CodeViewer from "../components/layout/CodeViewer";
 

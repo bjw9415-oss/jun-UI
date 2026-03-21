@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
-import Checkbox, {
-  type CheckboxProps,
-} from "../components/data-entry/Checkbox";
+import { Checkbox, type CheckboxProps } from "../components/data-entry";
 import PageHeader from "../components/layout/PageHeader";
 import CodeViewer from "../components/layout/CodeViewer";
 
 type CodeTabType = "component" | "usage";
 type CheckedState = boolean | "indeterminate";
 
-// 🎨 색상 테마 옵션 정의
+//  색상 테마 옵션 정의
 const COLOR_OPTIONS = [
   {
     name: "Default Blue",
