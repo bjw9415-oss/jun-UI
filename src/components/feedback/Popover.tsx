@@ -1,7 +1,6 @@
 import { useRef, useState, type ReactNode } from "react";
 import { cn } from "../../shared/lib/utils";
-import { useClickOutside } from "../../hooks/useClickOutside";
-import { useEscapeKey } from "../../hooks/useEscapeKey";
+import { useClickOutside, useEscapeKey } from "../../hooks";
 
 export type PopoverPosition = "top" | "bottom" | "left" | "right";
 
