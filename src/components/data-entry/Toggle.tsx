@@ -23,7 +23,7 @@ export interface ToggleProps extends Omit<
   thumbImage?: string; // 손잡이 안의 이미지 URL
 }
 
-const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
+export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
   (
     {
       className,
@@ -132,5 +132,3 @@ const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
 );
 
 Toggle.displayName = "Toggle";
-
-export default Toggle;

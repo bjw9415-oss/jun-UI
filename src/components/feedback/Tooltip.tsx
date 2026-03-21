@@ -14,7 +14,7 @@ export interface TooltipProps {
   className?: string;
 }
 
-export default function Tooltip({
+export function Tooltip({
   content,
   children,
   position = "top",

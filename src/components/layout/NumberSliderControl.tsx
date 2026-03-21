@@ -7,7 +7,7 @@ interface NumberSliderControlProps {
   unit?: string;
 }
 
-export default function NumberSliderControl({
+export function NumberSliderControl({
   label,
   value,
   onChange,

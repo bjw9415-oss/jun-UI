@@ -13,7 +13,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   variant?: BadgeVariant;
 }
 
-export default function Badge({
+export function Badge({
   className,
   variant = "default",
   ...props

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Input from "../components/data-entry/Input";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { Input } from "../components/data-entry";
+import { PageHeader, CodeViewer } from "../components/layout";
 import { Search, Mail, Lock, Eye, EyeOff } from "lucide-react";
 
 type InputType = "text" | "password" | "email";

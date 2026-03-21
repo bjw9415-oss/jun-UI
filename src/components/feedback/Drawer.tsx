@@ -2,8 +2,7 @@ import { type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
-import { useScrollLock } from "../../hooks/useScrollLock";
-import { useEscapeKey } from "../../hooks/useEscapeKey";
+import { useScrollLock, useEscapeKey } from "../../hooks";
 
 export type DrawerDirection = "left" | "right" | "top" | "bottom";
 export type DrawerSize = "sm" | "md" | "lg" | "xl" | "full";
@@ -20,7 +19,7 @@ export interface DrawerProps {
   className?: string;
 }
 
-export default function Drawer({
+export function Drawer({
   isOpen,
   onClose,
   direction = "right", // 기본값은 실무에서 가장 많이 쓰는 우측 패널

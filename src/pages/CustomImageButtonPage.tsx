@@ -1,9 +1,11 @@
 import { useState, useRef } from "react";
-import Button from "../components/buttons/Button";
+import { Button } from "../components/buttons";
 import { Upload, X, Image as ImageIcon } from "lucide-react";
-import CodeViewer from "../components/layout/CodeViewer";
-import NumberSliderControl from "../components/layout/NumberSliderControl";
-import PageHeader from "../components/layout/PageHeader";
+import {
+  PageHeader,
+  CodeViewer,
+  NumberSliderControl,
+} from "../components/layout";
 
 export default function CustomImageButtonPage() {
   // [ 상태 관리 영역 (State & Refs)] ========================================

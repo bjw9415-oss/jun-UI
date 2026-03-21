@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Tooltip, { type TooltipPosition } from "../components/feedback/Tooltip";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { Tooltip, type TooltipPosition } from "../components/feedback";
+import { PageHeader, CodeViewer } from "../components/layout";
 
 type CodeTabType = "component" | "usage";
 

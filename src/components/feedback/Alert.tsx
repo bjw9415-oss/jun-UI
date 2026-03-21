@@ -16,7 +16,7 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   icon?: ReactNode; // 커스텀 아이콘을 넣을 수도 있게 열어둡니다.
 }
 
-export default function Alert({
+export function Alert({
   className,
   variant = "default",
   title,

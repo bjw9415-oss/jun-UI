@@ -14,7 +14,7 @@ export interface CheckboxProps extends Omit<
   activeColor?: string; // 체크되었을 때의 배경 & 테두리 색상
 }
 
-const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (
     {
       className,
@@ -123,5 +123,3 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 );
 
 Checkbox.displayName = "Checkbox";
-
-export default Checkbox;

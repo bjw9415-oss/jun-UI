@@ -1,7 +1,6 @@
 import { useRef, useState, type ReactNode } from "react";
 import { cn } from "../../shared/lib/utils";
-import { useClickOutside } from "../../hooks/useClickOutside";
-import { useEscapeKey } from "../../hooks/useEscapeKey";
+import { useClickOutside, useEscapeKey } from "../../hooks";
 
 export type PopoverPosition = "top" | "bottom" | "left" | "right";
 
@@ -15,7 +14,7 @@ export interface PopoverProps {
   /** 추가 커스텀 클래스 */
   className?: string;
 }
-export default function Popover({
+export function Popover({
   content,
   children,
   position = "bottom",

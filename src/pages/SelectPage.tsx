@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Select from "../components/data-entry/Select";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { Select } from "../components/data-entry";
+import { PageHeader, CodeViewer } from "../components/layout";
 
 type CodeTabType = "component" | "usage";
 

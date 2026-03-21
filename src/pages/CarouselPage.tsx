@@ -6,10 +6,9 @@ import {
   CarouselPrevious,
   CarouselNext,
   CarouselIndicators,
-} from "../components/data-display/Carousel";
+} from "../components/data-display";
 import { Card, CardContent } from "../components/data-display/Card";
-import PageHeader from "../components/layout/PageHeader";
-import CodeViewer from "../components/layout/CodeViewer";
+import { PageHeader, CodeViewer } from "../components/layout";
 
 export default function CarouselPage() {
   const [showArrows, setShowArrows] = useState(true);

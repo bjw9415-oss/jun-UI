@@ -4,7 +4,7 @@ interface CodeViewerProps {
   code: string;
 }
 
-export default function CodeViewer({ code }: CodeViewerProps) {
+export function CodeViewer({ code }: CodeViewerProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {

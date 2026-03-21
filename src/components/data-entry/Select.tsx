@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { ChevronDown, Check } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
-import { useClickOutside } from "../../hooks/useClickOutside";
+import { useClickOutside } from "../../hooks";
 
 export interface SelectOption {
   value: string;
@@ -19,7 +19,7 @@ export interface SelectProps {
   className?: string;
 }
 
-export default function Select({
+export function Select({
   options,
   value,
   onChange,
