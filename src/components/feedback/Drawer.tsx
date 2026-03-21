@@ -1,17 +1,37 @@
 import { type ReactNode } from "react";
 import { createPortal } from "react-dom";
+import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
 import { useScrollLock, useEscapeKey } from "../../hooks";
 
-export type DrawerDirection = "left" | "right" | "top" | "bottom";
+//  CVA로 방향만 관리
+const drawerVariants = cva(
+  "fixed flex flex-col bg-[#161b22] text-white shadow-2xl transition-transform ease-in-out",
+  {
+    variants: {
+      direction: {
+        left: "inset-y-0 left-0 border-r border-gray-800 animate-in slide-in-from-left duration-300",
+        right:
+          "inset-y-0 right-0 border-l border-gray-800 animate-in slide-in-from-right duration-300",
+        top: "inset-x-0 top-0 border-b border-gray-800 animate-in slide-in-from-top duration-300",
+        bottom:
+          "inset-x-0 bottom-0 border-t border-gray-800 animate-in slide-in-from-bottom duration-300",
+      },
+    },
+    defaultVariants: {
+      direction: "right",
+    },
+  },
+);
+
+//  size는 별도 타입으로 관리
 export type DrawerSize = "sm" | "md" | "lg" | "xl" | "full";
 
-export interface DrawerProps {
+export interface DrawerProps extends VariantProps<typeof drawerVariants> {
   isOpen: boolean;
   onClose: () => void;
-  direction?: DrawerDirection;
-  size?: DrawerSize;
+  size?: DrawerSize; // 별도 관리
   title?: ReactNode;
   description?: ReactNode;
   children: ReactNode;
@@ -22,61 +42,43 @@ export interface DrawerProps {
 export function Drawer({
   isOpen,
   onClose,
-  direction = "right", // 기본값은 실무에서 가장 많이 쓰는 우측 패널
-  size = "md",
+  direction = "right", //  기본값 명시
+  size = "md", //  기본값 명시
   title,
   description,
   children,
   footer,
   className,
 }: DrawerProps) {
-  //  스크롤 잠금
   useScrollLock(isOpen);
-  //ESC 키 이벤트
   useEscapeKey(onClose, isOpen);
+
   if (!isOpen) return null;
 
-  //  2. 방향에 따른 CSS 클래스 및 애니메이션 매핑
-  const directionConfig = {
-    left: "inset-y-0 left-0 border-r border-gray-800 animate-in slide-in-from-left duration-300",
-    right:
-      "inset-y-0 right-0 border-l border-gray-800 animate-in slide-in-from-right duration-300",
-    top: "inset-x-0 top-0 border-b border-gray-800 animate-in slide-in-from-top duration-300",
-    bottom:
-      "inset-x-0 bottom-0 border-t border-gray-800 animate-in slide-in-from-bottom duration-300",
-  };
-
-  //  3. 사이즈 설정 (좌/우는 너비(width) 기준, 상/하는 높이(height) 기준)
+  // 방향에 따른 사이즈 매핑
   const isHorizontal = direction === "left" || direction === "right";
-  const sizeConfig = {
+  const sizeClass = {
     sm: isHorizontal ? "w-64" : "h-64",
     md: isHorizontal ? "w-80" : "h-80",
     lg: isHorizontal ? "w-96" : "h-96",
     xl: isHorizontal ? "w-[28rem]" : "h-[28rem]",
     full: isHorizontal ? "w-screen" : "h-screen",
-  };
+  }[size];
 
   return createPortal(
     <div className="fixed inset-0 z-50">
-      {/* 어두운 배경 (Backdrop) */}
       <div
         className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/*  패널 본체 */}
       <div
         role="dialog"
         aria-modal="true"
-        className={cn(
-          "fixed flex flex-col bg-[#161b22] text-white shadow-2xl transition-transform ease-in-out",
-          directionConfig[direction],
-          sizeConfig[size],
-          className,
-        )}
+        className={cn(drawerVariants({ direction }), sizeClass, className)}
       >
-        {/* 헤더 영역 (제목 & 닫기 버튼) */}
+        {/* 헤더 */}
         <div className="flex items-start justify-between border-b border-gray-800/60 px-6 py-4">
           <div className="flex flex-col gap-1 pr-6">
             {title && (
@@ -95,12 +97,12 @@ export function Drawer({
           </button>
         </div>
 
-        {/* 본문 영역 (스크롤 가능하도록 처리) */}
+        {/* 본문 */}
         <div className="flex-1 overflow-y-auto px-6 py-4 text-gray-300">
           {children}
         </div>
 
-        {/* 푸터 영역 */}
+        {/* 푸터 */}
         {footer && (
           <div className="mt-auto border-t border-gray-800/60 px-6 py-4 flex items-center justify-end gap-3">
             {footer}
