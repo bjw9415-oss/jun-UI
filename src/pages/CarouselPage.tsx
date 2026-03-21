@@ -6,7 +6,7 @@ import {
   CarouselPrevious,
   CarouselNext,
   CarouselIndicators,
-} from "../components/data-display/Carousel";
+} from "../components/data-display";
 import { Card, CardContent } from "../components/data-display/Card";
 import { PageHeader, CodeViewer } from "../components/layout";
 

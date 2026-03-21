@@ -13,7 +13,7 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   shape?: AvatarShape;
 }
 
-export default function Avatar({
+export function Avatar({
   src,
   alt = "User Avatar",
   fallback,

@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "../components/data-display/Accordion";
+} from "../components/data-display";
 import { PageHeader, CodeViewer } from "../components/layout";
 
 export default function AccordionPage() {

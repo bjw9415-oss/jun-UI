@@ -1,8 +1,9 @@
 import { useState, useMemo, useRef, type ChangeEvent } from "react";
-import Avatar, {
+import {
+  Avatar,
   type AvatarSize,
   type AvatarShape,
-} from "../components/data-display/Avatar";
+} from "../components/data-display";
 import { PageHeader, CodeViewer } from "../components/layout";
 
 import {
