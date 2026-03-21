@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../components/buttons/Button";
+import { Button } from "../components/buttons";
 import { PageHeader, CodeViewer } from "../components/layout";
 
 type VariantType = "primary" | "outline" | "danger";

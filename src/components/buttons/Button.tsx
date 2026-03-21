@@ -13,7 +13,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "icon";
 }
 
-export default function Button({
+export function Button({
   children,
   variant = "primary",
   size = "md",
