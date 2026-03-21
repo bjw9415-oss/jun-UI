@@ -1,92 +1,103 @@
-import { type HTMLAttributes, type ReactNode } from "react";
-import { cn } from "../../shared/lib/utils";
+import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { Info, AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
+import { cn } from "../../shared/lib/utils";
 
-export type AlertVariant =
-  | "default"
-  | "info"
-  | "success"
-  | "warning"
-  | "outline"
-  | "danger";
+// Alert 컨테이너 스타일
+const alertVariants = cva("relative w-full rounded-xl border p-4 flex gap-3", {
+  variants: {
+    variant: {
+      default: "bg-[#161b22] border-gray-800 text-gray-300",
+      info: "bg-[#00a2ff]/10 border-[#00a2ff]/20 text-[#00a2ff]",
+      success: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400",
+      warning: "bg-yellow-500/10 border-yellow-500/20 text-yellow-400",
+      danger: "bg-red-500/10 border-red-500/20 text-red-400",
+      outline: "bg-transparent border-gray-700 text-gray-400",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
-export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: AlertVariant;
+// 타이틀 스타일
+const alertTitleVariants = cva("font-semibold leading-none tracking-tight", {
+  variants: {
+    variant: {
+      default: "text-white",
+      info: "text-[#00a2ff]",
+      success: "text-emerald-500",
+      warning: "text-yellow-500",
+      danger: "text-red-500",
+      outline: "text-gray-300",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+//  아이콘 스타일도 CVA로 관리
+const alertIconVariants = cva("h-5 w-5", {
+  variants: {
+    variant: {
+      default: "text-gray-400",
+      info: "text-[#00a2ff]",
+      success: "text-emerald-500",
+      warning: "text-yellow-500",
+      danger: "text-red-500",
+      outline: "text-gray-500",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+type AlertVariant = NonNullable<AlertProps["variant"]>;
+
+// 아이콘 컴포넌트 매핑 (색상 제거)
+const iconMap: Record<AlertVariant, typeof Info> = {
+  default: Info,
+  info: Info,
+  success: CheckCircle2,
+  warning: AlertTriangle,
+  danger: XCircle,
+  outline: Info,
+} as const;
+const getDefaultIcon = (variant: AlertProps["variant"], iconClass: string) => {
+  const IconComponent = iconMap[variant ?? "default"];
+  return <IconComponent className={iconClass} />;
+};
+export interface AlertProps
+  extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {
   title?: string;
-  icon?: ReactNode; // 커스텀 아이콘을 넣을 수도 있게 열어둡니다.
+  icon?: ReactNode;
 }
 
-export function Alert({
-  className,
-  variant = "default",
-  title,
-  icon,
-  children,
-  ...props
-}: AlertProps) {
-  // 상태별 아이콘 및 색상 테마 매핑
-  const variantConfig = {
-    default: {
-      wrapper: "bg-[#161b22] border-gray-800 text-gray-300",
-      icon: icon || <Info className="h-5 w-5 text-gray-400" />,
-      title: "text-white",
-    },
-    info: {
-      wrapper: "bg-[#00a2ff]/10 border-[#00a2ff]/20 text-[#00a2ff]",
-      icon: icon || <Info className="h-5 w-5 text-[#00a2ff]" />,
-      title: "text-[#00a2ff]",
-    },
-    success: {
-      wrapper: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400",
-      icon: icon || <CheckCircle2 className="h-5 w-5 text-emerald-500" />,
-      title: "text-emerald-500",
-    },
-    warning: {
-      wrapper: "bg-yellow-500/10 border-yellow-500/20 text-yellow-400",
-      icon: icon || <AlertTriangle className="h-5 w-5 text-yellow-500" />,
-      title: "text-yellow-500",
-    },
-    danger: {
-      wrapper: "bg-red-500/10 border-red-500/20 text-red-400",
-      icon: icon || <XCircle className="h-5 w-5 text-red-500" />,
-      title: "text-red-500",
-    },
-    outline: {
-      wrapper: "bg-transparent border-gray-700 text-gray-400",
-      icon: icon || <Info className="h-5 w-5 text-gray-500" />,
-      title: "text-gray-300",
-    },
-  };
+export const Alert = forwardRef<HTMLDivElement, AlertProps>(
+  ({ className, variant, title, icon, children, ...props }, ref) => {
+    const iconClass = alertIconVariants({ variant });
 
-  const config = variantConfig[variant];
+    return (
+      <div
+        ref={ref}
+        role="alert"
+        className={cn(alertVariants({ variant, className }))}
+        {...props}
+      >
+        <div className="shrink-0 mt-0.5">
+          {icon || getDefaultIcon(variant, iconClass)}
+        </div>
 
-  return (
-    <div
-      role="alert"
-      className={cn(
-        "relative w-full rounded-xl border p-4 flex gap-3",
-        config.wrapper,
-        className,
-      )}
-      {...props}
-    >
-      {/*  좌측 아이콘 영역 */}
-      <div className="shrink-0 mt-0.5">{config.icon}</div>
-
-      {/*  우측 텍스트 컨텐츠 영역 */}
-      <div className="flex-1 flex flex-col gap-1.5">
-        {title && (
-          <h5
-            className={cn(
-              "font-semibold leading-none tracking-tight",
-              config.title,
-            )}
-          >
-            {title}
-          </h5>
-        )}
-        <div className="text-sm opacity-90 leading-relaxed">{children}</div>
+        <div className="flex-1 flex flex-col gap-1.5">
+          {title && (
+            <h5 className={alertTitleVariants({ variant })}>{title}</h5>
+          )}
+          <div className="text-sm opacity-90 leading-relaxed">{children}</div>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  },
+);
+
+Alert.displayName = "Alert";
