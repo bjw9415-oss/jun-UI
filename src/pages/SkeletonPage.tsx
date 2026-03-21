@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Skeleton from "../components/feedback/Skeleton";
+import { Skeleton } from "../components/feedback";
 import PageHeader from "../components/layout/PageHeader";
 import CodeViewer from "../components/layout/CodeViewer";
 import { User } from "lucide-react";

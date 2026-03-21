@@ -15,7 +15,7 @@ export interface PopoverProps {
   /** 추가 커스텀 클래스 */
   className?: string;
 }
-export default function Popover({
+export function Popover({
   content,
   children,
   position = "bottom",

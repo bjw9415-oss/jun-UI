@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Drawer, {
+import {
+  Drawer,
   type DrawerDirection,
   type DrawerSize,
-} from "../components/feedback/Drawer";
+} from "../components/feedback";
 import PageHeader from "../components/layout/PageHeader";
 import CodeViewer from "../components/layout/CodeViewer";
 

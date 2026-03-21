@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Tooltip, { type TooltipPosition } from "../components/feedback/Tooltip";
+import { Tooltip, type TooltipPosition } from "../components/feedback";
 import PageHeader from "../components/layout/PageHeader";
 import CodeViewer from "../components/layout/CodeViewer";
 

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import Popover, { type PopoverPosition } from "../components/feedback/Popover";
+import { Popover, type PopoverPosition } from "../components/feedback";
 import PageHeader from "../components/layout/PageHeader";
 import CodeViewer from "../components/layout/CodeViewer";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useToast, type ToastVariant } from "../components/feedback/Toast";
+import { useToast, type ToastVariant } from "../components/feedback";
 import PageHeader from "../components/layout/PageHeader";
 import CodeViewer from "../components/layout/CodeViewer";
 

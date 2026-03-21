@@ -20,7 +20,7 @@ export interface DrawerProps {
   className?: string;
 }
 
-export default function Drawer({
+export function Drawer({
   isOpen,
   onClose,
   direction = "right", // 기본값은 실무에서 가장 많이 쓰는 우측 패널
