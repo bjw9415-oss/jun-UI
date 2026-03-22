@@ -13,18 +13,81 @@ import {
   Info,
   AlertTriangle,
 } from "lucide-react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../shared/lib/utils";
 
-// 1. 위치(Position) 타입 추가(총 6방향 지원)
-export type ToastPosition =
-  | "top-right"
-  | "top-left"
-  | "bottom-right"
-  | "bottom-left"
-  | "top-center"
-  | "bottom-center";
+const toastContainerVariants = cva(
+  "fixed z-50 m-4 flex w-full max-w-sm gap-3 sm:m-6 pointer-events-none",
+  {
+    variants: {
+      position: {
+        "top-right": "top-0 right-0 flex-col",
+        "top-left": "top-0 left-0 flex-col",
+        "top-center": "top-0 left-1/2 -translate-x-1/2 flex-col",
+        "bottom-right": "bottom-0 right-0 flex-col",
+        "bottom-left": "bottom-0 left-0 flex-col",
+        "bottom-center": "bottom-0 left-1/2 -translate-x-1/2 flex-col",
+      },
+    },
+    defaultVariants: {
+      position: "bottom-right",
+    },
+  },
+);
 
-export type ToastVariant = "default" | "success" | "danger" | "warning";
+const toastItemVariants = cva(
+  "pointer-events-auto relative flex w-full items-start gap-3 rounded-xl border p-4 shadow-lg transition-all animate-in fade-in duration-300",
+  {
+    variants: {
+      variant: {
+        default: "bg-[#161b22] border-gray-800 text-white",
+        success: "bg-emerald-500/10 border-emerald-500/30 text-emerald-500",
+        danger: "bg-red-500/10 border-red-500/30 text-red-500",
+        warning: "bg-yellow-500/10 border-yellow-500/30 text-yellow-500",
+      },
+      position: {
+        "top-right": "slide-in-from-right-full",
+        "top-left": "slide-in-from-left-full",
+        "top-center": "slide-in-from-top-full",
+        "bottom-right": "slide-in-from-right-full",
+        "bottom-left": "slide-in-from-left-full",
+        "bottom-center": "slide-in-from-bottom-full",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      position: "bottom-right",
+    },
+  },
+);
+
+const toastIconVariants = cva("h-5 w-5", {
+  variants: {
+    variant: {
+      default: "text-[#00a2ff]",
+      success: "",
+      danger: "",
+      warning: "",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+export type ToastPosition = NonNullable<
+  VariantProps<typeof toastContainerVariants>["position"]
+>;
+export type ToastVariant = NonNullable<
+  VariantProps<typeof toastItemVariants>["variant"]
+>;
+
+const iconMap = {
+  default: Info,
+  success: CheckCircle2,
+  danger: AlertCircle,
+  warning: AlertTriangle,
+} as const;
 
 export interface ToastMessage {
   id: string;
@@ -83,27 +146,12 @@ export const ToastProvider = ({
     [removeToast, position],
   );
 
-  // 3. 위치에 따른 컨테이너 CSS 매핑
-  const positionClasses = {
-    "top-right": "top-0 right-0 flex-col",
-    "top-left": "top-0 left-0 flex-col",
-    "top-center": "top-0 left-1/2 -translate-x-1/2 flex-col",
-    "bottom-right": "bottom-0 right-0 flex-col",
-    "bottom-left": "bottom-0 left-0 flex-col",
-    "bottom-center": "bottom-0 left-1/2 -translate-x-1/2 flex-col",
-  };
-
   return (
     <ToastContext.Provider value={{ toast, removeToast }}>
       {children}
       {typeof window !== "undefined" &&
         createPortal(
-          <div
-            className={cn(
-              "fixed z-50 m-4 flex w-full max-w-sm gap-3 sm:m-6 pointer-events-none",
-              positionClasses[position],
-            )}
-          >
+          <div className={cn(toastContainerVariants({ position }))}>
             {toasts.map((t) => (
               <ToastItem
                 key={t.id}
@@ -129,53 +177,19 @@ const ToastItem = ({
   onRemove: () => void;
   position: ToastPosition;
 }) => {
-  const variantConfig = {
-    default: {
-      bg: "bg-[#161b22] border-gray-800 text-white",
-      icon: <Info className="h-5 w-5 text-[#00a2ff]" />,
-    },
-    success: {
-      bg: "bg-emerald-500/10 border-emerald-500/30 text-emerald-500",
-      icon: <CheckCircle2 className="h-5 w-5" />,
-    },
-    danger: {
-      bg: "bg-red-500/10 border-red-500/30 text-red-500",
-      icon: <AlertCircle className="h-5 w-5" />,
-    },
-    warning: {
-      bg: "bg-yellow-500/10 border-yellow-500/30 text-yellow-500",
-      icon: <AlertTriangle className="h-5 w-5" />,
-    },
-  };
-
-  const config = variantConfig[toast.variant || "default"];
-
-  // 위치에 따라 날아오는 애니메이션 방향 다르게 설정
-  const slideAnimation = {
-    "top-right": "slide-in-from-right-full",
-    "top-left": "slide-in-from-left-full",
-    "top-center": "slide-in-from-top-full",
-    "bottom-right": "slide-in-from-right-full",
-    "bottom-left": "slide-in-from-left-full",
-    "bottom-center": "slide-in-from-bottom-full",
-  };
+  const variant = toast.variant || "default";
+  const Icon = iconMap[variant];
 
   return (
-    <div
-      role="alert"
-      className={cn(
-        "pointer-events-auto relative flex w-full items-start gap-3 rounded-xl border p-4 shadow-lg transition-all",
-        "animate-in fade-in duration-300",
-        slideAnimation[position], // 방향에 맞는 슬라이드 애니메이션 적용!
-        config.bg,
-      )}
-    >
-      <div className="shrink-0 pt-0.5">{config.icon}</div>
+    <div role="alert" className={toastItemVariants({ variant, position })}>
+      <div className="shrink-0 pt-0.5">
+        <Icon className={toastIconVariants({ variant })} />
+      </div>
       <div className="flex flex-1 flex-col gap-1">
         <h3
           className={cn(
             "text-sm font-semibold",
-            toast.variant ? "" : "text-white",
+            variant === "default" && "text-white",
           )}
         >
           {toast.title}
@@ -184,7 +198,7 @@ const ToastItem = ({
           <p
             className={cn(
               "text-sm opacity-90",
-              toast.variant ? "" : "text-gray-400",
+              variant === "default" && "text-gray-400",
             )}
           >
             {toast.description}
