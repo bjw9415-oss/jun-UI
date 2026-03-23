@@ -1,9 +1,9 @@
-import { useRef, useState, type ReactNode } from "react";
-import { cva, type VariantProps } from "class-variance-authority";
+import { useCallback, useId, useRef, useState, type ReactNode } from "react";
+import { cva } from "class-variance-authority";
 import { cn } from "../../shared/lib/utils";
 import { useClickOutside, useEscapeKey } from "../../hooks";
 import type { Direction } from "../../types/ui";
-
+import { useFocusTrap } from "../../hooks/useFocusTrap";
 const popoverVariants = cva(
   "absolute z-50 w-72 rounded-xl bg-[#1c222b] border border-gray-700 p-4 text-sm text-white shadow-2xl transition-all animate-in fade-in zoom-in-95 duration-200",
   {
@@ -20,14 +20,12 @@ const popoverVariants = cva(
     },
   },
 );
-
-export interface PopoverProps extends VariantProps<typeof popoverVariants> {
+export interface PopoverProps {
   content: ReactNode;
   children: ReactNode;
-  position: Direction;
+  position?: Direction; // 명시적 타입
   className?: string;
 }
-
 export function Popover({
   content,
   children,
@@ -35,15 +33,33 @@ export function Popover({
   className,
 }: PopoverProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const popoverRef = useRef<HTMLDivElement>(null);
+  const popoverId = useId();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  useClickOutside(popoverRef, () => setIsOpen(false));
-  useEscapeKey(() => setIsOpen(false), isOpen);
-
+  const handleCloseWithFocusReturn = useCallback(() => {
+    setIsOpen(false);
+    // 트리거 안에 있는 실제 요소(ex: Button)를 찾아서 포커스 복귀
+    const triggerChild = triggerRef.current?.firstElementChild as HTMLElement;
+    if (triggerChild && typeof triggerChild.focus === "function") {
+      triggerChild.focus();
+    } else {
+      triggerRef.current?.focus();
+    }
+  }, []);
+  useClickOutside(containerRef, () => setIsOpen(false));
+  useEscapeKey(handleCloseWithFocusReturn, isOpen);
+  useFocusTrap(contentRef, isOpen);
   return (
-    <div className="relative inline-flex" ref={popoverRef}>
+    <div className="relative inline-flex" ref={containerRef}>
       <div
+        ref={triggerRef}
         onClick={() => setIsOpen((prev) => !prev)}
+        tabIndex={-1}
+        aria-haspopup="dialog"
+        aria-expanded={isOpen}
+        aria-controls={isOpen ? popoverId : undefined}
         className="cursor-pointer inline-flex"
       >
         {children}
@@ -51,9 +67,13 @@ export function Popover({
 
       {isOpen && (
         <div
+          ref={contentRef}
+          id={popoverId} // 트리거의 aria-controls와 연결되는 ID
           role="dialog"
+          aria-modal="true" // 포커스 트랩이 있으므로 모달 취급
           className={cn(popoverVariants({ position }), className)}
           onClick={(e) => e.stopPropagation()}
+          tabIndex={-1} // 포커스 트랩이 정확히 잡을 수 있도록 보조
         >
           {content}
         </div>
