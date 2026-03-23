@@ -1,4 +1,4 @@
-import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { forwardRef, useId, type HTMLAttributes, type ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Info, AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
@@ -68,7 +68,7 @@ const iconMap: Record<AlertVariant, typeof Info> = {
 } as const;
 const getDefaultIcon = (variant: AlertProps["variant"], iconClass: string) => {
   const IconComponent = iconMap[variant ?? "default"];
-  return <IconComponent className={iconClass} />;
+  return <IconComponent className={iconClass} aria-hidden="true" />;
 };
 export interface AlertProps
   extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {
@@ -79,11 +79,14 @@ export interface AlertProps
 export const Alert = forwardRef<HTMLDivElement, AlertProps>(
   ({ className, variant, title, icon, children, ...props }, ref) => {
     const iconClass = alertIconVariants({ variant });
-
+    const titleId = useId();
+    const descId = useId();
     return (
       <div
         ref={ref}
         role="alert"
+        aria-labelledby={title ? titleId : undefined}
+        aria-describedby={children ? descId : undefined}
         className={cn(alertVariants({ variant, className }))}
         {...props}
       >
@@ -93,9 +96,13 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
 
         <div className="flex-1 flex flex-col gap-1.5">
           {title && (
-            <h5 className={alertTitleVariants({ variant })}>{title}</h5>
+            <h5 id={titleId} className={alertTitleVariants({ variant })}>
+              {title}
+            </h5>
           )}
-          <div className="text-sm opacity-90 leading-relaxed">{children}</div>
+          <div id={descId} className="text-sm opacity-90 leading-relaxed">
+            {children}
+          </div>
         </div>
       </div>
     );
