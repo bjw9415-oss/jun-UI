@@ -1,9 +1,12 @@
-import { type ReactNode } from "react";
+import { useId, useRef, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
 import { useScrollLock, useEscapeKey } from "../../hooks";
+import type { StandardSize } from "../../types/ui";
+import { useFocusTrap } from "../../hooks/useFocusTrap";
 
+export type ModalSize = StandardSize | "full";
 export interface ModalProps {
   /** 모달이 열려있는지 여부 */
   isOpen: boolean;
@@ -18,7 +21,7 @@ export interface ModalProps {
   /** 하단 버튼 영역 (선택) */
   footer?: ReactNode;
   /** 모달 최대 너비 사이즈 */
-  size?: "sm" | "md" | "lg" | "xl" | "full";
+  size?: ModalSize;
   /** 외부 클래스 주입 */
   className?: string;
 }
@@ -34,10 +37,14 @@ export function Modal({
   className,
 }: ModalProps) {
   //  스크롤 잠금 로직
+  const titleId = useId();
+  const descId = useId();
+  const modalRef = useRef<HTMLDivElement>(null);
   useScrollLock(isOpen);
 
   //  ESC 키 처리 로직
   useEscapeKey(onClose, isOpen);
+  useFocusTrap(modalRef, isOpen);
 
   // 열려있지 않으면 아무것도 렌더링하지 않음
   if (!isOpen) return null;
@@ -48,6 +55,7 @@ export function Modal({
     md: "max-w-lg",
     lg: "max-w-2xl",
     xl: "max-w-4xl",
+    "2xl": "max-w-5xl",
     full: "max-w-[calc(100vw-2rem)]",
   };
 
@@ -63,8 +71,11 @@ export function Modal({
 
       {/* 모달 컨텐츠 박스 */}
       <div
+        ref={modalRef}
         role="dialog"
         aria-modal="true"
+        aria-labelledby={title ? titleId : undefined}
+        aria-describedby={description ? descId : undefined}
         className={cn(
           "relative flex w-full flex-col gap-4 rounded-2xl border border-gray-800 bg-[#161b22] p-6 text-white shadow-2xl transition-all",
           // 팝업 애니메이션 (아래에서 위로 살짝 올라오며 커짐)
@@ -76,20 +87,25 @@ export function Modal({
         {/* 우측 상단 닫기 버튼 */}
         <button
           onClick={onClose}
+          aria-label="모달 닫기"
           className="absolute right-4 top-4 rounded-lg p-1 text-gray-400 opacity-70 transition-opacity hover:bg-gray-800 hover:text-white hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#00a2ff] focus:ring-offset-2 focus:ring-offset-[#161b22]"
         >
           <X className="h-5 w-5" />
-          <span className="sr-only">닫기</span>
+          <span className="sr-only" aria-hidden="true">
+            닫기
+          </span>
         </button>
 
         {/* 헤더 영역 (제목 & 설명) */}
         {(title || description) && (
           <div className="flex flex-col gap-1.5 pr-6">
             {title && (
-              <h2 className="text-xl font-bold tracking-tight">{title}</h2>
+              <h2 id={titleId} className="text-xl font-bold tracking-tight">
+                {title}
+              </h2>
             )}
             {description && (
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p id={descId} className="text-sm text-gray-400 leading-relaxed">
                 {description}
               </p>
             )}
