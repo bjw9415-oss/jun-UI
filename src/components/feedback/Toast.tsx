@@ -184,9 +184,14 @@ const ToastItem = ({
   const Icon = iconMap[variant];
 
   return (
-    <div role="alert" className={toastItemVariants({ variant, position })}>
+    <div
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      className={toastItemVariants({ variant, position })}
+    >
       <div className="shrink-0 pt-0.5">
-        <Icon className={toastIconVariants({ variant })} />
+        <Icon className={toastIconVariants({ variant })} aria-hidden="true" />
       </div>
       <div className="flex flex-1 flex-col gap-1">
         <h3
@@ -210,6 +215,7 @@ const ToastItem = ({
       </div>
       <button
         onClick={onRemove}
+        aria-label="알림 닫기"
         className="shrink-0 rounded-lg p-1 opacity-70 transition-opacity hover:bg-black/20 hover:opacity-100"
       >
         <X className="h-4 w-4" />
