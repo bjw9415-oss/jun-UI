@@ -13,7 +13,7 @@ import {
   Info,
   AlertTriangle,
 } from "lucide-react";
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "../../shared/lib/utils";
 
 const toastContainerVariants = cva(
@@ -75,12 +75,15 @@ const toastIconVariants = cva("h-5 w-5", {
   },
 });
 
-export type ToastPosition = NonNullable<
-  VariantProps<typeof toastContainerVariants>["position"]
->;
-export type ToastVariant = NonNullable<
-  VariantProps<typeof toastItemVariants>["variant"]
->;
+export type ToastPosition =
+  | "top-right"
+  | "top-left"
+  | "top-center"
+  | "bottom-right"
+  | "bottom-left"
+  | "bottom-center";
+
+export type ToastVariant = "default" | "success" | "danger" | "warning";
 
 const iconMap = {
   default: Info,

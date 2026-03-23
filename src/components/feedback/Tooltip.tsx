@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../shared/lib/utils";
+import type { Direction } from "../../types/ui";
 
 // 툴팁 본체 스타일 및 위치 CVA
 const tooltipVariants = cva(
@@ -37,13 +38,10 @@ const tooltipArrowVariants = cva("absolute w-0 h-0 border-[5px]", {
   },
 });
 
-export type TooltipPosition = NonNullable<
-  VariantProps<typeof tooltipVariants>["position"]
->;
-
 export interface TooltipProps extends VariantProps<typeof tooltipVariants> {
   content: ReactNode;
   children: ReactNode;
+  position?: Direction;
   className?: string;
 }
 

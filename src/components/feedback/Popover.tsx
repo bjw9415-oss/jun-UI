@@ -2,6 +2,7 @@ import { useRef, useState, type ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../shared/lib/utils";
 import { useClickOutside, useEscapeKey } from "../../hooks";
+import type { Direction } from "../../types/ui";
 
 const popoverVariants = cva(
   "absolute z-50 w-72 rounded-xl bg-[#1c222b] border border-gray-700 p-4 text-sm text-white shadow-2xl transition-all animate-in fade-in zoom-in-95 duration-200",
@@ -19,13 +20,11 @@ const popoverVariants = cva(
     },
   },
 );
-export type PopoverPosition = NonNullable<
-  VariantProps<typeof popoverVariants>["position"]
->;
 
 export interface PopoverProps extends VariantProps<typeof popoverVariants> {
   content: ReactNode;
   children: ReactNode;
+  position: Direction;
   className?: string;
 }
 

@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
 import { useScrollLock, useEscapeKey } from "../../hooks";
+import type { Direction, StandardSize } from "../../types/ui";
 
 //  CVA로 방향만 관리
 const drawerVariants = cva(
@@ -25,18 +26,15 @@ const drawerVariants = cva(
   },
 );
 
-export type DrawerDirection = NonNullable<
-  VariantProps<typeof drawerVariants>["direction"]
->;
-
 //  size는 별도 타입으로 관리
-export type DrawerSize = "sm" | "md" | "lg" | "xl" | "full";
+export type DrawerSize = StandardSize | "full";
 
 export interface DrawerProps extends VariantProps<typeof drawerVariants> {
   isOpen: boolean;
   onClose: () => void;
   size?: DrawerSize; // 별도 관리
   title?: ReactNode;
+  direction?: Direction;
   description?: ReactNode;
   children: ReactNode;
   footer?: ReactNode;
@@ -66,6 +64,7 @@ export function Drawer({
     md: isHorizontal ? "w-80" : "h-80",
     lg: isHorizontal ? "w-96" : "h-96",
     xl: isHorizontal ? "w-[28rem]" : "h-[28rem]",
+    "2xl": isHorizontal ? "w-[36rem]" : "h-[36rem]",
     full: isHorizontal ? "w-screen" : "h-screen",
   }[size];
 
