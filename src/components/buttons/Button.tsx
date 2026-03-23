@@ -2,7 +2,7 @@ import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../shared/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
-
+import type { AsChildProp } from "../../types/ui";
 // cva를 사용해 버튼의 "스타일 사전"을 정의
 const buttonVariants = cva(
   // 공통 기본 스타일
@@ -46,9 +46,8 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends
     ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+    VariantProps<typeof buttonVariants>,
+    AsChildProp {}
 
 // 3. forwardRef 적용 (UI 라이브러리 버튼은 툴팁이나 팝오버를 위해 ref를 받을 수 있어야)
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
