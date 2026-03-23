@@ -2,6 +2,7 @@ import { forwardRef, type HTMLAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../shared/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
+import type { AsChildProp } from "../../types/ui";
 
 // cva를 사용해 버튼의 "스타일 사전"을 정의
 const badgeVariants = cva(
@@ -26,9 +27,10 @@ export type BadgeVariant = NonNullable<
   VariantProps<typeof badgeVariants>["variant"]
 >;
 export interface BadgeProps
-  extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {
-  asChild?: boolean;
-}
+  extends
+    HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants>,
+    AsChildProp {}
 export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
   ({ className, variant, asChild, ...props }, ref) => {
     const Comp = asChild ? Slot : "div";

@@ -1,9 +1,11 @@
-import { type ReactNode } from "react";
+import { useId, useRef, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
 import { cn } from "../../shared/lib/utils";
 import { useScrollLock, useEscapeKey } from "../../hooks";
+import type { Direction, StandardSize } from "../../types/ui";
+import { useFocusTrap } from "../../hooks/useFocusTrap";
 
 //  CVA로 방향만 관리
 const drawerVariants = cva(
@@ -25,18 +27,15 @@ const drawerVariants = cva(
   },
 );
 
-export type DrawerDirection = NonNullable<
-  VariantProps<typeof drawerVariants>["direction"]
->;
-
 //  size는 별도 타입으로 관리
-export type DrawerSize = "sm" | "md" | "lg" | "xl" | "full";
+export type DrawerSize = StandardSize | "full";
 
 export interface DrawerProps extends VariantProps<typeof drawerVariants> {
   isOpen: boolean;
   onClose: () => void;
   size?: DrawerSize; // 별도 관리
   title?: ReactNode;
+  direction?: Direction;
   description?: ReactNode;
   children: ReactNode;
   footer?: ReactNode;
@@ -56,7 +55,12 @@ export function Drawer({
 }: DrawerProps) {
   useScrollLock(isOpen);
   useEscapeKey(onClose, isOpen);
-
+  const titleId = useId();
+  const descriptionId = useId();
+  const drawerRef = useRef<HTMLDivElement>(null);
+  useScrollLock(isOpen);
+  useEscapeKey(onClose, isOpen);
+  useFocusTrap(drawerRef, isOpen);
   if (!isOpen) return null;
 
   // 방향에 따른 사이즈 매핑
@@ -66,6 +70,7 @@ export function Drawer({
     md: isHorizontal ? "w-80" : "h-80",
     lg: isHorizontal ? "w-96" : "h-96",
     xl: isHorizontal ? "w-[28rem]" : "h-[28rem]",
+    "2xl": isHorizontal ? "w-[36rem]" : "h-[36rem]",
     full: isHorizontal ? "w-screen" : "h-screen",
   }[size];
 
@@ -78,8 +83,11 @@ export function Drawer({
       />
 
       <div
+        ref={drawerRef}
         role="dialog"
         aria-modal="true"
+        aria-labelledby={title ? titleId : undefined}
+        aria-describedby={description ? descriptionId : undefined}
         className={cn(drawerVariants({ direction }), sizeClass, className)}
       >
         {/* 헤더 */}
@@ -94,9 +102,10 @@ export function Drawer({
           </div>
           <button
             onClick={onClose}
+            aria-label="드로어 닫기"
             className="absolute right-4 top-4 rounded-lg p-1 text-gray-400 opacity-70 transition-opacity hover:bg-gray-800 hover:text-white hover:opacity-100"
           >
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5" aria-hidden="true" />
             <span className="sr-only">닫기</span>
           </button>
         </div>

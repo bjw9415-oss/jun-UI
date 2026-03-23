@@ -2,17 +2,18 @@ import { forwardRef, useState } from "react";
 import { cn } from "../../shared/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
 import { User, UserCircle } from "lucide-react";
+import type { AsChildProp, StandardSize } from "../../types/ui";
 
 export type AvatarSize = "sm" | "md" | "lg" | "xl" | "2xl";
 export type AvatarShape = "circle" | "square";
 
-export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AvatarProps
+  extends React.HTMLAttributes<HTMLDivElement>, AsChildProp {
   src?: string;
   alt?: string;
   fallback?: string;
-  size?: AvatarSize;
+  size?: StandardSize; //
   shape?: AvatarShape;
-  asChild?: boolean;
 }
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
