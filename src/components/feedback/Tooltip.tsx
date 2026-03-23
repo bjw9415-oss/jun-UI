@@ -1,7 +1,14 @@
-import { useState, type ReactNode } from "react";
-import { cva, type VariantProps } from "class-variance-authority";
+import {
+  cloneElement,
+  isValidElement,
+  useId,
+  useState,
+  type ReactNode,
+} from "react";
+import { cva } from "class-variance-authority";
 import { cn } from "../../shared/lib/utils";
 import type { Direction } from "../../types/ui";
+import { useEscapeKey } from "../../hooks/useEscapeKey";
 
 // 툴팁 본체 스타일 및 위치 CVA
 const tooltipVariants = cva(
@@ -38,13 +45,12 @@ const tooltipArrowVariants = cva("absolute w-0 h-0 border-[5px]", {
   },
 });
 
-export interface TooltipProps extends VariantProps<typeof tooltipVariants> {
+export interface TooltipProps {
   content: ReactNode;
   children: ReactNode;
   position?: Direction;
   className?: string;
 }
-
 export function Tooltip({
   content,
   children,
@@ -52,7 +58,16 @@ export function Tooltip({
   className,
 }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
-
+  const tooltipId = useId();
+  useEscapeKey(() => setIsVisible(false), isVisible);
+  const trigger = isValidElement(children)
+    ? cloneElement(
+        children as React.ReactElement<{ "aria-describedby"?: string }>,
+        {
+          "aria-describedby": isVisible ? tooltipId : undefined,
+        },
+      )
+    : children;
   return (
     <div
       className="relative inline-flex"
@@ -62,14 +77,16 @@ export function Tooltip({
       onBlur={() => setIsVisible(false)}
     >
       {/* 트리거 요소 */}
-      {children}
+      {trigger}
 
       {/*  툴팁 본체 */}
       <div
+        id={tooltipId}
         role="tooltip"
+        aria-hidden={!isVisible}
         className={cn(
           tooltipVariants({ position }),
-          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95", // 동적 애니메이션은 따로 빼두는 센스!
+          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95",
           className,
         )}
       >
