@@ -19,6 +19,9 @@ const popoverVariants = cva(
     },
   },
 );
+export type PopoverPosition = NonNullable<
+  VariantProps<typeof popoverVariants>["position"]
+>;
 
 export interface PopoverProps extends VariantProps<typeof popoverVariants> {
   content: ReactNode;

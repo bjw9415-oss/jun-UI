@@ -53,7 +53,9 @@ const alertIconVariants = cva("h-5 w-5", {
     variant: "default",
   },
 });
-type AlertVariant = NonNullable<AlertProps["variant"]>;
+export type AlertVariant = NonNullable<
+  VariantProps<typeof alertVariants>["variant"]
+>;
 
 // 아이콘 컴포넌트 매핑 (색상 제거)
 const iconMap: Record<AlertVariant, typeof Info> = {

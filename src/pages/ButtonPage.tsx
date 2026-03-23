@@ -32,9 +32,14 @@ export default function ButtonPage() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview (미리보기)
           </div>
-          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
+          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto gap-1">
             <Button variant={variant} size={size} disabled={isDisabled}>
               {size === "icon" ? "😻" : buttonText}
+            </Button>
+            <Button asChild variant={variant} size={size} disabled={isDisabled}>
+              <a href="https://github.com" target="_blank">
+                깃허브로 날아가기 🚀
+              </a>
             </Button>
           </div>
         </div>
