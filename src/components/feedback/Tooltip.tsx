@@ -37,6 +37,10 @@ const tooltipArrowVariants = cva("absolute w-0 h-0 border-[5px]", {
   },
 });
 
+export type TooltipPosition = NonNullable<
+  VariantProps<typeof tooltipVariants>["position"]
+>;
+
 export interface TooltipProps extends VariantProps<typeof tooltipVariants> {
   content: ReactNode;
   children: ReactNode;

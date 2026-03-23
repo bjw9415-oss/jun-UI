@@ -20,6 +20,9 @@ const badgeVariants = cva(
     },
   },
 );
+export type BadgeVariant = NonNullable<
+  VariantProps<typeof badgeVariants>["variant"]
+>;
 export interface BadgeProps
   extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {}
 export const Badge = forwardRef<HTMLDivElement, BadgeProps>(

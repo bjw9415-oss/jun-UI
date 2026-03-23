@@ -25,6 +25,10 @@ const drawerVariants = cva(
   },
 );
 
+export type DrawerDirection = NonNullable<
+  VariantProps<typeof drawerVariants>["direction"]
+>;
+
 //  size는 별도 타입으로 관리
 export type DrawerSize = "sm" | "md" | "lg" | "xl" | "full";
 
