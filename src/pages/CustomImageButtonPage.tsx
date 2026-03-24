@@ -76,11 +76,11 @@ export default function CustomImageButtonPage() {
         <div className="flex-1 bg-[#161b22] rounded-2xl border border-gray-800 flex flex-col overflow-hidden">
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium flex justify-between items-center">
             <span>Preview</span>
-            <span className="text-xs bg-[#21262d] px-2 py-1 rounded text-gray-400">
+            <span className="text-xs bg-secondary px-2 py-1 rounded text-gray-400">
               {safeWidth} x {safeHeight}
             </span>
           </div>
-          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
+          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
             {" "}
             <Button
               className="relative overflow-hidden p-0 group border-0 shadow-2xl"
@@ -97,7 +97,7 @@ export default function CustomImageButtonPage() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               ) : (
-                <div className="absolute inset-0 w-full h-full bg-[#21262d] flex flex-col items-center justify-center text-gray-500">
+                <div className="absolute inset-0 w-full h-full bg-secondary flex flex-col items-center justify-center text-gray-500">
                   <ImageIcon className="w-8 h-8 mb-2 opacity-50" />
                   <span className="text-xs">No Image</span>
                 </div>
@@ -200,7 +200,7 @@ export default function CustomImageButtonPage() {
                 type="text"
                 value={buttonText}
                 onChange={(e) => setButtonText(e.target.value)}
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff]"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary"
               />
             </div>
           </div>

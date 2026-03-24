@@ -88,7 +88,7 @@ export function Modal({
         <button
           onClick={onClose}
           aria-label="모달 닫기"
-          className="absolute right-4 top-4 rounded-lg p-1 text-gray-400 opacity-70 transition-opacity hover:bg-gray-800 hover:text-white hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#00a2ff] focus:ring-offset-2 focus:ring-offset-[#161b22]"
+          className="absolute right-4 top-4 rounded-lg p-1 text-gray-400 opacity-70 transition-opacity hover:bg-gray-800 hover:text-white hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#161b22]"
         >
           <X className="h-5 w-5" />
           <span className="sr-only" aria-hidden="true">

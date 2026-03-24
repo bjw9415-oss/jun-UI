@@ -50,7 +50,7 @@ export default function SystemStatus() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             <div className="w-full max-w-lg mx-auto flex flex-col gap-10">
               {/*  뱃지 미리보기 */}
               <div className="flex flex-col items-center gap-4">
@@ -137,7 +137,7 @@ export default function SystemStatus() {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
-              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800">
+              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800">
                 실무 적용 예시 💡 (코드 실시간 연동)
               </button>
             </div>

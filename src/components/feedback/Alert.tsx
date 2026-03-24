@@ -8,7 +8,7 @@ const alertVariants = cva("relative w-full rounded-xl border p-4 flex gap-3", {
   variants: {
     variant: {
       default: "bg-[#161b22] border-gray-800 text-gray-300",
-      info: "bg-[#00a2ff]/10 border-[#00a2ff]/20 text-[#00a2ff]",
+      info: "bg-primary/10 border-primary/20 text-primary",
       success: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400",
       warning: "bg-yellow-500/10 border-yellow-500/20 text-yellow-400",
       danger: "bg-red-500/10 border-red-500/20 text-red-400",
@@ -25,7 +25,7 @@ const alertTitleVariants = cva("font-semibold leading-none tracking-tight", {
   variants: {
     variant: {
       default: "text-white",
-      info: "text-[#00a2ff]",
+      info: "text-primary",
       success: "text-emerald-500",
       warning: "text-yellow-500",
       danger: "text-red-500",
@@ -42,7 +42,7 @@ const alertIconVariants = cva("h-5 w-5", {
   variants: {
     variant: {
       default: "text-gray-400",
-      info: "text-[#00a2ff]",
+      info: "text-primary",
       success: "text-emerald-500",
       warning: "text-yellow-500",
       danger: "text-red-500",

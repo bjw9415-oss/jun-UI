@@ -24,6 +24,7 @@ import AccordionPage from "./pages/AccordionPage";
 import CarouselPage from "./pages/CarouselPage";
 import PaginationPage from "./pages/PaginationPage";
 import BreadcrumbDemo from "./pages/BreadcrumbPage";
+import SettingsTemplate from "./pages/SettingsTemplate";
 function App() {
   return (
     <ToastProvider position="top-center">
@@ -55,6 +56,7 @@ function App() {
           <Route path="/carousel" element={<CarouselPage />} />
           <Route path="/pagination" element={<PaginationPage />} />
           <Route path="/breadcrumb" element={<BreadcrumbDemo />} />
+          <Route path="/settings-template" element={<SettingsTemplate />} />
         </Routes>
       </HashRouter>
     </ToastProvider>

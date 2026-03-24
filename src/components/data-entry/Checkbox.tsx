@@ -23,7 +23,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       onCheckedChange,
       disabled,
       size = "md",
-      activeColor = "bg-[#00a2ff] border-[#00a2ff]", // 기본 파란색
+      activeColor = "bg-primary border-primary", // 기본 파란색
       name,
       value,
       ...props
@@ -83,7 +83,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1117]",
             isChecked === false
               ? "focus-visible:ring-gray-400"
-              : "focus-visible:ring-[#00a2ff]",
+              : "focus-visible:ring-primary",
             "disabled:cursor-not-allowed disabled:opacity-50",
             className,
           )}

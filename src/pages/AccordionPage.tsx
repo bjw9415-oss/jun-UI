@@ -52,7 +52,7 @@ export default function FAQ() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-start p-8 sm:p-12 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-start p-8 sm:p-12 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             {/*  아코디언 실제 렌더링 */}
             <div className="w-full max-w-lg bg-[#161b22] border border-gray-800 rounded-xl p-6 shadow-xl">
               <h3 className="text-white font-semibold mb-4 text-lg">
@@ -84,7 +84,7 @@ export default function FAQ() {
                   <AccordionContent>
                     내부 콘텐츠의 높이를 동적으로 계산하기 위해, 최신{" "}
                     <strong>CSS Grid</strong> 속성인{" "}
-                    <code className="text-[#00a2ff] bg-[#00a2ff]/10 px-1 py-0.5 rounded">
+                    <code className="text-primary bg-primary/10 px-1 py-0.5 rounded">
                       grid-template-rows
                     </code>
                     를 활용했습니다. JS의 개입 없이 CSS 엔진만으로 부드럽게
@@ -119,13 +119,13 @@ export default function FAQ() {
               <div className="grid grid-cols-2 gap-2 bg-[#0a0d12] p-2 rounded-xl border border-gray-800">
                 <button
                   onClick={() => setType("single")}
-                  className={`text-sm font-medium py-2.5 rounded-lg transition-all ${type === "single" ? "bg-[#161b22] text-[#00a2ff] border border-[#00a2ff]/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+                  className={`text-sm font-medium py-2.5 rounded-lg transition-all ${type === "single" ? "bg-[#161b22] text-primary border border-primary/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
                 >
                   Single (하나만 열기)
                 </button>
                 <button
                   onClick={() => setType("multiple")}
-                  className={`text-sm font-medium py-2.5 rounded-lg transition-all ${type === "multiple" ? "bg-[#161b22] text-[#00a2ff] border border-[#00a2ff]/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+                  className={`text-sm font-medium py-2.5 rounded-lg transition-all ${type === "multiple" ? "bg-[#161b22] text-primary border border-primary/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
                 >
                   Multiple (여러 개 열기)
                 </button>
@@ -140,7 +140,7 @@ export default function FAQ() {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
-              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800">
+              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800">
                 실무 적용 예시 💡
               </button>
             </div>

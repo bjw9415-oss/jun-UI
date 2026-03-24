@@ -32,7 +32,7 @@ export default function ButtonPage() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview (미리보기)
           </div>
-          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto gap-1">
+          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto gap-1">
             <Button variant={variant} size={size} disabled={isDisabled}>
               {size === "icon" ? "😻" : buttonText}
             </Button>
@@ -54,7 +54,7 @@ export default function ButtonPage() {
             <div className="flex flex-col gap-2">
               <label className="text-sm text-gray-400">Variant</label>
               <select
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff]"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary"
                 value={variant}
                 onChange={(e) => setVariant(e.target.value as VariantType)}
               >
@@ -71,7 +71,7 @@ export default function ButtonPage() {
             <div className="flex flex-col gap-2">
               <label className="text-sm text-gray-400">Size</label>
               <select
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff]"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary"
                 value={size}
                 onChange={(e) => setSize(e.target.value as SizeType)}
               >
@@ -92,7 +92,7 @@ export default function ButtonPage() {
                 value={buttonText}
                 onChange={(e) => setButtonText(e.target.value)}
                 disabled={size === "icon"}
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff] disabled:opacity-50"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary disabled:opacity-50"
               />
             </div>
 
@@ -101,7 +101,7 @@ export default function ButtonPage() {
                 type="checkbox"
                 checked={isDisabled}
                 onChange={(e) => setIsDisabled(e.target.checked)}
-                className="w-4 h-4 accent-[#00a2ff]"
+                className="w-4 h-4 accent-primary"
               />
               <span className="text-gray-300 text-sm">Disabled (비활성화)</span>
             </label>

@@ -34,7 +34,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
       name,
       value = "on",
       size = "md",
-      activeColor = "bg-[#00a2ff]", // 기본 파란색 유지
+      activeColor = "bg-primary", // 기본 파란색 유지
       thumbIcon,
       thumbImage,
       ...props
@@ -76,7 +76,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
             isChecked ? activeColor : "bg-gray-600", // 커스텀 색상 적용
             "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1117]",
             isChecked
-              ? "focus-visible:ring-[#00a2ff]"
+              ? "focus-visible:ring-primary"
               : "focus-visible:ring-gray-400",
             "disabled:cursor-not-allowed disabled:opacity-50",
             className,
@@ -101,7 +101,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
               <span
                 className={cn(
                   "flex items-center justify-center transition-colors duration-200",
-                  isChecked ? "text-[#00a2ff]" : "text-gray-400", // 켜지면 테마색, 꺼지면 회색
+                  isChecked ? "text-primary" : "text-gray-400", // 켜지면 테마색, 꺼지면 회색
                   size === "sm"
                     ? "scale-50"
                     : size === "md"

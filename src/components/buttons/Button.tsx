@@ -12,15 +12,15 @@ const buttonVariants = cva(
       // 모양 종류
       variant: {
         primary:
-          "bg-[#00a2ff] text-white hover:bg-[#008bd9] shadow-[0_0_15px_rgba(0,162,255,0.3)] hover:shadow-[0_0_20px_rgba(0,162,255,0.6)]",
+          "bg-primary text-white hover:bg-primary-hover shadow-[0_0_15px_rgba(0,162,255,0.3)] hover:shadow-[0_0_20px_rgba(0,162,255,0.6)]",
         outline:
-          "border-2 border-[#30363d] text-gray-300 hover:border-[#00a2ff] hover:text-[#00a2ff] bg-transparent",
+          "border-2 border-[#30363d] text-gray-300 hover:border-primary hover:text-primary bg-transparent",
         danger:
           "bg-red-500 text-white hover:bg-red-600 shadow-[0_0_15px_rgba(239,68,68,0.3)]",
         secondary:
-          "bg-[#21262d] text-gray-300 hover:bg-[#30363d] border border-gray-700",
+          "bg-secondary text-gray-300 hover:bg-[#30363d] border border-gray-700",
         ghost:
-          "bg-transparent text-gray-300 hover:bg-[#21262d] hover:text-white",
+          "bg-transparent text-gray-300 hover:bg-secondary hover:text-white",
         success:
           "bg-[#1EC800] text-white hover:bg-[#18a300] shadow-[0_0_15px_rgba(30,200,0,0.3)]",
       },

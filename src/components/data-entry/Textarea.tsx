@@ -17,7 +17,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             // 기본 스타일 (최소 높이 지정 및 세로로만 늘어나게 resize-y 적용)
             "w-full  p-4 bg-[#0d1117] border border-gray-700 rounded-lg text-white text-sm transition-all duration-200 outline-none placeholder:text-gray-500 resize-y",
             // 포커스 & 비활성화 스타일
-            "focus:border-[#00a2ff] focus:ring-1 focus:ring-[#00a2ff]",
+            "focus:border-primary focus:ring-1 focus:ring-primary",
             "disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-[#161b22]",
             // 에러 상태 스타일
             error && "border-red-500 focus:border-red-500 focus:ring-red-500",

@@ -41,6 +41,27 @@ interface ComponentCategory {
 
 const componentCategories: ComponentCategory[] = [
   {
+    title: "✨ Templates (실전 예시)",
+    description:
+      "우리가 깎은 컴포넌트들을 조립하여 만든 실무급 페이지 예시입니다.",
+    items: [
+      {
+        name: "Settings Dashboard",
+        path: "/settings-template",
+        icon: LayoutTemplate,
+        desc: "Tabs, Input, Toggle 등을 활용한 환경 설정 대시보드",
+      },
+
+      {
+        name: "More Templates...",
+        path: "#",
+        icon: AppWindow,
+        desc: "더 많은 실전 템플릿이 곧 추가될 예정입니다.",
+        disabled: true,
+      },
+    ],
+  },
+  {
     title: " Buttons (버튼류)",
     description: "사용자의 클릭 액션을 유도하는 컴포넌트들입니다.",
     items: [
@@ -218,7 +239,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#0d1117] flex flex-col items-center py-24 px-6">
       {/* 1. 헤더 영역 */}
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
-        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#00a2ff] to-[#1EC800] mb-6 tracking-tight">
+        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-primary to-[#1EC800] mb-6 tracking-tight">
           Jun-UI
         </h1>
         <p className="text-gray-400 text-lg max-w-xl mx-auto">
@@ -276,13 +297,13 @@ export default function Home() {
                   <Link
                     key={itemIdx}
                     to={item.path}
-                    className="group bg-[#161b22] border border-gray-800 rounded-xl p-5 flex flex-col gap-3 hover:border-[#00a2ff] hover:bg-[#1c222b] hover:shadow-[0_0_20px_rgba(0,162,255,0.1)] transition-all duration-300"
+                    className="group bg-[#161b22] border border-gray-800 rounded-xl p-5 flex flex-col gap-3 hover:border-primary hover:bg-[#1c222b] hover:shadow-[0_0_20px_rgba(0,162,255,0.1)] transition-all duration-300"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-[#0d1117] group-hover:bg-[#00a2ff]/10 flex items-center justify-center border border-gray-800 group-hover:border-[#00a2ff]/30 transition-colors">
-                      <Icon className="w-5 h-5 text-gray-400 group-hover:text-[#00a2ff] transition-colors" />
+                    <div className="w-10 h-10 rounded-lg bg-[#0d1117] group-hover:bg-primary/10 flex items-center justify-center border border-gray-800 group-hover:border-primary/30 transition-colors">
+                      <Icon className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-1 group-hover:text-[#00a2ff] transition-colors">
+                      <h3 className="text-white font-semibold mb-1 group-hover:text-primary transition-colors">
                         {item.name}
                       </h3>
                       <p className="text-xs text-gray-500 leading-relaxed">

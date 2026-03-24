@@ -41,7 +41,7 @@ ${
           <div className="flex flex-col space-y-1.5">
             <label className="text-sm font-medium text-white">프로젝트 이름</label>
             <input 
-              className="flex h-9 w-full rounded-md border border-gray-700 bg-[#0a0d12] px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#00a2ff] disabled:cursor-not-allowed disabled:opacity-50 text-white" 
+              className="flex h-9 w-full rounded-md border border-gray-700 bg-[#0a0d12] px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50 text-white" 
               placeholder="Jun-UI-Library" 
             />
           </div>
@@ -54,7 +54,7 @@ ${
         <button className="px-4 py-2 bg-transparent text-gray-300 hover:text-white border border-gray-700 hover:bg-gray-800 rounded-md text-sm font-medium transition-colors">
           취소
         </button>
-        <button className="px-4 py-2 bg-[#00a2ff] text-white hover:bg-[#0081cc] rounded-md text-sm font-medium transition-colors">
+        <button className="px-4 py-2 bg-primary text-white hover:bg-[#0081cc] rounded-md text-sm font-medium transition-colors">
           생성하기
         </button>
       </CardFooter>\n`
@@ -77,7 +77,7 @@ ${
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             {/*  카드 렌더링 영역 */}
             <Card className="w-full max-w-87.5 transition-all duration-300 animate-in zoom-in-95">
               {showHeader && (
@@ -96,7 +96,7 @@ ${
                         프로젝트 이름
                       </label>
                       <input
-                        className="flex h-9 w-full rounded-md border border-gray-700 bg-[#0a0d12] px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#00a2ff] text-white"
+                        className="flex h-9 w-full rounded-md border border-gray-700 bg-[#0a0d12] px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary text-white"
                         placeholder="Jun-UI-Library"
                       />
                     </div>
@@ -108,7 +108,7 @@ ${
                   <button className="px-4 py-2 bg-transparent text-gray-300 hover:text-white border border-gray-700 hover:bg-gray-800 rounded-md text-sm font-medium transition-colors">
                     취소
                   </button>
-                  <button className="px-4 py-2 bg-[#00a2ff] text-white hover:bg-[#0081cc] rounded-md text-sm font-medium transition-colors shadow-lg shadow-[#00a2ff]/20">
+                  <button className="px-4 py-2 bg-primary text-white hover:bg-[#0081cc] rounded-md text-sm font-medium transition-colors shadow-lg shadow-primary/20">
                     생성하기
                   </button>
                 </CardFooter>
@@ -130,7 +130,7 @@ ${
                   type="checkbox"
                   checked={showHeader}
                   onChange={(e) => setShowHeader(e.target.checked)}
-                  className="w-4 h-4 accent-[#00a2ff]"
+                  className="w-4 h-4 accent-primary"
                 />
                 <span className="text-sm text-gray-300 font-medium">
                   Card Header (제목/설명)
@@ -142,7 +142,7 @@ ${
                   type="checkbox"
                   checked={showContent}
                   onChange={(e) => setShowContent(e.target.checked)}
-                  className="w-4 h-4 accent-[#00a2ff]"
+                  className="w-4 h-4 accent-primary"
                 />
                 <span className="text-sm text-gray-300 font-medium">
                   Card Content (본문)
@@ -154,7 +154,7 @@ ${
                   type="checkbox"
                   checked={showFooter}
                   onChange={(e) => setShowFooter(e.target.checked)}
-                  className="w-4 h-4 accent-[#00a2ff]"
+                  className="w-4 h-4 accent-primary"
                 />
                 <span className="text-sm text-gray-300 font-medium">
                   Card Footer (액션 버튼)
@@ -165,7 +165,7 @@ ${
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
-              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800">
+              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800">
                 실무 적용 예시 💡
               </button>
             </div>

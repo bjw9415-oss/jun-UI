@@ -74,7 +74,7 @@ export default function IconButtonPage() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview (미리보기)
           </div>
-          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
+          <div className="flex-1 flex items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
             {/* 실제 렌더링되는 버튼 */}
             <Button
               variant={variant}
@@ -107,7 +107,7 @@ export default function IconButtonPage() {
             <div className="flex flex-col gap-2">
               <label className="text-sm text-gray-400">Select Icon</label>
               <select
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff]"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary"
                 value={iconName}
                 onChange={(e) => setIconName(e.target.value as IconType)}
               >
@@ -158,7 +158,7 @@ export default function IconButtonPage() {
                 value={buttonText}
                 onChange={(e) => setButtonText(e.target.value)}
                 disabled={position === "icon-only"}
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff] disabled:opacity-50"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary disabled:opacity-50"
               />
             </div>
 
@@ -168,7 +168,7 @@ export default function IconButtonPage() {
             <div className="flex flex-col gap-2">
               <label className="text-sm text-gray-400">Variant</label>
               <select
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff]"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary"
                 value={variant}
                 onChange={(e) => setVariant(e.target.value as VariantType)}
               >
@@ -195,7 +195,7 @@ export default function IconButtonPage() {
                 checked={isRounded}
                 onChange={(e) => setIsRounded(e.target.checked)}
                 disabled={position !== "icon-only"}
-                className="w-4 h-4 accent-[#00a2ff]"
+                className="w-4 h-4 accent-primary"
               />
               <span className="text-gray-300 text-sm">
                 완전 둥글게 (Rounded Full)

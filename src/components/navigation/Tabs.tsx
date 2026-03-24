@@ -73,7 +73,7 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
         aria-selected={isSelected}
         onClick={() => context.onValueChange(value)}
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-[#0a0d12] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a2ff] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-[#0a0d12] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           isSelected
             ? "bg-[#161b22] text-white shadow-sm border border-gray-700" // 선택됐을 때 (도드라짐)
             : "hover:text-gray-200 border border-transparent", // 안 선택됐을 때
@@ -104,7 +104,7 @@ const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>(
         ref={ref}
         role="tabpanel"
         className={cn(
-          "mt-2 ring-offset-[#0d1117] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a2ff] focus-visible:ring-offset-2 animate-in fade-in zoom-in-95 duration-200",
+          "mt-2 ring-offset-[#0d1117] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 animate-in fade-in zoom-in-95 duration-200",
           className,
         )}
         {...props}

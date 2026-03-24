@@ -53,7 +53,7 @@ export default function Settings() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             {/*  탭 컨테이너 시작 */}
             <Tabs
               value={activeTab}
@@ -81,7 +81,7 @@ export default function Settings() {
                         이름
                       </label>
                       <input
-                        className="w-full h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#00a2ff]"
+                        className="w-full h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
                         defaultValue="Jun Developer"
                       />
                     </div>
@@ -90,7 +90,7 @@ export default function Settings() {
                         이메일
                       </label>
                       <input
-                        className="w-full h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#00a2ff]"
+                        className="w-full h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
                         defaultValue="jun@example.com"
                       />
                     </div>
@@ -119,7 +119,7 @@ export default function Settings() {
                       </label>
                       <input
                         type="password"
-                        className="w-full h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#00a2ff]"
+                        className="w-full h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
                       />
                     </div>
                     <div className="space-y-1">
@@ -128,12 +128,12 @@ export default function Settings() {
                       </label>
                       <input
                         type="password"
-                        className="w-full h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#00a2ff]"
+                        className="w-full h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
                       />
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <button className="w-full px-4 py-2 bg-[#00a2ff] text-white hover:bg-[#0081cc] rounded-md text-sm font-medium transition-colors">
+                    <button className="w-full px-4 py-2 bg-primary text-white hover:bg-[#0081cc] rounded-md text-sm font-medium transition-colors">
                       비밀번호 업데이트
                     </button>
                   </CardFooter>
@@ -154,13 +154,13 @@ export default function Settings() {
               <div className="grid grid-cols-2 gap-2 bg-[#0a0d12] p-2 rounded-xl border border-gray-800">
                 <button
                   onClick={() => setActiveTab("account")}
-                  className={`text-sm font-medium py-2.5 rounded-lg transition-all ${activeTab === "account" ? "bg-[#161b22] text-[#00a2ff] border border-[#00a2ff]/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+                  className={`text-sm font-medium py-2.5 rounded-lg transition-all ${activeTab === "account" ? "bg-[#161b22] text-primary border border-primary/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
                 >
                   계정 (Account)
                 </button>
                 <button
                   onClick={() => setActiveTab("password")}
-                  className={`text-sm font-medium py-2.5 rounded-lg transition-all ${activeTab === "password" ? "bg-[#161b22] text-[#00a2ff] border border-[#00a2ff]/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+                  className={`text-sm font-medium py-2.5 rounded-lg transition-all ${activeTab === "password" ? "bg-[#161b22] text-primary border border-primary/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
                 >
                   보안 (Password)
                 </button>
@@ -174,7 +174,7 @@ export default function Settings() {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
-              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800">
+              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800">
                 실무 적용 예시 💡
               </button>
             </div>

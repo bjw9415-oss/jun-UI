@@ -64,7 +64,7 @@ const toastItemVariants = cva(
 const toastIconVariants = cva("h-5 w-5", {
   variants: {
     variant: {
-      default: "text-[#00a2ff]",
+      default: "text-primary",
       success: "",
       danger: "",
       warning: "",

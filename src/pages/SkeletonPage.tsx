@@ -41,7 +41,7 @@ export default function UserCard({ isLoading }) {
 
   return (
     <div className="flex items-center gap-4 p-4 border border-gray-800 rounded-xl">
-      <div className="h-12 w-12 rounded-full bg-[#00a2ff] flex items-center justify-center text-white">
+      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center text-white">
         <User />
       </div>
       <div>
@@ -65,7 +65,7 @@ export default function UserCard({ isLoading }) {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             <div className="w-full max-w-sm mx-auto flex flex-col gap-6">
               {/* 로딩 상태에 따른 UI 렌더링 */}
               {isLoading ? (
@@ -92,14 +92,14 @@ export default function UserCard({ isLoading }) {
                 //  실제 데이터 UI (로딩 완료)
                 <div className="flex flex-col gap-4 p-6 bg-[#161b22] border border-gray-800 hover:border-gray-700 transition-colors rounded-2xl shadow-xl animate-in fade-in duration-500">
                   <div className="flex items-center gap-4">
-                    <div className="h-14 w-14 rounded-full bg-linear-to-tr from-[#00a2ff] to-[#1EC800] flex items-center justify-center text-white shrink-0 shadow-lg shadow-[#00a2ff]/20">
+                    <div className="h-14 w-14 rounded-full bg-linear-to-tr from-primary to-[#1EC800] flex items-center justify-center text-white shrink-0 shadow-lg shadow-primary/20">
                       <User size={28} />
                     </div>
                     <div className="flex flex-col flex-1">
                       <h4 className="text-white font-bold text-lg">
                         Jun Developer
                       </h4>
-                      <p className="text-sm text-[#00a2ff] font-medium">
+                      <p className="text-sm text-primary font-medium">
                         Frontend Engineer
                       </p>
                     </div>
@@ -141,7 +141,7 @@ export default function UserCard({ isLoading }) {
               <button
                 onClick={triggerLoading}
                 disabled={isLoading}
-                className="w-full py-2.5 bg-[#161b22] text-white border border-gray-700 font-medium rounded-xl hover:bg-gray-800 hover:text-[#00a2ff] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-2.5 bg-[#161b22] text-white border border-gray-700 font-medium rounded-xl hover:bg-gray-800 hover:text-primary transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 다시 불러오기 (Reload)
               </button>
@@ -150,7 +150,7 @@ export default function UserCard({ isLoading }) {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
-              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800">
+              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800">
                 실무 적용 예시 💡
               </button>
             </div>

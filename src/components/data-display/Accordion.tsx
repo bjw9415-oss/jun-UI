@@ -101,7 +101,7 @@ const AccordionTrigger = React.forwardRef<
         type="button"
         onClick={() => rootContext.toggleValue(itemContext.value)}
         className={cn(
-          "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:text-[#00a2ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a2ff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1117] text-gray-200",
+          "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1117] text-gray-200",
           className,
         )}
         {...props}
@@ -111,7 +111,7 @@ const AccordionTrigger = React.forwardRef<
         <ChevronDown
           className={cn(
             "h-4 w-4 shrink-0 text-gray-500 transition-transform duration-300 ease-in-out",
-            itemContext.isOpen && "rotate-180 text-[#00a2ff]",
+            itemContext.isOpen && "rotate-180 text-primary",
           )}
         />
       </button>

@@ -26,7 +26,7 @@ export default function DrawerPage() {
   footer={
     <>
       <button className="px-4 py-2 text-sm text-gray-400 hover:text-white">취소</button>
-      <button className="px-4 py-2 text-sm bg-[#00a2ff] text-white rounded-lg">저장</button>
+      <button className="px-4 py-2 text-sm bg-primary text-white rounded-lg">저장</button>
     </>
   }
 >
@@ -62,7 +62,7 @@ export default function UserSettings() {
         <div className="flex flex-col gap-6 py-2">
           <div className="space-y-2">
             <label className="text-sm font-medium text-gray-300">사용자 이름</label>
-            <input type="text" className="w-full bg-[#0d1117] border border-gray-800 rounded-lg p-2 text-sm text-white focus:border-[#00a2ff] outline-none" defaultValue="Jun" />
+            <input type="text" className="w-full bg-[#0d1117] border border-gray-800 rounded-lg p-2 text-sm text-white focus:border-primary outline-none" defaultValue="Jun" />
           </div>
           <div className="space-y-2">
             <label className="text-sm font-medium text-gray-300">이메일 알림</label>
@@ -87,9 +87,9 @@ export default function UserSettings() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-[#00a2ff]/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-[#00a2ff]/20">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20">
                 <span className="text-2xl">🗄️</span>
               </div>
               <h3 className="text-white font-bold text-lg">Side Panel</h3>
@@ -99,7 +99,7 @@ export default function UserSettings() {
 
               <button
                 onClick={() => setIsOpen(true)}
-                className="px-6 py-3 bg-[#00a2ff]/10 text-[#00a2ff] border border-[#00a2ff]/30 font-semibold rounded-xl hover:bg-[#00a2ff] hover:text-white transition-all shadow-lg hover:shadow-[#00a2ff]/20"
+                className="px-6 py-3 bg-primary/10 text-primary border border-primary/30 font-semibold rounded-xl hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-primary/20"
               >
                 Open Drawer
               </button>
@@ -123,7 +123,7 @@ export default function UserSettings() {
                   </button>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="px-4 py-2 rounded-lg text-sm font-medium bg-[#00a2ff] text-white hover:bg-[#0081cc] transition-all"
+                    className="px-4 py-2 rounded-lg text-sm font-medium bg-primary text-white hover:bg-[#0081cc] transition-all"
                   >
                     저장하기
                   </button>
@@ -138,7 +138,7 @@ export default function UserSettings() {
                   <input
                     type="text"
                     defaultValue="Jun-UI"
-                    className="w-full bg-[#0d1117] border border-gray-800 rounded-lg p-2.5 text-sm text-white focus:border-[#00a2ff] focus:ring-1 focus:ring-[#00a2ff] outline-none transition-all"
+                    className="w-full bg-[#0d1117] border border-gray-800 rounded-lg p-2.5 text-sm text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                   />
                 </div>
                 <div className="space-y-2">
@@ -148,7 +148,7 @@ export default function UserSettings() {
                   <textarea
                     rows={4}
                     defaultValue="나만의 다크 테마 React 컴포넌트 라이브러리를 만들고 있습니다."
-                    className="w-full bg-[#0d1117] border border-gray-800 rounded-lg p-2.5 text-sm text-white focus:border-[#00a2ff] focus:ring-1 focus:ring-[#00a2ff] outline-none transition-all resize-none"
+                    className="w-full bg-[#0d1117] border border-gray-800 rounded-lg p-2.5 text-sm text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                   />
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function UserSettings() {
                   <button
                     key={d}
                     onClick={() => setDirection(d)}
-                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${direction === d ? "bg-[#00a2ff] text-white" : "text-gray-500 hover:text-gray-300"}`}
+                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${direction === d ? "bg-primary text-white" : "text-gray-500 hover:text-gray-300"}`}
                   >
                     {d}
                   </button>
@@ -191,7 +191,7 @@ export default function UserSettings() {
                   <button
                     key={s}
                     onClick={() => setSize(s)}
-                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${size === s ? "bg-[#00a2ff] text-white" : "text-gray-500 hover:text-gray-300"}`}
+                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${size === s ? "bg-primary text-white" : "text-gray-500 hover:text-gray-300"}`}
                   >
                     {s}
                   </button>
@@ -204,13 +204,13 @@ export default function UserSettings() {
             <div className="flex gap-2 px-1">
               <button
                 onClick={() => setCodeTab("component")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 조립된 코드
               </button>
               <button
                 onClick={() => setCodeTab("usage")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 실무 적용 예시 💡
               </button>
