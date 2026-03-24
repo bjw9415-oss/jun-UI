@@ -24,6 +24,7 @@ import {
   FileDigit,
   Route,
 } from "lucide-react";
+import { ThemePicker } from "@/components";
 
 interface ComponentItem {
   name: string;
@@ -236,7 +237,11 @@ const componentCategories: ComponentCategory[] = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0d1117] flex flex-col items-center py-24 px-6">
+    <div className="relative min-h-screen bg-[#0d1117] flex flex-col items-center py-24 px-6">
+      {/*  테마 픽커 */}
+      <div className="absolute top-6 right-6 sm:top-8 sm:right-12 animate-in fade-in slide-in-from-top-4 duration-700">
+        <ThemePicker />
+      </div>
       {/* 1. 헤더 영역 */}
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-primary to-[#1EC800] mb-6 tracking-tight">
