@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { User, Bell, Shield, KeyRound, MonitorSmartphone } from "lucide-react";
 import { Button, Input, Toggle, useToast, PageHeader } from "@/components";
-
 export default function SettingsTemplate() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
