@@ -41,6 +41,27 @@ interface ComponentCategory {
 
 const componentCategories: ComponentCategory[] = [
   {
+    title: "✨ Templates (실전 예시)",
+    description:
+      "우리가 깎은 컴포넌트들을 조립하여 만든 실무급 페이지 예시입니다.",
+    items: [
+      {
+        name: "Settings Dashboard",
+        path: "/settings-template",
+        icon: LayoutTemplate,
+        desc: "Tabs, Input, Toggle 등을 활용한 환경 설정 대시보드",
+      },
+
+      {
+        name: "More Templates...",
+        path: "#",
+        icon: AppWindow,
+        desc: "더 많은 실전 템플릿이 곧 추가될 예정입니다.",
+        disabled: true,
+      },
+    ],
+  },
+  {
     title: " Buttons (버튼류)",
     description: "사용자의 클릭 액션을 유도하는 컴포넌트들입니다.",
     items: [

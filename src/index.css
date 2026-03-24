@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
 
 /* 1. 실제 색상 값을 보관하는 변수 창고 (나중에 여기에 Light 모드 색상을 추가할 겁니다!) */
 :root {
