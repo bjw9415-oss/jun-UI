@@ -27,16 +27,17 @@
   - `Drawer`, `Modal`, `Popover`: `useId`를 활용한 `aria-labelledby`, `aria-describedby` 동적 매핑 및 Focus Return(ESC 닫기 시 원래 트리거로 포커스 복귀) 로직 적용
   - `Tooltip`: `cloneElement` 흑마법을 활용하여 트리거 요소에 `aria-describedby` 자동 주입
   - `Toast`, `Alert`: `role="alert"`, `aria-live="assertive"`, `aria-atomic="true"` 속성을 부여하여 스크린 리더 즉각 반응 지원 및 불필요한 장식용 아이콘 스크린 리더 무시(`aria-hidden`) 처리
-- [ ] **Barrel Export (인덱싱)**: `index.ts`를 활용한 Import 경로 최적화 (진행 예정)
+- [x] **모듈 내보내기 최적화 (Barrel Export)**: `index.ts` 및 절대 경로(`@/`)를 활용하여 깔끔하고 직관적인 Import 환경 구축
 
 ## Features
 
 - **Dark Theme First**: 세련된 다크 모드(`bg-[#0d1117]`)를 기본 배경으로 설계된 UI
-- **Tailwind CSS v4**: 최신 Tailwind 엔진을 활용한 직관적이고 빠른 스타일링
+- **Tailwind CSS v4 & Animation**: 최신 Tailwind 엔진과 `tailwindcss-animate` 플러그인을 활용한 폭포수(Staggered) 등장 애니메이션 및 직관적인 스타일링
+- **Global Theme Customization**: CSS 변수와 연동되어 실시간으로 메인 컬러(`primary`)를 변경할 수 있는 `ThemePicker` 및 다크/라이트 모드 전환 `ThemeToggle` 컴포넌트 제공
 - **Type-Safe**: TypeScript 기반의 엄격한 `interface` 설계로 완벽한 자동완성 지원
 - **Flexible & Scalable**: `clsx`와 `tailwind-merge`를 결합한 `cn` 유틸리티로 자유로운 클래스 병합 지원
 - **Modern Icons**: `lucide-react`를 활용한 깔끔하고 일관된 벡터 아이콘 적용
-- **Interactive Playground (DX)**: 각 컴포넌트의 상태를 직접 조작하고, 설정값에 따라 실시간으로 진화하는 **실무 적용 예시 코드**를 제공하여 최고 수준의 개발자 경험(DX) 제공
+- **Interactive Playground (DX)**: 각 컴포넌트의 상태를 직접 조작하고, 설정값에 따라 실시간으로 진화하는 **실무 적용 예시 코드 및 템플릿(Settings Dashboard 등)**을 제공하여 최고 수준의 개발자 경험(DX) 제공
 
 ## Tech Stack
 
@@ -100,12 +101,17 @@ npm install
 npm run dev
 ```
 
-## 🚀 Next Steps (Roadmap)
+🚀 Next Steps (Roadmap)
+Phase 3: DX 최적화 및 문서화 (Documentation & Testing)
 
-**Phase 3: DX 최적화 및 문서화 (Documentation & Testing)**
+- [x] Import 최적화: 절대 경로(@/) 설정 및 Barrel Export(index.ts) 패턴 적용 완료
 
-- [ ] **Import 최적화**: 절대 경로(`@/`) 설정 및 Barrel Export(`index.ts`) 패턴 적용
-- [ ] **Storybook 도입**: 컴포넌트별 인터랙티브 문서 및 카탈로그 구축
-- [ ] **Unit Testing**: Jest + React Testing Library를 활용한 컴포넌트 안정성 검증
-- [ ] **Templates 제작**: 디자인 시스템을 활용한 실제 페이지 레이아웃(Dashboard, Auth 등) 예시 구현
-- [ ] **NPM 패키지 배포**: `npm install jun-ui` 환경 구축 (CI/CD 파이프라인 연동)
+- [x] Templates 제작: 디자인 시스템을 활용한 실제 페이지 레이아웃(Settings Dashboard) 예시 구현 완료
+
+- [ ] 디자인 토큰(Design Token) 전면 도입: 모든 컴포넌트의 하드코딩된 색상을 light-dark() 기반의 시맨틱 변수(Semantic Variables)로 치환하여 완벽한 다크/라이트 모드 생태계 구축
+
+- [ ] Storybook 도입: 컴포넌트별 인터랙티브 문서 및 카탈로그 구축
+
+- [ ] Unit Testing: Jest + React Testing Library를 활용한 컴포넌트 안정성 검증
+
+- [ ] NPM 패키지 배포: npm install jun-ui 환경 구축 (CI/CD 파이프라인 연동)
