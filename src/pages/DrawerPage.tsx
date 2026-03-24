@@ -1,18 +1,14 @@
 import { useState } from "react";
-import {
-  Drawer,
-  type DrawerDirection,
-  type DrawerSize,
-} from "../components/feedback";
-import { PageHeader, CodeViewer } from "../components/layout";
-
+import { Drawer, type DrawerSize } from "@/components/feedback";
+import { PageHeader, CodeViewer } from "@/components/layout";
+import type { Direction } from "@/types/ui";
 type CodeTabType = "component" | "usage";
 
 export default function DrawerPage() {
   const [isOpen, setIsOpen] = useState(false);
 
   // 커스텀 상태
-  const [direction, setDirection] = useState<DrawerDirection>("right");
+  const [direction, setDirection] = useState<Direction>("right");
   const [size, setSize] = useState<DrawerSize>("md");
   const [codeTab, setCodeTab] = useState<CodeTabType>("component");
 

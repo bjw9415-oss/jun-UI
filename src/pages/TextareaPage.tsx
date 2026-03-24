@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Textarea } from "../components/data-entry";
-import { PageHeader, CodeViewer } from "../components/layout";
+import { Textarea } from "@/components/data-entry";
+import { PageHeader, CodeViewer } from "@/components/layout";
 
-import { NumberSliderControl } from "../components/layout";
+import { NumberSliderControl } from "@/components/layout";
 type CodeTabType = "component" | "usage";
 
 export default function TextareaPage() {

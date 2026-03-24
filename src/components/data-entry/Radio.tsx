@@ -5,7 +5,7 @@ import {
   useState,
   type InputHTMLAttributes,
 } from "react";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 // 1. Context 정의 (부모의 상태를 자식들에게 전달)
 interface RadioContextValue {

@@ -6,8 +6,8 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "../components/data-display";
-import { PageHeader, CodeViewer } from "../components/layout";
+} from "@/components/data-display";
+import { PageHeader, CodeViewer } from "@/components/layout";
 
 export default function CardPage() {
   const [showHeader, setShowHeader] = useState(true);

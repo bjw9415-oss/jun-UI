@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Button } from "../components/buttons";
+import { Button } from "@/components/buttons";
 import { Upload, X, Image as ImageIcon } from "lucide-react";
 import {
   PageHeader,

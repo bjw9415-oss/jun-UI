@@ -6,9 +6,9 @@ import {
   type ReactNode,
 } from "react";
 import { cva } from "class-variance-authority";
-import { cn } from "../../shared/lib/utils";
-import type { Direction } from "../../types/ui";
-import { useEscapeKey } from "../../hooks/useEscapeKey";
+import { cn } from "@/shared/lib/utils";
+import type { Direction } from "@/types/ui";
+import { useEscapeKey } from "@/hooks/useEscapeKey";
 
 // 툴팁 본체 스타일 및 위치 CVA
 const tooltipVariants = cva(

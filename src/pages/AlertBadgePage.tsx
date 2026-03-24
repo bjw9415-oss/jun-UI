@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
-import { Alert, type AlertVariant } from "../components/feedback";
-import { Badge, type BadgeVariant } from "../components/feedback";
-import { PageHeader, CodeViewer } from "../components/layout";
+import { Alert, type AlertVariant } from "@/components/feedback";
+import { Badge, type BadgeVariant } from "@/components/feedback";
+import { PageHeader, CodeViewer } from "@/components/layout";
 
 import { Terminal } from "lucide-react";
 

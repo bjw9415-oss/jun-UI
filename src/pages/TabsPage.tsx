@@ -4,7 +4,7 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
-} from "../components/navigation";
+} from "@/components/navigation";
 import {
   Card,
   CardHeader,
@@ -12,8 +12,8 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "../components/data-display/Card";
-import { PageHeader, CodeViewer } from "../components/layout";
+} from "@/components/data-display";
+import { PageHeader, CodeViewer } from "@/components/layout";
 
 export default function TabsPage() {
   const [activeTab, setActiveTab] = useState("account");

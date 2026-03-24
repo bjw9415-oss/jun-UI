@@ -1,7 +1,7 @@
 import { forwardRef, useId, type HTMLAttributes, type ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Info, AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 // Alert 컨테이너 스타일
 const alertVariants = cva("relative w-full rounded-xl border p-4 flex gap-3", {

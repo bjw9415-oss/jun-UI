@@ -1,8 +1,8 @@
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
-import type { AsChildProp } from "../../types/ui";
+import type { AsChildProp } from "@/types/ui";
 // cva를 사용해 버튼의 "스타일 사전"을 정의
 const buttonVariants = cva(
   // 공통 기본 스타일
