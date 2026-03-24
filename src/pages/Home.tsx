@@ -24,7 +24,7 @@ import {
   FileDigit,
   Route,
 } from "lucide-react";
-import { ThemePicker } from "@/components";
+import { ThemePicker, ThemeToggle } from "@/components";
 
 interface ComponentItem {
   name: string;
@@ -43,8 +43,7 @@ interface ComponentCategory {
 const componentCategories: ComponentCategory[] = [
   {
     title: "✨ Templates (실전 예시)",
-    description:
-      "우리가 깎은 컴포넌트들을 조립하여 만든 실무급 페이지 예시입니다.",
+    description: " 컴포넌트들을 조립하여 만든 페이지 예시입니다.",
     items: [
       {
         name: "Settings Dashboard",
@@ -237,23 +236,26 @@ const componentCategories: ComponentCategory[] = [
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#0d1117] flex flex-col items-center py-24 px-6">
+    <div className="relative min-h-screen bg-(--bg-home) transition-colors duration-500 flex flex-col items-center py-24 px-6">
+      {" "}
       {/*  테마 픽커 */}
-      <div className="absolute top-6 right-6 sm:top-8 sm:right-12 animate-in fade-in slide-in-from-top-4 duration-700">
+      <div className="absolute top-6 right-6 sm:top-8 sm:right-12 flex flex-col items-end gap-6 animate-in fade-in slide-in-from-top-4 duration-700">
+        {" "}
         <ThemePicker />
+        <ThemeToggle />
       </div>
       {/* 1. 헤더 영역 */}
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-primary to-[#1EC800] mb-6 tracking-tight">
           Jun-UI
         </h1>
-        <p className="text-gray-400 text-lg max-w-xl mx-auto">
+        <p className="text-(--text-home) transition-colors duration-500 text-lg max-w-xl mx-auto mb-8">
+          {" "}
           나만의 다크 테마 React 컴포넌트 라이브러리.
           <br />
           아름답고 재사용 가능한 UI 부품들을 모아두는 공간입니다.
         </p>
       </div>
-
       {/* 2. 카테고리별 컴포넌트 리스트 영역 */}
       <div className="w-full max-w-5xl flex flex-col gap-12">
         {componentCategories.map((category, idx) => (
@@ -264,10 +266,12 @@ export default function Home() {
           >
             {/* 카테고리 제목 */}
             <div className="border-b border-gray-800 pb-2">
-              <h2 className="text-2xl font-bold text-white mb-1">
+              <h2 className="text-2xl font-bold text-(--text-home) mb-1">
                 {category.title}
               </h2>
-              <p className="text-sm text-gray-500">{category.description}</p>
+              <p className="text-sm text-(--text-home)">
+                {category.description}
+              </p>
             </div>
 
             {/* 카드 그리드 */}

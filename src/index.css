@@ -16,6 +16,8 @@
   --success-hover: #18a300;
 
   --border-default: #30363d;
+  --bg-home: light-dark(#f8fafc, #0d1117);
+  --text-home: light-dark(#0f172a, #ffffff);
 }
 
 /* 2. Tailwind에게 "내가 만든 변수를 클래스 이름으로 쓸게!" 라고 알려주기 */
@@ -29,4 +31,10 @@
   --color-success: var(--success);
   --color-success-hover: var(--success-hover);
   --color-border-default: var(--border-default);
+  --color-home-bg: var(--bg-home);
+  --color-home-text: var(--text-home);
+}
+
+.dark {
+  color-scheme: dark;
 }
