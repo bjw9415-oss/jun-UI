@@ -19,7 +19,7 @@ export function CodeViewer({ code }: CodeViewerProps) {
         <span>Code</span>
         <button
           onClick={handleCopy}
-          className={`text-xs transition-colors ${copied ? "text-green-400 font-bold" : "text-[#00a2ff] hover:text-white"}`}
+          className={`text-xs transition-colors ${copied ? "text-green-400 font-bold" : "text-primary hover:text-white"}`}
         >
           {copied ? "✓ 복사 완료!" : "복사하기"}
         </button>

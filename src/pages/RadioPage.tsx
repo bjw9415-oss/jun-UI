@@ -10,7 +10,7 @@ type CodeTabType = "component" | "usage";
 
 // 색상 테마 옵션
 const COLOR_OPTIONS = [
-  { name: "Default Blue", class: "border-[#00a2ff] text-[#00a2ff]" },
+  { name: "Default Blue", class: "border-primary text-primary" },
   { name: "Emerald", class: "border-emerald-500 text-emerald-500" },
   { name: "Indigo", class: "border-indigo-500 text-indigo-500" },
   { name: "Pink", class: "border-pink-500 text-pink-500" },
@@ -70,15 +70,15 @@ export default function SubscriptionPlan() {
         <span className="text-white font-bold">₩0</span>
       </label>
 
-      <label className="flex items-center justify-between p-4 border border-[#00a2ff] rounded-xl bg-[#00a2ff]/5 cursor-pointer">
+      <label className="flex items-center justify-between p-4 border border-primary rounded-xl bg-primary/5 cursor-pointer">
         <div className="flex items-center gap-3">
           <Radio value="pro" />
           <div className="flex flex-col">
-            <span className="text-[#00a2ff] font-medium">Pro (추천)</span>
+            <span className="text-primary font-medium">Pro (추천)</span>
             <span className="text-xs text-gray-400">모든 고급 기능 포함</span>
           </div>
         </div>
-        <span className="text-[#00a2ff] font-bold">₩9,900</span>
+        <span className="text-primary font-bold">₩9,900</span>
       </label>
     </RadioGroup>
   );
@@ -97,10 +97,10 @@ export default function SubscriptionPlan() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-10 min-h-100 gap-8 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-10 min-h-100 gap-8 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             {/* 🌟 실무 적용 예시: 요금제 선택 UI */}
             <div className="w-full max-w-sm space-y-4">
-              <div className="text-xs text-[#00a2ff] font-bold tracking-wider uppercase">
+              <div className="text-xs text-primary font-bold tracking-wider uppercase">
                 Select Plan
               </div>
 
@@ -129,7 +129,7 @@ export default function SubscriptionPlan() {
 
                 {/* Pro Plan */}
                 <label
-                  className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-colors ${selectedValue === "pro" ? "border-[#00a2ff] bg-[#00a2ff]/5" : "border-gray-800 bg-[#161b22] hover:border-gray-700"}`}
+                  className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-colors ${selectedValue === "pro" ? "border-primary bg-primary/5" : "border-gray-800 bg-[#161b22] hover:border-gray-700"}`}
                 >
                   <div className="flex items-center gap-3">
                     <Radio value="pro" disabled={isDisabled} />
@@ -137,7 +137,7 @@ export default function SubscriptionPlan() {
                       <span
                         className={
                           selectedValue === "pro"
-                            ? "text-[#00a2ff] font-medium"
+                            ? "text-primary font-medium"
                             : "text-white font-medium"
                         }
                       >
@@ -151,7 +151,7 @@ export default function SubscriptionPlan() {
                   <span
                     className={
                       selectedValue === "pro"
-                        ? "text-[#00a2ff] font-bold"
+                        ? "text-primary font-bold"
                         : "text-white font-bold"
                     }
                   >
@@ -176,7 +176,7 @@ export default function SubscriptionPlan() {
                   <button
                     key={s}
                     onClick={() => setSize(s)}
-                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${size === s ? "bg-[#00a2ff] text-white" : "text-gray-500 hover:text-gray-300"}`}
+                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${size === s ? "bg-primary text-white" : "text-gray-500 hover:text-gray-300"}`}
                   >
                     {s}
                   </button>
@@ -193,7 +193,7 @@ export default function SubscriptionPlan() {
                 type="checkbox"
                 checked={isDisabled}
                 onChange={(e) => setIsDisabled(e.target.checked)}
-                className="w-4 h-4 accent-[#00a2ff]"
+                className="w-4 h-4 accent-primary"
               />
             </label>
 
@@ -223,13 +223,13 @@ export default function SubscriptionPlan() {
             <div className="flex gap-2 px-1">
               <button
                 onClick={() => setCodeTab("component")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 조립된 코드
               </button>
               <button
                 onClick={() => setCodeTab("usage")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 실무 적용 예시 💡
               </button>

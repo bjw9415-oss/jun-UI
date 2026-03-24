@@ -101,7 +101,7 @@ const CarouselPrevious = React.forwardRef<
       ref={ref}
       onClick={goToPrev}
       className={cn(
-        "absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#161b22]/80 border border-gray-700 text-white shadow-lg backdrop-blur-sm transition-all hover:bg-[#00a2ff] hover:border-[#00a2ff]",
+        "absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#161b22]/80 border border-gray-700 text-white shadow-lg backdrop-blur-sm transition-all hover:bg-primary hover:border-primary",
         className,
       )}
       {...props}
@@ -122,7 +122,7 @@ const CarouselNext = React.forwardRef<
       ref={ref}
       onClick={goToNext}
       className={cn(
-        "absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#161b22]/80 border border-gray-700 text-white shadow-lg backdrop-blur-sm transition-all hover:bg-[#00a2ff] hover:border-[#00a2ff]",
+        "absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#161b22]/80 border border-gray-700 text-white shadow-lg backdrop-blur-sm transition-all hover:bg-primary hover:border-primary",
         className,
       )}
       {...props}
@@ -156,7 +156,7 @@ const CarouselIndicators = React.forwardRef<
           className={cn(
             "h-2 rounded-full transition-all duration-300",
             currentIndex === idx
-              ? "w-6 bg-[#00a2ff]"
+              ? "w-6 bg-primary"
               : "w-2 bg-white/30 hover:bg-white/50",
           )}
         />

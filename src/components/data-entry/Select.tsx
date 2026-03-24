@@ -54,7 +54,7 @@ export function Select({
           // 선택된 값이 있으면 흰색, 없으면 회색(placeholder 색상)
           selectedOption ? "text-white" : "text-gray-500",
           // 포커스/오픈 상태 스타일
-          isOpen && "border-[#00a2ff] ring-1 ring-[#00a2ff]",
+          isOpen && "border-primary ring-1 ring-primary",
           // 비활성화 스타일
           "disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-[#161b22]",
           // 에러 스타일
@@ -91,8 +91,8 @@ export function Select({
                     "w-full px-4 py-2.5 text-sm flex items-center justify-between cursor-pointer transition-colors",
                     // 선택된 아이템은 파란 글씨, 마우스 올리면 배경색 변경
                     option.value === value
-                      ? "text-[#00a2ff] bg-[#00a2ff]/10 font-medium"
-                      : "text-gray-300 hover:bg-[#21262d] hover:text-white",
+                      ? "text-primary bg-primary/10 font-medium"
+                      : "text-gray-300 hover:bg-secondary hover:text-white",
                   )}
                 >
                   <span className="truncate">{option.label}</span>

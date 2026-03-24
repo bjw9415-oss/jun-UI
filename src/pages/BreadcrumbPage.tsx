@@ -71,7 +71,7 @@ export default function Navigation() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             {/* 가상의 웹사이트 헤더 영역 구현 */}
             <div className="w-full max-w-2xl bg-[#161b22] border border-gray-800 rounded-xl overflow-hidden shadow-2xl shadow-black/40">
               <div className="bg-[#0a0d12] px-6 py-4 border-b border-gray-800 flex items-center">
@@ -164,13 +164,13 @@ export default function Navigation() {
               <div className="grid grid-cols-2 gap-2 bg-[#0a0d12] p-2 rounded-xl border border-gray-800">
                 <button
                   onClick={() => setSeparatorType("chevron")}
-                  className={`flex items-center justify-center gap-2 text-sm font-medium py-2.5 rounded-lg transition-all ${separatorType === "chevron" ? "bg-[#161b22] text-[#00a2ff] border border-[#00a2ff]/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+                  className={`flex items-center justify-center gap-2 text-sm font-medium py-2.5 rounded-lg transition-all ${separatorType === "chevron" ? "bg-[#161b22] text-primary border border-primary/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
                 >
                   Chevron ( <ChevronRight className="w-4 h-4" /> )
                 </button>
                 <button
                   onClick={() => setSeparatorType("slash")}
-                  className={`flex items-center justify-center gap-2 text-sm font-medium py-2.5 rounded-lg transition-all ${separatorType === "slash" ? "bg-[#161b22] text-[#00a2ff] border border-[#00a2ff]/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+                  className={`flex items-center justify-center gap-2 text-sm font-medium py-2.5 rounded-lg transition-all ${separatorType === "slash" ? "bg-[#161b22] text-primary border border-primary/30 shadow-sm" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
                 >
                   Slash ( <Slash className="w-4 h-4" /> )
                 </button>
@@ -185,7 +185,7 @@ export default function Navigation() {
                   type="checkbox"
                   checked={showEllipsis}
                   onChange={(e) => setShowEllipsis(e.target.checked)}
-                  className="w-4 h-4 accent-[#00a2ff]"
+                  className="w-4 h-4 accent-primary"
                 />
                 <span className="text-sm text-gray-300 font-medium">
                   Collapse Paths (중간 경로 생략)
@@ -193,7 +193,7 @@ export default function Navigation() {
               </label>
               <p className="text-xs text-gray-500">
                 계층(Depth)이 너무 깊어지면{" "}
-                <code className="text-[#00a2ff]">BreadcrumbEllipsis</code>{" "}
+                <code className="text-primary">BreadcrumbEllipsis</code>{" "}
                 컴포넌트를 중간에 끼워 넣어 UI를 깔끔하게 유지할 수 있습니다.
               </p>
             </div>
@@ -201,7 +201,7 @@ export default function Navigation() {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
-              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800">
+              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800">
                 실무 적용 예시 💡
               </button>
             </div>

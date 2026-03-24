@@ -38,7 +38,7 @@ export default function SaveProfile() {
   };
 
   return (
-    <button onClick={handleSave} className="px-4 py-2 bg-[#00a2ff] text-white rounded-lg">
+    <button onClick={handleSave} className="px-4 py-2 bg-primary text-white rounded-lg">
       프로필 저장하기
     </button>
   );
@@ -82,9 +82,9 @@ export default function SaveProfile() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-[#00a2ff]/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-[#00a2ff]/20">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20">
                 <span className="text-2xl">🍞</span>
               </div>
               <h3 className="text-white font-bold text-lg">Toast Playground</h3>
@@ -94,7 +94,7 @@ export default function SaveProfile() {
 
               <button
                 onClick={handleFireToast}
-                className="px-6 py-3 bg-[#00a2ff] text-white font-semibold rounded-xl hover:bg-[#0081cc] transition-all shadow-lg hover:shadow-[#00a2ff]/20 active:scale-95"
+                className="px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-[#0081cc] transition-all shadow-lg hover:shadow-primary/20 active:scale-95"
               >
                 Show Toast
               </button>
@@ -118,7 +118,7 @@ export default function SaveProfile() {
                       onClick={() => setVariant(v)}
                       className={`text-xs uppercase font-bold py-2.5 rounded-lg border transition-all ${
                         variant === v
-                          ? "bg-[#00a2ff] text-white border-[#00a2ff]"
+                          ? "bg-primary text-white border-primary"
                           : "bg-[#0a0d12] border-gray-800 text-gray-400 hover:border-gray-600"
                       }`}
                     >
@@ -138,7 +138,7 @@ export default function SaveProfile() {
                 type="checkbox"
                 checked={showDescription}
                 onChange={(e) => setShowDescription(e.target.checked)}
-                className="w-4 h-4 accent-[#00a2ff]"
+                className="w-4 h-4 accent-primary"
               />
             </label>
           </div>
@@ -146,7 +146,7 @@ export default function SaveProfile() {
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
               <button
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800`}
               >
                 어디서든 Hook으로 호출 💡
               </button>

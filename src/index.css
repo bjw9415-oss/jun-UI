@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+/* 1. 실제 색상 값을 보관하는 변수 창고 (나중에 여기에 Light 모드 색상을 추가할 겁니다!) */
+:root {
+  --primary: #00a2ff;
+  --primary-hover: #008bd9;
+
+  --secondary: #21262d;
+  --secondary-hover: #30363d;
+
+  --danger: #ef4444; /* Tailwind의 red-500 */
+  --danger-hover: #dc2626; /* Tailwind의 red-600 */
+
+  --success: #1ec800;
+  --success-hover: #18a300;
+
+  --border-default: #30363d;
+}
+
+/* 2. Tailwind에게 "내가 만든 변수를 클래스 이름으로 쓸게!" 라고 알려주기 */
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+  --color-success: var(--success);
+  --color-success-hover: var(--success-hover);
+  --color-border-default: var(--border-default);
+}

@@ -87,7 +87,7 @@ export default function UserProfile() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             <div className="flex flex-col items-center justify-center p-12 border border-gray-800/50 rounded-3xl bg-[#161b22]/50 w-full max-w-sm mx-auto h-96 transition-all duration-300">
               <Avatar
                 size={size}
@@ -100,7 +100,7 @@ export default function UserProfile() {
                 <h3 className="text-white font-semibold text-lg">
                   Jun-UI User
                 </h3>
-                <p className="text-sm text-[#00a2ff] font-medium px-3 py-1 bg-[#00a2ff]/10 rounded-full inline-block border border-[#00a2ff]/20">
+                <p className="text-sm text-primary font-medium px-3 py-1 bg-primary/10 rounded-full inline-block border border-primary/20">
                   Status: {getStatusText()}
                 </p>
               </div>
@@ -129,7 +129,7 @@ export default function UserProfile() {
               <div className="grid grid-cols-2 gap-2">
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="flex items-center justify-center gap-2 px-3 py-2.5 bg-[#0a0d12] border border-gray-800 rounded-lg text-sm font-medium text-[#00a2ff] hover:border-[#00a2ff]/50 transition-colors"
+                  className="flex items-center justify-center gap-2 px-3 py-2.5 bg-[#0a0d12] border border-gray-800 rounded-lg text-sm font-medium text-primary hover:border-primary/50 transition-colors"
                 >
                   <UploadCloud className="w-4 h-4" /> 내 사진
                 </button>
@@ -164,7 +164,7 @@ export default function UserProfile() {
                   <button
                     key={s}
                     onClick={() => setSize(s)}
-                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${size === s ? "bg-[#00a2ff] text-white shadow-md" : "text-gray-500 hover:text-gray-300"}`}
+                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${size === s ? "bg-primary text-white shadow-md" : "text-gray-500 hover:text-gray-300"}`}
                   >
                     {s}
                   </button>
@@ -180,7 +180,7 @@ export default function UserProfile() {
                     <button
                       key={s}
                       onClick={() => setShape(s)}
-                      className={`text-xs uppercase font-bold py-2 rounded transition-colors ${shape === s ? "bg-[#00a2ff] text-white" : "text-gray-500 hover:text-gray-300"}`}
+                      className={`text-xs uppercase font-bold py-2 rounded transition-colors ${shape === s ? "bg-primary text-white" : "text-gray-500 hover:text-gray-300"}`}
                     >
                       {s}
                     </button>
@@ -197,7 +197,7 @@ export default function UserProfile() {
                   maxLength={2}
                   value={fallback}
                   onChange={(e) => setFallback(e.target.value.toUpperCase())}
-                  className="w-full bg-[#0a0d12] border border-gray-800 rounded-lg h-9 px-3 text-sm text-white focus:border-[#00a2ff] outline-none transition-colors"
+                  className="w-full bg-[#0a0d12] border border-gray-800 rounded-lg h-9 px-3 text-sm text-white focus:border-primary outline-none transition-colors"
                   placeholder="ex) JU"
                 />
               </div>
@@ -206,7 +206,7 @@ export default function UserProfile() {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
-              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800">
+              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800">
                 실무 적용 예시 💡
               </button>
             </div>

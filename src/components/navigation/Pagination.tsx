@@ -46,9 +46,9 @@ const PaginationLink = React.forwardRef<HTMLButtonElement, PaginationLinkProps>(
       ref={ref}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-[#0d1117] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a2ff] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+        "inline-flex h-9 w-9 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-[#0d1117] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
         isActive
-          ? "bg-[#00a2ff] text-white hover:bg-[#0081cc] shadow-md"
+          ? "bg-primary text-white hover:bg-[#0081cc] shadow-md"
           : "text-gray-400 hover:bg-[#161b22] hover:text-white border border-transparent hover:border-gray-800",
         className,
       )}

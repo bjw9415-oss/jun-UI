@@ -18,7 +18,7 @@ export default function TooltipPage() {
   const generatedCode = `<Tooltip
   content="${content}"${positionPropStr}
 >
-  <button className="px-4 py-2 bg-[#161b22] border border-gray-800 rounded-lg text-white hover:border-[#00a2ff] transition-colors">
+  <button className="px-4 py-2 bg-[#161b22] border border-gray-800 rounded-lg text-white hover:border-primary transition-colors">
     Hover me
   </button>
 </Tooltip>`;
@@ -62,10 +62,10 @@ export default function IconTooltips() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-10 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             <div className="flex flex-col items-center justify-center p-12 border border-gray-800/50 rounded-3xl bg-[#161b22]/50 w-full max-w-sm mx-auto">
               <Tooltip content={content} position={position}>
-                <button className="whitespace-nowrap px-5 py-3 bg-[#161b22] text-white border border-gray-700 font-semibold rounded-xl hover:border-[#00a2ff] hover:text-[#00a2ff] transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-[#00a2ff] focus:ring-offset-2 focus:ring-offset-[#161b22]">
+                <button className="whitespace-nowrap px-5 py-3 bg-[#161b22] text-white border border-gray-700 font-semibold rounded-xl hover:border-primary hover:text-primary transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#161b22]">
                   Hover me ✨
                 </button>
               </Tooltip>
@@ -86,7 +86,7 @@ export default function IconTooltips() {
                   <button
                     key={p}
                     onClick={() => setPosition(p)}
-                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${position === p ? "bg-[#00a2ff] text-white" : "text-gray-500 hover:text-gray-300"}`}
+                    className={`text-xs uppercase font-bold py-2 rounded transition-colors ${position === p ? "bg-primary text-white" : "text-gray-500 hover:text-gray-300"}`}
                   >
                     {p}
                   </button>
@@ -105,7 +105,7 @@ export default function IconTooltips() {
                 type="text"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                className="w-full bg-[#0a0d12] border border-gray-800 rounded-lg p-2.5 text-sm text-white focus:border-[#00a2ff] outline-none transition-colors"
+                className="w-full bg-[#0a0d12] border border-gray-800 rounded-lg p-2.5 text-sm text-white focus:border-primary outline-none transition-colors"
                 placeholder="툴팁 내용을 입력하세요"
               />
             </div>
@@ -114,13 +114,13 @@ export default function IconTooltips() {
             <div className="flex gap-2 px-1">
               <button
                 onClick={() => setCodeTab("component")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 조립된 코드
               </button>
               <button
                 onClick={() => setCodeTab("usage")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 실무 적용 예시 💡
               </button>

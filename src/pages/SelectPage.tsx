@@ -55,7 +55,7 @@ export default function SelectPage() {
   const disabledPropStr = isDisabled ? `\n        disabled` : "";
   const buttonDisabledStr = isDisabled
     ? `\n        disabled\n        className="h-11 bg-[#161b22] text-gray-500 rounded-lg font-medium cursor-not-allowed"`
-    : `\n        className="h-11 bg-[#00a2ff] text-white rounded-lg font-medium hover:bg-[#008ce6] transition-colors"`;
+    : `\n        className="h-11 bg-primary text-white rounded-lg font-medium hover:bg-[#008ce6] transition-colors"`;
 
   const usageExampleCode = `import { useState } from 'react';
 import Select from '../components/Select';
@@ -103,7 +103,7 @@ export default function SignupForm() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex items-start justify-center p-10 pt-20 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
+          <div className="flex-1 flex items-start justify-center p-10 pt-20 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
             <div className="w-full max-w-xs">
               <Select
                 options={fruitOptions}
@@ -129,7 +129,7 @@ export default function SignupForm() {
                 type="text"
                 value={placeholder}
                 onChange={(e) => setPlaceholder(e.target.value)}
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff]"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary"
               />
             </div>
 
@@ -139,7 +139,7 @@ export default function SignupForm() {
               </label>
               <button
                 onClick={() => setSelectedValue("")}
-                className="py-2 text-sm text-gray-300 bg-[#21262d] border border-gray-700 rounded-lg hover:bg-gray-700 transition-colors"
+                className="py-2 text-sm text-gray-300 bg-secondary border border-gray-700 rounded-lg hover:bg-gray-700 transition-colors"
               >
                 선택 초기화 (Clear)
               </button>
@@ -153,7 +153,7 @@ export default function SignupForm() {
                   type="checkbox"
                   checked={isDisabled}
                   onChange={(e) => setIsDisabled(e.target.checked)}
-                  className="w-4 h-4 accent-[#00a2ff]"
+                  className="w-4 h-4 accent-primary"
                 />
                 <span className="text-gray-300 text-sm">
                   Disabled (비활성화)
@@ -178,7 +178,7 @@ export default function SignupForm() {
                     type="text"
                     value={errorMessage}
                     onChange={(e) => setErrorMessage(e.target.value)}
-                    className="bg-[#21262d] text-red-400 border border-red-900/50 rounded-lg p-2 outline-none focus:border-red-500 text-sm mt-1"
+                    className="bg-secondary text-red-400 border border-red-900/50 rounded-lg p-2 outline-none focus:border-red-500 text-sm mt-1"
                   />
                 )}
               </div>
@@ -189,13 +189,13 @@ export default function SignupForm() {
             <div className="flex gap-2 px-1">
               <button
                 onClick={() => setCodeTab("component")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 조립된 코드
               </button>
               <button
                 onClick={() => setCodeTab("usage")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 실무 적용 예시 💡
               </button>

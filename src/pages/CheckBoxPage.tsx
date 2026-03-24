@@ -10,8 +10,8 @@ type CheckedState = boolean | "indeterminate";
 const COLOR_OPTIONS = [
   {
     name: "Default Blue",
-    class: "bg-[#00a2ff] border-[#00a2ff]",
-    ring: "focus-visible:ring-[#00a2ff]",
+    class: "bg-primary border-primary",
+    ring: "focus-visible:ring-primary",
   },
   {
     name: "Emerald",
@@ -142,7 +142,7 @@ export default function TermsAgreement() {
               Interactive
             </span>
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-10 min-h-100 gap-8 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
+          <div className="flex-1 flex flex-col items-center justify-center p-10 min-h-100 gap-8 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
             {/*  1. 우리가 조종판으로 조작하는 메인 체크박스 */}
             <div className="flex items-center justify-between p-5 bg-[#161b22] border border-gray-800 rounded-2xl w-full max-w-sm transition-colors hover:border-gray-700">
               <div className="flex flex-col gap-1">
@@ -165,7 +165,7 @@ export default function TermsAgreement() {
 
             {/*  2. 실무 적용 예시: 전체 동의 로직 (독립적으로 동작) */}
             <div className="flex flex-col gap-4 bg-[#161b22] p-5 border border-gray-800 rounded-2xl w-full max-w-sm opacity-90">
-              <div className="text-xs text-[#00a2ff] font-bold mb-1 tracking-wider uppercase">
+              <div className="text-xs text-primary font-bold mb-1 tracking-wider uppercase">
                 Real-world Example
               </div>
 
@@ -233,13 +233,13 @@ export default function TermsAgreement() {
                 </button>
                 <button
                   onClick={() => setCheckedState("indeterminate")}
-                  className={`text-xs font-bold py-2 rounded transition-colors ${checkedState === "indeterminate" ? "bg-[#00a2ff] text-white" : "text-gray-500 hover:text-gray-300"}`}
+                  className={`text-xs font-bold py-2 rounded transition-colors ${checkedState === "indeterminate" ? "bg-primary text-white" : "text-gray-500 hover:text-gray-300"}`}
                 >
                   Indeterminate
                 </button>
                 <button
                   onClick={() => setCheckedState(true)}
-                  className={`text-xs font-bold py-2 rounded transition-colors ${checkedState === true ? "bg-[#00a2ff] text-white" : "text-gray-500 hover:text-gray-300"}`}
+                  className={`text-xs font-bold py-2 rounded transition-colors ${checkedState === true ? "bg-primary text-white" : "text-gray-500 hover:text-gray-300"}`}
                 >
                   True
                 </button>
@@ -257,7 +257,7 @@ export default function TermsAgreement() {
                     <button
                       key={s}
                       onClick={() => setSize(s)}
-                      className={`text-xs uppercase font-bold px-4 py-2 rounded bg-[#0a0d12] border transition-colors ${size === s ? "border-[#00a2ff] text-[#00a2ff]" : "border-gray-800 text-gray-500 hover:border-gray-600"}`}
+                      className={`text-xs uppercase font-bold px-4 py-2 rounded bg-[#0a0d12] border transition-colors ${size === s ? "border-primary text-primary" : "border-gray-800 text-gray-500 hover:border-gray-600"}`}
                     >
                       {s}
                     </button>
@@ -307,13 +307,13 @@ export default function TermsAgreement() {
             <div className="flex gap-2 px-1">
               <button
                 onClick={() => setCodeTab("component")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 조립된 코드
               </button>
               <button
                 onClick={() => setCodeTab("usage")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 실무 적용 예시 💡
               </button>

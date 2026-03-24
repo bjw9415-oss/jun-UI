@@ -159,7 +159,7 @@ export default function DynamicInputExample() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex items-center justify-center p-10 min-h-100  bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
+          <div className="flex-1 flex items-center justify-center p-10 min-h-100  bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
             <div className="w-full max-w-sm">
               <Input
                 type={actualType}
@@ -186,7 +186,7 @@ export default function DynamicInputExample() {
               <select
                 value={inputType}
                 onChange={(e) => setInputType(e.target.value as InputType)}
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff]"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary"
               >
                 <option value="text">Text (기본)</option>
                 <option value="password">Password (비밀번호)</option>
@@ -200,7 +200,7 @@ export default function DynamicInputExample() {
                 type="text"
                 value={placeholder}
                 onChange={(e) => setPlaceholder(e.target.value)}
-                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-[#00a2ff]"
+                className="bg-[#0d1117] text-white border border-gray-700 rounded-lg p-2 outline-none focus:border-primary"
               />
             </div>
 
@@ -217,7 +217,7 @@ export default function DynamicInputExample() {
                       <button
                         key={icon}
                         onClick={() => setLeftIconName(icon)}
-                        className={`flex-1 py-1.5 text-xs rounded-md border transition-colors ${leftIconName === icon ? "bg-[#00a2ff] border-[#00a2ff] text-white" : "border-gray-700 text-gray-400 hover:bg-[#21262d]"}`}
+                        className={`flex-1 py-1.5 text-xs rounded-md border transition-colors ${leftIconName === icon ? "bg-primary border-primary text-white" : "border-gray-700 text-gray-400 hover:bg-secondary"}`}
                       >
                         {icon}
                       </button>
@@ -233,13 +233,13 @@ export default function DynamicInputExample() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => setRightIconName("none")}
-                    className={`flex-1 py-1.5 text-xs rounded-md border transition-colors ${rightIconName === "none" ? "bg-[#00a2ff] border-[#00a2ff] text-white" : "border-gray-700 text-gray-400 hover:bg-[#21262d]"}`}
+                    className={`flex-1 py-1.5 text-xs rounded-md border transition-colors ${rightIconName === "none" ? "bg-primary border-primary text-white" : "border-gray-700 text-gray-400 hover:bg-secondary"}`}
                   >
                     없음
                   </button>
                   <button
                     onClick={() => setRightIconName("Eye")}
-                    className={`flex-1 py-1.5 text-xs rounded-md border transition-colors ${rightIconName === "Eye" ? "bg-[#00a2ff] border-[#00a2ff] text-white" : "border-gray-700 text-gray-400 hover:bg-[#21262d]"}`}
+                    className={`flex-1 py-1.5 text-xs rounded-md border transition-colors ${rightIconName === "Eye" ? "bg-primary border-primary text-white" : "border-gray-700 text-gray-400 hover:bg-secondary"}`}
                   >
                     눈알 (Eye)
                   </button>
@@ -255,7 +255,7 @@ export default function DynamicInputExample() {
                   type="checkbox"
                   checked={isDisabled}
                   onChange={(e) => setIsDisabled(e.target.checked)}
-                  className="w-4 h-4 accent-[#00a2ff]"
+                  className="w-4 h-4 accent-primary"
                 />
                 <span className="text-gray-300 text-sm">
                   Disabled (비활성화)
@@ -280,7 +280,7 @@ export default function DynamicInputExample() {
                     type="text"
                     value={errorMessage}
                     onChange={(e) => setErrorMessage(e.target.value)}
-                    className="bg-[#21262d] text-red-400 border border-red-900/50 rounded-lg p-2 outline-none focus:border-red-500 text-sm mt-1"
+                    className="bg-secondary text-red-400 border border-red-900/50 rounded-lg p-2 outline-none focus:border-red-500 text-sm mt-1"
                   />
                 )}
               </div>
@@ -292,13 +292,13 @@ export default function DynamicInputExample() {
             <div className="flex gap-2 px-1">
               <button
                 onClick={() => setCodeTab("component")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 조립된 코드
               </button>
               <button
                 onClick={() => setCodeTab("usage")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 실무 적용 예시 💡
               </button>

@@ -9,8 +9,8 @@ type CodeTabType = "component" | "usage";
 const COLOR_OPTIONS = [
   {
     name: "Default Blue",
-    class: "bg-[#00a2ff]",
-    ring: "focus-visible:ring-[#00a2ff]",
+    class: "bg-primary",
+    ring: "focus-visible:ring-primary",
   },
   {
     name: "Emerald",
@@ -134,7 +134,7 @@ export default function NotificationSettings() {
               Interactive
             </span>
           </div>
-          <div className="flex-1 flex items-center justify-center p-10 min-h-75 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
+          <div className="flex-1 flex items-center justify-center p-10 min-h-75 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px] overflow-auto">
             <div className="flex flex-col gap-4 w-full max-w-md">
               {/*  조종판으로 조작하는 메인 토글 */}
               <div className="flex items-center justify-between p-5 bg-[#161b22] border border-gray-800 rounded-2xl transition-colors hover:border-gray-700">
@@ -214,7 +214,7 @@ export default function NotificationSettings() {
                   <button
                     key={s}
                     onClick={() => setSize(s)}
-                    className={`text-xs uppercase font-bold py-2 rounded ${size === s ? "bg-[#00a2ff] text-white" : "text-gray-500 hover:text-gray-300"}`}
+                    className={`text-xs uppercase font-bold py-2 rounded ${size === s ? "bg-primary text-white" : "text-gray-500 hover:text-gray-300"}`}
                   >
                     {s}
                   </button>
@@ -282,13 +282,13 @@ export default function NotificationSettings() {
             <div className="flex gap-2 px-1">
               <button
                 onClick={() => setCodeTab("component")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "component" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 조립된 코드
               </button>
               <button
                 onClick={() => setCodeTab("usage")}
-                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
+                className={`text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors ${codeTab === "usage" ? "bg-[#161b22] text-primary border-t border-x border-gray-800" : "text-gray-500 hover:text-gray-300"}`}
               >
                 실무 적용 예시 💡
               </button>

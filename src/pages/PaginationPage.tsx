@@ -107,10 +107,10 @@ export default function PostList() {
           <div className="p-4 border-b border-gray-800 text-sm text-gray-400 font-medium">
             Preview
           </div>
-          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 min-h-100 bg-[#0a0d12] bg-[radial-gradient(#30363d_1px,transparent_1px)] bg-size-[16px_16px]">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 min-h-100 bg-[#0a0d12] bg-[radial-gradient(var(--border-default)_1px,transparent_1px)] bg-size-[16px_16px]">
             {/* 가상의 데이터 리스트 영역 */}
             <div className="w-full max-w-2xl bg-[#161b22] border border-gray-800 rounded-xl p-6 mb-8 shadow-lg text-center">
-              <p className="text-[#00a2ff] font-bold text-xl mb-2">
+              <p className="text-primary font-bold text-xl mb-2">
                 현재 {currentPage} 페이지를 보고 있습니다
               </p>
               <p className="text-gray-400 text-sm">
@@ -181,7 +181,7 @@ export default function PostList() {
                   <label className="text-sm text-gray-300">
                     Total Pages (총 페이지 수)
                   </label>
-                  <span className="text-sm font-bold text-[#00a2ff]">
+                  <span className="text-sm font-bold text-primary">
                     {totalPages}
                   </span>
                 </div>
@@ -196,7 +196,7 @@ export default function PostList() {
                     // 총 페이지가 줄어들 때 현재 페이지가 넘어가 버리지 않게 방어
                     if (currentPage > val) setCurrentPage(val);
                   }}
-                  className="w-full accent-[#00a2ff]"
+                  className="w-full accent-primary"
                 />
               </div>
 
@@ -211,13 +211,13 @@ export default function PostList() {
                     max={totalPages}
                     value={currentPage}
                     onChange={(e) => handlePageChange(Number(e.target.value))}
-                    className="flex-1 h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#00a2ff]"
+                    className="flex-1 h-9 rounded-md border border-gray-700 bg-[#0a0d12] px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
                 <p className="text-xs text-gray-500 mt-2">
                   * 7페이지를 넘어갈 때부터 알고리즘이 자동으로{" "}
-                  <code className="text-[#00a2ff]">...</code>(말줄임표)을
-                  생성하여 레이아웃이 깨지지 않게 방어합니다.
+                  <code className="text-primary">...</code>(말줄임표)을 생성하여
+                  레이아웃이 깨지지 않게 방어합니다.
                 </p>
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function PostList() {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 px-1">
-              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-[#00a2ff] border-t border-x border-gray-800">
+              <button className="text-xs font-medium px-3 py-1.5 rounded-t-lg transition-colors bg-[#161b22] text-primary border-t border-x border-gray-800">
                 실무 적용 예시 💡
               </button>
             </div>

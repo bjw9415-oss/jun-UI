@@ -28,7 +28,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               // 기본 스타일 (다크 테마)
               "w-full h-11 bg-[#0d1117] border border-gray-700 rounded-lg text-white text-sm transition-all duration-200 outline-none placeholder:text-gray-500",
               // 포커스(클릭) 됐을 때 스타일 (파란색)
-              "focus:border-[#00a2ff] focus:ring-1 focus:ring-[#00a2ff]",
+              "focus:border-primary focus:ring-1 focus:ring-primary",
               // 비활성화(disabled) 스타일
               "disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-[#161b22]",
               // 아이콘 유무에 따른 좌우 여백(Padding) 자동 조절

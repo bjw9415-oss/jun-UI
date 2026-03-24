@@ -40,7 +40,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
       onValueChange,
       name,
       size = "md",
-      activeColor = "border-[#00a2ff] text-[#00a2ff]", // 테두리와 내부 원(dot) 색상
+      activeColor = "border-primary text-primary", // 테두리와 내부 원(dot) 색상
       children,
       ...props
     },
@@ -126,7 +126,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
               : "border-gray-500 bg-transparent hover:border-gray-400",
             "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1117]",
             isChecked
-              ? "focus-visible:ring-[#00a2ff]"
+              ? "focus-visible:ring-primary"
               : "focus-visible:ring-gray-400",
             "disabled:cursor-not-allowed disabled:opacity-50",
             className,
