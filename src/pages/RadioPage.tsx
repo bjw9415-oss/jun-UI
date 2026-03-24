@@ -3,8 +3,8 @@ import {
   RadioGroup,
   Radio,
   type RadioGroupProps,
-} from "../components/data-entry/Radio";
-import { PageHeader, CodeViewer } from "../components/layout";
+} from "@/components/data-entry/Radio";
+import { PageHeader, CodeViewer } from "@/components/layout";
 
 type CodeTabType = "component" | "usage";
 

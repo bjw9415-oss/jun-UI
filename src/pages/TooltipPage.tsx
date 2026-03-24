@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Tooltip, type TooltipPosition } from "../components/feedback";
-import { PageHeader, CodeViewer } from "../components/layout";
+import { Tooltip } from "@/components/feedback";
+import { PageHeader, CodeViewer } from "@/components/layout";
+import type { Direction } from "@/types/ui";
 
 type CodeTabType = "component" | "usage";
 
 export default function TooltipPage() {
-  const [position, setPosition] = useState<TooltipPosition>("top");
+  const [position, setPosition] = useState<Direction>("top");
   const [content, setContent] = useState("이것은 툴팁입니다!");
   const [codeTab, setCodeTab] = useState<CodeTabType>("component");
 

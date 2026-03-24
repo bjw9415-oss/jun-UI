@@ -1,9 +1,9 @@
 import { useCallback, useId, useRef, useState, type ReactNode } from "react";
 import { cva } from "class-variance-authority";
-import { cn } from "../../shared/lib/utils";
-import { useClickOutside, useEscapeKey } from "../../hooks";
-import type { Direction } from "../../types/ui";
-import { useFocusTrap } from "../../hooks/useFocusTrap";
+import { cn } from "@/shared/lib/utils";
+import { useClickOutside, useEscapeKey } from "@/hooks";
+import type { Direction } from "@/types/ui";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 const popoverVariants = cva(
   "absolute z-50 w-72 rounded-xl bg-[#1c222b] border border-gray-700 p-4 text-sm text-white shadow-2xl transition-all animate-in fade-in zoom-in-95 duration-200",
   {

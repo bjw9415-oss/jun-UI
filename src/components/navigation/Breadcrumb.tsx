@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ChevronRight, MoreHorizontal } from "lucide-react";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 export interface BreadcrumbProps extends React.ComponentPropsWithoutRef<"nav"> {
   children?: React.ReactNode;

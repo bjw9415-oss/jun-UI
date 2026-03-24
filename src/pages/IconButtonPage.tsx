@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../components/buttons";
+import { Button } from "@/components/buttons";
 import {
   Mail,
   ArrowRight,
@@ -7,7 +7,7 @@ import {
   Send,
   Image as ImageIcon,
 } from "lucide-react";
-import { PageHeader, CodeViewer } from "../components/layout";
+import { PageHeader, CodeViewer } from "@/components/layout";
 
 type VariantType =
   | "primary"

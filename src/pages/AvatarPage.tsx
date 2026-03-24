@@ -3,8 +3,8 @@ import {
   Avatar,
   type AvatarSize,
   type AvatarShape,
-} from "../components/data-display";
-import { PageHeader, CodeViewer } from "../components/layout";
+} from "@/components/data-display";
+import { PageHeader, CodeViewer } from "@/components/layout";
 
 import {
   UploadCloud,

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 //  최상위 래퍼 (nav 태그로 감싸서 접근성 향상)
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (

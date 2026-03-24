@@ -2,10 +2,10 @@ import { useId, useRef, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
-import { cn } from "../../shared/lib/utils";
-import { useScrollLock, useEscapeKey } from "../../hooks";
-import type { Direction, StandardSize } from "../../types/ui";
-import { useFocusTrap } from "../../hooks/useFocusTrap";
+import { cn } from "@/shared/lib/utils";
+import { useScrollLock, useEscapeKey } from "@/hooks";
+import type { Direction, StandardSize } from "@/types/ui";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 //  CVA로 방향만 관리
 const drawerVariants = cva(

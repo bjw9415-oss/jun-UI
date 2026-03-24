@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { ChevronDown } from "lucide-react";
 
 // Context 설정: 현재 열려있는 아이템들을 추적

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 // 1. 카드 최상위
 const Card = React.forwardRef<

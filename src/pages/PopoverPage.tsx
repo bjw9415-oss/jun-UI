@@ -1,9 +1,10 @@
 import { useMemo, useState } from "react";
-import { Popover, type PopoverPosition } from "../components/feedback";
+import { Popover } from "../components/feedback";
 import { PageHeader, CodeViewer } from "../components/layout";
+import type { Direction } from "@/types/ui";
 
 export default function PopoverPage() {
-  const [position, setPosition] = useState<PopoverPosition>("bottom");
+  const [position, setPosition] = useState<Direction>("bottom");
   const usageExampleCode = useMemo(() => {
     return `import Popover from '../components/Popover';
 import { Settings2 } from 'lucide-react';

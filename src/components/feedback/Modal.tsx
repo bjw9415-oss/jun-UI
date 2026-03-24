@@ -1,10 +1,10 @@
 import { useId, useRef, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
-import { cn } from "../../shared/lib/utils";
-import { useScrollLock, useEscapeKey } from "../../hooks";
-import type { StandardSize } from "../../types/ui";
-import { useFocusTrap } from "../../hooks/useFocusTrap";
+import { cn } from "@/shared/lib/utils";
+import { useScrollLock, useEscapeKey } from "@/hooks";
+import type { StandardSize } from "@/types/ui";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 export type ModalSize = StandardSize | "full";
 export interface ModalProps {

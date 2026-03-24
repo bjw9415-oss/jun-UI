@@ -7,8 +7,8 @@ import {
   PaginationNext,
   PaginationPrevious,
   PaginationEllipsis,
-} from "../components/navigation";
-import { PageHeader, CodeViewer } from "../components/layout";
+} from "@/components/navigation";
+import { PageHeader, CodeViewer } from "@/components/layout";
 
 export default function PaginationPage() {
   const [currentPage, setCurrentPage] = useState(1);

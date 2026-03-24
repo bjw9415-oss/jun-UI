@@ -14,7 +14,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import { cva } from "class-variance-authority";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 const toastContainerVariants = cva(
   "fixed z-50 m-4 flex w-full max-w-sm gap-3 sm:m-6 pointer-events-none",

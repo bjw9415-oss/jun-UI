@@ -1,8 +1,8 @@
 import { forwardRef, useState } from "react";
-import { cn } from "../../shared/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
 import { User, UserCircle } from "lucide-react";
-import type { AsChildProp, StandardSize } from "../../types/ui";
+import type { AsChildProp, StandardSize } from "@/types/ui";
 
 export type AvatarSize = "sm" | "md" | "lg" | "xl" | "2xl";
 export type AvatarShape = "circle" | "square";
